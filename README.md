@@ -62,6 +62,12 @@ include missing values and values outside displayed ranges. These describe sampl
 and reference-selection biases; they are not anomaly scores. No distance is inferred
 by inverting noisy parallaxes. The analysis dependency is separate from API dependencies.
 
+Experiment 001A tests control-matching feasibility with a preregistered 100-target
+selection and fixed tolerances. Run `python -m scripts.control_matching --plot`
+after installing `requirements-analysis.txt`; omit `--plot` for JSON-only offline
+execution. [Protocol](docs/EXPERIMENT_001A.md) and
+[results](reports/experiment_001a/REPORT.md) retain unsuccessful matches explicitly.
+
 ## Deployment safety
 
 Work is proposed on `feat/stellar-registry-gaia-dr3`; do not merge or deploy until

@@ -1,0 +1,2118 @@
+{
+  "experiment": "001A",
+  "algorithm": "deterministic-maximum-cardinality-v1",
+  "selection_sha256": "0fbfd09f03ba4fe0d9016f8f9486f016fa98dd9e0a39cb16836f430a48bfdcff",
+  "protocol_sha256": "b99c498c41b48c6847852957c9b051ea49d8252121f4ae367b006e0f5de7c2b4",
+  "raw_sha256": "d193d7e144d5a7fc9f3d877a9323fc3c68ee2baf05b966d997392309a5248fb0",
+  "target_count": 100,
+  "reference_pool_count": 531,
+  "matched_target_count": 3,
+  "matched_fraction": 0.03,
+  "operational_criterion_met": false,
+  "status_counts": {
+    "matched": 3,
+    "unusable_covariates": 34,
+    "no_eligible_control": 63,
+    "control_competition": 0
+  },
+  "targets_with_any_eligible_control_by_stage": {
+    "G magnitude": 21,
+    "color": 12,
+    "absolute Galactic latitude": 11,
+    "parallax SNR": 3,
+    "RUWE": 3
+  },
+  "covariate_order": [
+    "phot_g_mean_mag",
+    "bp_rp",
+    "abs_b_deg",
+    "parallax_over_error",
+    "ruwe"
+  ],
+  "tolerances": {
+    "g_mag": 0.5,
+    "bp_rp": 0.25,
+    "abs_b_deg": 10,
+    "parallax_snr_factor": 2,
+    "ruwe_factor": 2
+  },
+  "targets": [
+    {
+      "source_id": "1742491424811169024",
+      "covariates": [
+        20.257099151611328,
+        1.1948623657226562,
+        29.593422509205094,
+        1.7566137313842773,
+        0.9787340760231018
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5887387104599756416",
+      "covariates": [
+        20.647159576416016,
+        1.8855628967285156,
+        2.6719958850233927,
+        2.2666194438934326,
+        0.9873034358024597
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4063049438902424576",
+      "covariates": [
+        18.33285903930664,
+        1.3475513458251953,
+        3.175741709583441,
+        0.3921109437942505,
+        1.123977780342102
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 2,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5412855753106255232",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5417037333265168128",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "2313838142375437312",
+      "covariates": [
+        19.771352767944336,
+        1.803741455078125,
+        76.27231293318236,
+        1.9761545658111572,
+        0.9694970846176147
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4096911343095839360",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "4185863238218529280",
+      "covariates": [
+        18.639909744262695,
+        1.149984359741211,
+        11.733728273142816,
+        1.729136347770691,
+        1.0247242450714111
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "3445702526138836480",
+      "covariates": [
+        17.489303588867188,
+        1.2962226867675781,
+        3.516873429990868,
+        1.3974947929382324,
+        0.9805290102958679
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 61,
+        "color": 18,
+        "absolute Galactic latitude": 6,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5355845388026435584",
+      "covariates": [
+        20.500839233398438,
+        1.1118888854980469,
+        2.764794456535143,
+        0.017167694866657257,
+        0.9954695105552673
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5309971357728275200",
+      "covariates": [
+        18.121519088745117,
+        1.2493247985839844,
+        4.4326322390580986,
+        1.8255196809768677,
+        1.0282782316207886
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 12,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4045874178030525440",
+      "covariates": [
+        19.012290954589844,
+        1.4721488952636719,
+        6.943462289674643,
+        0.2932575047016144,
+        0.9295910596847534
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "6869151688546546432",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5337571882775253120",
+      "covariates": [
+        17.27396583557129,
+        1.0935401916503906,
+        0.4499352554841671,
+        2.569554328918457,
+        1.034129023551941
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 91,
+        "color": 15,
+        "absolute Galactic latitude": 5,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "2023448020452477696",
+      "covariates": [
+        19.220111846923828,
+        1.5737438201904297,
+        5.723755583155117,
+        2.095618963241577,
+        1.030659556388855
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "1696317227844792448",
+      "covariates": [
+        19.548355102539062,
+        1.5320091247558594,
+        38.94434501163535,
+        1.7815967798233032,
+        1.0678162574768066
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4149140413153049600",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "2956620199115718784",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "4119807435915993088",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "4254663391620307456",
+      "covariates": [
+        17.68218994140625,
+        1.6285209655761719,
+        4.27550672059585,
+        4.191234111785889,
+        1.0666714906692505
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 39,
+        "color": 24,
+        "absolute Galactic latitude": 13,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "6770277791887777536",
+      "covariates": [
+        16.46714210510254,
+        0.38344383239746094,
+        15.735891995308622,
+        3.414478063583374,
+        0.9079921245574951
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 163,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4092102044856380928",
+      "covariates": [
+        19.991262435913086,
+        1.818094253540039,
+        6.4832227979372465,
+        0.24922798573970795,
+        1.0798131227493286
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4103152583439111552",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "4040122009955011456",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5339185961489164672",
+      "covariates": [
+        18.370710372924805,
+        1.3813972473144531,
+        1.7214430263922755,
+        1.7449846267700195,
+        1.1571537256240845
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 1,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "3350238391131417216",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5225184919424175616",
+      "covariates": [
+        18.361284255981445,
+        1.594491958618164,
+        12.825447795521496,
+        3.27354097366333,
+        0.9640573263168335
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 1,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "3472448215201780480",
+      "covariates": [
+        20.61904525756836,
+        1.378580093383789,
+        30.59955591433681,
+        1.2453782558441162,
+        1.0933762788772583
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "6727343310262317696",
+      "covariates": [
+        16.155982971191406,
+        0.8470373153686523,
+        10.418796957554179,
+        6.294205665588379,
+        1.0565481185913086
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 168,
+        "color": 61,
+        "absolute Galactic latitude": 39,
+        "parallax SNR": 20,
+        "RUWE": 20
+      },
+      "eligible_control_ids": [
+        "4075618711988409088",
+        "5699764172687104256",
+        "5929258465919963392",
+        "5823554544749755904",
+        "5799060586767864192",
+        "6725117177176050176",
+        "5375493488999987584",
+        "5592128272161744128",
+        "1982909370330277376",
+        "5706449924933788800",
+        "5342869020526032384",
+        "1975313325536997504",
+        "6653338648600778240",
+        "4035533408627344384",
+        "5547998307837351552",
+        "2928711093617349504",
+        "1849340216749100544",
+        "5694136494226945024",
+        "6719252446539673856",
+        "3426505637234714112"
+      ],
+      "assigned_control_id": "4075618711988409088",
+      "status": "matched",
+      "control_covariates": [
+        16.127166748046875,
+        0.9739475250244141,
+        11.37358488348178,
+        10.019209861755371,
+        0.9578455090522766
+      ],
+      "absolute_tolerance_scaled_differences": [
+        0.0576324462890625,
+        0.5076408386230469,
+        0.09547879259276008,
+        0.6706725135913605,
+        0.1414935862444519
+      ]
+    },
+    {
+      "source_id": "2024187785624907904",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "2027633483255197184",
+      "covariates": [
+        20.00755500793457,
+        2.583925247192383,
+        0.7849743259718958,
+        0.8111780881881714,
+        1.0858392715454102
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4321622314018524544",
+      "covariates": [
+        19.22819709777832,
+        2.3783798217773438,
+        0.29485278251645386,
+        1.224616289138794,
+        1.009503722190857
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5515432044724984832",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "6251189006562938752",
+      "covariates": [
+        18.642257690429688,
+        1.4932079315185547,
+        27.133825903182125,
+        1.8861680030822754,
+        1.0134303569793701
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "6180620018125528320",
+      "covariates": [
+        20.630075454711914,
+        1.4903564453125,
+        31.178742789573768,
+        1.0572670698165894,
+        1.1100705862045288
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5817473553926807424",
+      "covariates": [
+        18.159093856811523,
+        2.578857421875,
+        12.702053528362816,
+        16.944658279418945,
+        1.0012788772583008
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 11,
+        "color": 1,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4058451560208446848",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "4129046387166050048",
+      "covariates": [
+        18.573755264282227,
+        1.433340072631836,
+        15.188668316698683,
+        1.9081308841705322,
+        1.0835909843444824
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5823422427234452480",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "2013495752292290304",
+      "covariates": [
+        18.67477035522461,
+        2.558605194091797,
+        0.3057477062464227,
+        1.6042897701263428,
+        0.9385507106781006
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "6018505515465110784",
+      "covariates": [
+        19.434825897216797,
+        2.1294937133789062,
+        6.898473503920189,
+        1.3025635480880737,
+        0.9850338101387024
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "6018898968842714624",
+      "covariates": [
+        19.705448150634766,
+        1.79437255859375,
+        8.333529857514836,
+        1.0561001300811768,
+        1.0364220142364502
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4095169678010887552",
+      "covariates": [
+        17.54936981201172,
+        2.1487483978271484,
+        0.6158628553923868,
+        5.318239688873291,
+        1.0665996074676514
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 57,
+        "color": 15,
+        "absolute Galactic latitude": 3,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5952294230975398784",
+      "covariates": [
+        17.54195213317871,
+        1.326150894165039,
+        6.280675214545849,
+        6.273256301879883,
+        1.3336703777313232
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 58,
+        "color": 16,
+        "absolute Galactic latitude": 8,
+        "parallax SNR": 5,
+        "RUWE": 5
+      },
+      "eligible_control_ids": [
+        "3397236392886442368",
+        "2184318283967325440",
+        "6063297656404084736",
+        "2940424190978163456",
+        "2105605380402381056"
+      ],
+      "assigned_control_id": "3397236392886442368",
+      "status": "matched",
+      "control_covariates": [
+        17.293170928955078,
+        1.43487548828125,
+        9.298685178828753,
+        10.279651641845703,
+        1.0018556118011475
+      ],
+      "absolute_tolerance_scaled_differences": [
+        0.4975624084472656,
+        0.43489837646484375,
+        0.30180099642829045,
+        0.7125049630157861,
+        0.4127275412047955
+      ]
+    },
+    {
+      "source_id": "2012388926335700864",
+      "covariates": [
+        19.89286994934082,
+        2.074491500854492,
+        0.556781654404996,
+        0.5613925457000732,
+        1.0408055782318115
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4077640958723430272",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5304519704196001536",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "6766591133692959104",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5857744580378874880",
+      "covariates": [
+        19.57497215270996,
+        1.5470657348632812,
+        3.5727933123327804,
+        1.4627803564071655,
+        1.0737873315811157
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4517354934462291840",
+      "covariates": [
+        20.02862548828125,
+        1.9952716827392578,
+        6.959002939390019,
+        1.48977530002594,
+        1.0709105730056763
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5335114165036791424",
+      "covariates": [
+        19.731351852416992,
+        1.9434127807617188,
+        0.8142344134642855,
+        1.5292515754699707,
+        1.0934562683105469
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4067121033299563392",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "4338838222265590784",
+      "covariates": [
+        19.1460018157959,
+        2.7693710327148438,
+        23.117909888881933,
+        5.69971227645874,
+        1.0921305418014526
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "2026777062484462208",
+      "covariates": [
+        19.472929000854492,
+        3.0833797454833984,
+        1.4364786469418946,
+        2.251842498779297,
+        1.0421689748764038
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4153593091636771200",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "bp_rp",
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5625853351793441280",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "4042135701051372160",
+      "covariates": [
+        15.773773193359375,
+        1.4483280181884766,
+        6.054819891813072,
+        8.369136810302734,
+        0.9256722331047058
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 151,
+        "color": 55,
+        "absolute Galactic latitude": 40,
+        "parallax SNR": 20,
+        "RUWE": 20
+      },
+      "eligible_control_ids": [
+        "5900113127080151936",
+        "5308480866647217280",
+        "6023648171889448448",
+        "2073294414466892544",
+        "5359250025777826048",
+        "4513953698352049024",
+        "2051351838858559744",
+        "5900161574302372480",
+        "250581899725310720",
+        "5943527034463458688",
+        "5349011957608496768",
+        "5833735193465125120",
+        "1827488350902781440",
+        "4052383866638113024",
+        "4288514060420482432",
+        "2074111763934155648",
+        "3032605768388547968",
+        "4151548687206606080",
+        "4045863384720754048",
+        "2173107014886468480"
+      ],
+      "assigned_control_id": "5900113127080151936",
+      "status": "matched",
+      "control_covariates": [
+        15.78113842010498,
+        1.4059743881225586,
+        5.766483583535445,
+        11.491328239440918,
+        1.0345125198364258
+      ],
+      "absolute_tolerance_scaled_differences": [
+        0.014730453491210938,
+        0.16941452026367188,
+        0.02883363082776267,
+        0.4573948267949495,
+        0.1603777530652993
+      ]
+    },
+    {
+      "source_id": "4922412436843702528",
+      "covariates": [
+        19.79901123046875,
+        1.876516342163086,
+        65.41084399588179,
+        1.5841131210327148,
+        1.1098271608352661
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5883488030202155008",
+      "covariates": [
+        19.552095413208008,
+        2.601499557495117,
+        0.13468214183740854,
+        1.8616490364074707,
+        0.9532727003097534
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5697454751603898880",
+      "covariates": [
+        18.316926956176758,
+        1.1099929809570312,
+        2.5590810068901084,
+        0.6106793880462646,
+        1.0194183588027954
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 3,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "1830068561059115520",
+      "covariates": [
+        20.319477081298828,
+        1.312591552734375,
+        5.705144407280117,
+        0.35429278016090393,
+        1.0264805555343628
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5953489778009542656",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "4336494853751830912",
+      "covariates": [
+        18.035430908203125,
+        1.428558349609375,
+        19.46543209518362,
+        4.291027545928955,
+        0.9073301553726196
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 14,
+        "color": 2,
+        "absolute Galactic latitude": 1,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5824315819112437248",
+      "covariates": [
+        18.625768661499023,
+        1.0232219696044922,
+        8.344264851303999,
+        0.4041747748851776,
+        1.0202951431274414
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5792395102446460672",
+      "covariates": [
+        19.060577392578125,
+        0.9478645324707031,
+        15.54283999806933,
+        0.9744201898574829,
+        1.0556354522705078
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4340913550464869760",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5406641171647194240",
+      "covariates": [
+        18.85666275024414,
+        1.2099552154541016,
+        4.747044874585545,
+        0.0810479074716568,
+        1.0777961015701294
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5240418245016495616",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "1308268650638218752",
+      "covariates": [
+        17.996292114257812,
+        3.2330589294433594,
+        37.55271366228404,
+        68.94852447509766,
+        0.9975321888923645
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 18,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5960203254308116224",
+      "covariates": [
+        17.50764274597168,
+        1.5688743591308594,
+        2.9824871238728705,
+        4.206417560577393,
+        1.0385125875473022
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 61,
+        "color": 34,
+        "absolute Galactic latitude": 16,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4208390036741159168",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "3317389794056215552",
+      "covariates": [
+        18.635284423828125,
+        1.6999893188476562,
+        6.696159958580958,
+        1.2802832126617432,
+        1.0181864500045776
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5308091021041442688",
+      "covariates": [
+        18.688894271850586,
+        1.617685317993164,
+        0.5803777114971286,
+        1.3634461164474487,
+        0.9720638394355774
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "2070638711617032448",
+      "covariates": [
+        19.10146141052246,
+        3.448060989379883,
+        2.979771842030172,
+        0.16490371525287628,
+        1.0217195749282837
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "2920550307849951872",
+      "covariates": [
+        20.007963180541992,
+        1.7736358642578125,
+        12.55243175803517,
+        3.227337121963501,
+        1.0671532154083252
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "3322020073743381248",
+      "covariates": [
+        17.68697166442871,
+        1.0408515930175781,
+        6.533145329049638,
+        2.59985089302063,
+        0.9254384636878967
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 39,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "1830134944084386688",
+      "covariates": [
+        20.384836196899414,
+        1.2705726623535156,
+        5.4329389916755515,
+        0.3063795864582062,
+        1.0000797510147095
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4093755779163824256",
+      "covariates": [
+        20.042720794677734,
+        1.4711112976074219,
+        3.8594837241739426,
+        7.54132604598999,
+        1.1147558689117432
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5960555789504120320",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "4507628341060202240",
+      "covariates": [
+        19.17962646484375,
+        1.9825153350830078,
+        6.177490964843686,
+        3.5804781913757324,
+        0.9005712866783142
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5934564223662230912",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5251754725308361344",
+      "covariates": [
+        19.39227867126465,
+        1.0653800964355469,
+        5.4894686012944,
+        1.1575947999954224,
+        1.005339503288269
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5959464970907219200",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5931158559460931200",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "2061942884631011456",
+      "covariates": [
+        19.57027244567871,
+        1.6982383728027344,
+        3.830681696890117,
+        0.6663811802864075,
+        0.9911388754844666
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "2238382443228356096",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "1949470846609301632",
+      "covariates": [
+        19.296998977661133,
+        2.516704559326172,
+        13.370983513572112,
+        3.328735113143921,
+        1.046655535697937
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "6021108918498064000",
+      "covariates": [
+        19.68718719482422,
+        1.4383735656738281,
+        8.563103297956628,
+        0.332663893699646,
+        1.0749077796936035
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4106552032879030400",
+      "covariates": [
+        19.839237213134766,
+        2.530986785888672,
+        2.0366791702783646,
+        0.7770317196846008,
+        1.0700379610061646
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4049710202371103872",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5942396495975930240",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5977491390994166784",
+      "covariates": [
+        18.85579490661621,
+        2.1792869567871094,
+        4.217348909059414,
+        1.8504010438919067,
+        0.9711039662361145
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4063399396980399616",
+      "covariates": [
+        15.715091705322266,
+        2.6590442657470703,
+        1.3042225475831215,
+        3.820958137512207,
+        0.948332667350769
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 156,
+        "color": 3,
+        "absolute Galactic latitude": 3,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4053506850340271744",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "bp_rp",
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "5979684302532041728",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error",
+        "ruwe"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "6661771426043548160",
+      "covariates": [
+        18.17302131652832,
+        0.8091049194335938,
+        22.09830418757927,
+        0.8361859917640686,
+        0.9713219404220581
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 11,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4338998342943276928",
+      "covariates": null,
+      "missing_or_nonpositive_fields": [
+        "parallax_over_error"
+      ],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "unusable_covariates"
+    },
+    {
+      "source_id": "4318595633399388032",
+      "covariates": [
+        20.0068359375,
+        2.065855026245117,
+        4.342591016443286,
+        0.1847037523984909,
+        1.046628713607788
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "5618627597601241984",
+      "covariates": [
+        18.683486938476562,
+        1.729339599609375,
+        3.0455972897447117,
+        1.0786709785461426,
+        1.003163456916809
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 0,
+        "color": 0,
+        "absolute Galactic latitude": 0,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    },
+    {
+      "source_id": "4301043167200824448",
+      "covariates": [
+        17.59306526184082,
+        1.2175731658935547,
+        6.934554657615292,
+        5.096280097961426,
+        1.4987577199935913
+      ],
+      "missing_or_nonpositive_fields": [],
+      "cumulative_eligible_counts": {
+        "G magnitude": 49,
+        "color": 6,
+        "absolute Galactic latitude": 4,
+        "parallax SNR": 0,
+        "RUWE": 0
+      },
+      "eligible_control_ids": [],
+      "assigned_control_id": null,
+      "status": "no_eligible_control"
+    }
+  ],
+  "interpretation": "Control feasibility only; no anomaly score, significance test or technology inference."
+}
