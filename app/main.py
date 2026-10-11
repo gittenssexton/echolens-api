@@ -60,6 +60,16 @@ def search_stars(
             'units':{'ra':'deg','dec':'deg','g_mag':'mag','bp_rp':'mag','parallax':'mas'},
             'stars':[dict(r) for r in rows], 'detail_endpoint':'/stars/{source_id}'}
 
+@app.get('/stars/stats')
+def star_stats():
+    # Register before the dynamic source-ID route.
+    with registry() as c:
+        count = c.execute('SELECT COUNT(*) FROM stars').fetchone()[0]
+        imports = c.execute('SELECT id, manifest_json FROM imports ORDER BY id').fetchall()
+    return {'database_loaded': True, 'star_count': count, 'ingestion_runs': len(imports),
+            'catalogs': [{'import_id': r['id'], 'catalog': json.loads(r['manifest_json'])['catalog'],
+                         'release': json.loads(r['manifest_json'])['release']} for r in imports]}
+
 @app.get('/stars/{source_id}')
 def inspect_star(source_id: str):
     if not source_id.isascii() or not source_id.isdigit() or not 1 <= len(source_id) <= 19:

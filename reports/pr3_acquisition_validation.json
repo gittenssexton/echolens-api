@@ -1,0 +1,27 @@
+{
+  "pr": 3,
+  "commit": "5fdb162ff0ee5bc64b8187b3d9664bdfc88c98c4",
+  "workflow_run_id": 38138969207,
+  "artifact_id": 11701313699,
+  "artifact_sha256": "54258e24cec25a2899ba282edcb501aabad0c2a65c2812186f926363ed9f46ae",
+  "csv_sha256": "5b3fe3c52838b42440ef0589940437440daab24cb4e13d6151548e48858eb465",
+  "query_sha256": "be78c3e53db57863b66727d2e9bfb0e4267f189b4654dd90d90f42b76c29351f",
+  "rows": 10000,
+  "unique_source_ids": 10000,
+  "csv_fields": 15,
+  "database_matches_all_csv_values": true,
+  "integrity_check": "ok",
+  "foreign_key_violations": 0,
+  "selection_and_order_valid": true,
+  "nonnegative_available_uncertainties": true,
+  "source_id_overlap_with_pr2": 0,
+  "retrieved_utc": "2026-10-11T12:23:01.295767+00:00",
+  "imported_utc": "2026-10-11T12:23:01.469901+00:00",
+  "adql": "SELECT TOP 10000\n    source_id, ra, dec, parallax, parallax_error, parallax_over_error,\n    pmra, pmra_error, pmdec, pmdec_error, phot_g_mean_mag,\n    phot_g_mean_flux_over_error, bp_rp, ruwe, random_index\nFROM gaiadr3.gaia_source\nWHERE random_index >= 500000000 AND random_index < 600000000\n  AND parallax IS NOT NULL AND parallax_over_error >= 5\n  AND phot_g_mean_mag IS NOT NULL AND bp_rp IS NOT NULL\n  AND ruwe < 1.4\nORDER BY random_index ASC",
+  "limitations": [
+    "Separate quality-selected cohort; not combined with PR2 catalog.",
+    "Only 15 fields: no position-error/correlation/photometric-flux-error fields or stellar classification probabilities.",
+    "CSV lacks per-field unit/UCD metadata and explicit TAP result status.",
+    "Offline importer does not verify these selection conditions; this independent audit does."
+  ]
+}

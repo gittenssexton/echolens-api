@@ -17,6 +17,8 @@ Existing `/` and `/health` responses are preserved. `/docs` documents:
 * `GET /stars/{source_id}`: all catalog values, uncertainties, correlations,
   field metadata, provenance, separate catalog inferences and interpretations.
 * `GET /catalogs`: import manifest and complete source-column metadata.
+* `GET /stars/stats`: loaded registry counts and catalog/import identifiers.
+  An unavailable registry returns 503, rather than a scientifically misleading zero count.
 
 Source IDs are strings. Query nulls are excluded by numeric filters. Coordinates
 are ICRS degrees; parallax is mas. RA ranges do not wrap: split across zero into
@@ -43,6 +45,11 @@ FITS values retain native precision; formatted XML display precision is not
 applied to measurements. The ESA provider supports asynchronous VOTable jobs.
 Original artifacts and serving-archive provenance are retained. Offline replay is the
 reproducibility guarantee; a later live query may reflect archive changes.
+
+The manual **Frozen registry artifact** workflow rebuilds the committed snapshot
+offline and exports validated observations, metadata and SQLite as a 30-day artifact.
+Artifacts require durable archival; they are not a deployment mechanism.
+See [PR reconciliation](docs/PR_RECONCILIATION.md) before combining parallel branches.
 
 [Experiment protocol](docs/EXPERIMENT_001.md) · [Audit/schema/integration](docs/REGISTRY.md)
 

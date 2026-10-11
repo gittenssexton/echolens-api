@@ -94,12 +94,22 @@ def test_missing_and_invalid_id(client):
     assert client.get('/stars/abc').status_code == 422
     assert client.get('/catalogs').json()['catalogs'][0]['provenance']['expected_rows'] == 10000
 
+def test_stats_route_precedes_source_id(client):
+    response = client.get('/stars/stats')
+    assert response.status_code == 200
+    result = response.json()
+    assert result['database_loaded'] is True
+    assert result['star_count'] == 10000
+    assert result['ingestion_runs'] == 1
+    assert result['catalogs'][0]['release'] == 'DR3'
+
 def test_health_without_database(monkeypatch, tmp_path):
     monkeypatch.setenv('ECHOLENS_DB_PATH', str(tmp_path/'missing.sqlite3'))
     with TestClient(app) as client:
         assert client.get('/health').json() == {'status':'ok'}
         assert client.get('/').json() == {'service':'EchoLens API','status':'online','docs':'/docs'}
         assert client.get('/stars').status_code == 503
+        assert client.get('/stars/stats').status_code == 503
     assert not (tmp_path/'missing.sqlite3').exists()
 
 def test_offline_rebuild_same_logical_data(db, tmp_path):
