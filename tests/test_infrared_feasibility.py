@@ -39,3 +39,10 @@ def test_quality_is_band_specific():
 def test_2mass_confusion_flag_rejects_band():
     row={'ph_qual':'AAA','cc_flg':'0c0','h_msigcom':.1}
     assert quality(row,'tmass','h')==['artifact']
+
+def test_large_catalog_identifier_is_exact_text():
+    g=star(ra=10,dec=0,pmra=0)
+    row={'ra_pm':10,'dec_pm':0,'cntr':1234567890123456789}
+    a=associate(g,[row],'wise')
+    assert a['chosen']['measurement']['cntr']=='1234567890123456789'
+    assert row['cntr']==1234567890123456789
