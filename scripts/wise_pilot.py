@@ -264,7 +264,7 @@ def replay_snapshot(output, directory):
             if sep<=15:
                 # Normalize derived display values at 10 microarcsec across numerical-library builds.
                 # Eligibility uses the unrounded separation; observations are untouched.
-                candidates.append({'allwise_source_id':infrared['source_id'],'separation_arcsec':round(sep,5),
+                candidates.append({'allwise_source_id':infrared['source_id'],'separation_arcsec':math.floor(round(sep,6) * 1e5 + 0.5 + 1e-10) / 1e5,
                     'comparison_epoch_mjd_tt':epoch,'epoch_method':method,'eligible':sep<=3,
                     'photometry':photometry(infrared),'motion_blend_swap':len(infrared.get('pmcode') or '')>=2 and infrared['pmcode'][1]=='Y'})
         candidates.sort(key=lambda c:(c['separation_arcsec'],c['allwise_source_id']))
