@@ -168,7 +168,8 @@ def quality_record(oid,l,g,e):
     if snr is None or snr<10:issues["gaia"].append("Gaia_parallax_SNR_below_10_or_missing")
     ruwe=gsource.get("ruwe")
     if not finite(ruwe) or ruwe>=1.4:issues["gaia"].append("Gaia_RUWE_above_or_missing")
-    if gsource.get("duplicated_source") is not False:
+    # Gaia DR3 IRSA transport exports this boolean as integer 0/1.
+    if gsource.get("duplicated_source") not in (0, False):
         issues["gaia"].append("Gaia_duplicate_flag_or_missing")
     if gsource.get("non_single_star")!=0:
         issues["gaia"].append("Gaia_non_single_star_flag_or_missing")
