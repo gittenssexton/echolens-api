@@ -66,6 +66,9 @@ The committed `data/wise_001b.tar.gz` contains the native responses and
 the transport amendment hash; `selection.json` for exact Gaia IDs and the protocol
 hash; and `observations.json` for metadata, original measurements and units.
 Derived associations and screens are in `results.json`, separate from observations.
+Derived separation output is rounded to six decimal places in arcseconds to
+remove numerical-library rounding noise. Eligibility uses unrounded values;
+native catalog observations and measurement uncertainties are never rounded.
 
 Data: NASA/IPAC IRSA AllWISE Source Catalog (`allwise_p3as_psd`), WISE
 (UCLA/JPL-Caltech) and NEOWISE (JPL-Caltech), funded by NASA. Gaia mission data

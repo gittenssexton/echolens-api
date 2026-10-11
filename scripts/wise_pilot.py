@@ -262,7 +262,9 @@ def replay_snapshot(output, directory):
             position, epoch, method = candidate_epoch(infrared)
             sep = separation(propagate(r,epoch),position)
             if sep<=15:
-                candidates.append({'allwise_source_id':infrared['source_id'],'separation_arcsec':sep,
+                # Normalize derived display values across numerical-library builds.
+                # Eligibility uses the unrounded separation; observations are untouched.
+                candidates.append({'allwise_source_id':infrared['source_id'],'separation_arcsec':round(sep,6),
                     'comparison_epoch_mjd_tt':epoch,'epoch_method':method,'eligible':sep<=3,
                     'photometry':photometry(infrared),'motion_blend_swap':len(infrared.get('pmcode') or '')>=2 and infrared['pmcode'][1]=='Y'})
         candidates.sort(key=lambda c:(c['separation_arcsec'],c['allwise_source_id']))
