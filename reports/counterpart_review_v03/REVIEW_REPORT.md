@@ -52,7 +52,7 @@ Keep the proposed thresholds unfrozen. Next develop band-integrated stellar-atmo
 
 ## Validation, reproduction and limits
 
-Four new covariance tests passed; all thirteen pilot/covariance tests passed together. The previous 35-test baseline and GitHub CI for pilot commit 39b7ffcd4de5ecadf65ca1021d2d6e147b8e3aa6 passed before this addition. Input hashes and output validation are recorded in review.json/validation.json; the original pilot results and summary retain their recorded hashes.
+All 39 local regression tests passed with one dependency deprecation warning, including four new covariance tests; all thirteen pilot/covariance tests also passed together. GitHub CI passed for review code commit 40fa98747885e043a2eef7cd19f9a3687439bfb8, run 38158710841. The previous 35-test baseline and GitHub CI for pilot commit 39b7ffcd4de5ecadf65ca1021d2d6e147b8e3aa6 passed before this addition. Input hashes and output validation are recorded in review.json/validation.json; the original pilot results and summary retain their recorded hashes.
 
 Install requirements-review.txt, then run `python -m scripts.counterpart_review --review` and `python -m scripts.counterpart_figures`. Archived observations are sufficient; fetching is optional and separate. No live API routes, production database or Render settings changed. PR #7 stays draft and unmerged.
 
