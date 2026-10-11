@@ -1,0 +1,102 @@
+[
+  {
+    "gaia_source_id": "4310899120739084800",
+    "group": "reference",
+    "wise": {
+      "designation": "J185927.34+094839.2",
+      "separation_arcsec": 0.06254790150089468
+    },
+    "tmass": {
+      "designation": "18592734+0948393",
+      "separation_arcsec": 0.014721183423506558
+    },
+    "status": "data review only; no infrared-excess score",
+    "required_review": [
+      "image counterpart identity and contamination",
+      "covariance-aware matching",
+      "reference classification",
+      "noncontemporaneous variability",
+      "photosphere model feasibility"
+    ]
+  },
+  {
+    "gaia_source_id": "4461930649238469760",
+    "group": "reference",
+    "wise": {
+      "designation": "J164610.24+152634.8",
+      "separation_arcsec": 0.0026633448922219853
+    },
+    "tmass": {
+      "designation": "16461024+1526347",
+      "separation_arcsec": 0.11158842247297372
+    },
+    "status": "data review only; no infrared-excess score",
+    "required_review": [
+      "image counterpart identity and contamination",
+      "covariance-aware matching",
+      "reference classification",
+      "noncontemporaneous variability",
+      "photosphere model feasibility"
+    ]
+  },
+  {
+    "gaia_source_id": "2224020313110506496",
+    "group": "reference",
+    "wise": {
+      "designation": "J213109.25+693102.2",
+      "separation_arcsec": 0.05340526289486052
+    },
+    "tmass": {
+      "designation": "21310929+6931023",
+      "separation_arcsec": 0.2214954895042304
+    },
+    "status": "data review only; no infrared-excess score",
+    "required_review": [
+      "image counterpart identity and contamination",
+      "covariance-aware matching",
+      "reference classification",
+      "noncontemporaneous variability",
+      "photosphere model feasibility"
+    ]
+  },
+  {
+    "gaia_source_id": "192355921445905536",
+    "group": "reference",
+    "wise": {
+      "designation": "J055251.00+420109.8",
+      "separation_arcsec": 0.03266489103337625
+    },
+    "tmass": {
+      "designation": "05525100+4201099",
+      "separation_arcsec": 0.032095559880237025
+    },
+    "status": "data review only; no infrared-excess score",
+    "required_review": [
+      "image counterpart identity and contamination",
+      "covariance-aware matching",
+      "reference classification",
+      "noncontemporaneous variability",
+      "photosphere model feasibility"
+    ]
+  },
+  {
+    "gaia_source_id": "4262211057903494912",
+    "group": "variable",
+    "wise": {
+      "designation": "J190834.97-013114.0",
+      "separation_arcsec": 0.04340132347406865
+    },
+    "tmass": {
+      "designation": "19083498-0131139",
+      "separation_arcsec": 0.17329226754285787
+    },
+    "status": "data review only; no infrared-excess score",
+    "required_review": [
+      "image counterpart identity and contamination",
+      "covariance-aware matching",
+      "reference classification",
+      "noncontemporaneous variability",
+      "photosphere model feasibility"
+    ]
+  }
+]
