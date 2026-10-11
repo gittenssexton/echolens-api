@@ -1,0 +1,35 @@
+name: Experiment 006A — ESA LAMOST DR9 schema discovery (read-only)
+on:
+  push:
+    branches: [experiment/lamost-esasky-epoch-006]
+    paths: [.github/workflows/esasky-006.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install existing scientific requirements
+        run: pip install -r requirements-dev.txt
+      - name: Run existing and schema-integrity unit tests
+        run: |
+          python -m scripts.import_gaia
+          python -m pytest -q
+      - name: Query ESA TAP_SCHEMA only, never stellar observations
+        run: python -m scripts.esasky_lamost_schema_006 --output /tmp/esasky-006-schema
+      - name: Record SHA-256 of original archived VOTables
+        run: |
+          find /tmp/esasky-006-schema -type f -print -exec sha256sum {} \;
+      - name: Preserve protocol and original ESA metadata replies
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-esasky-schema-006a
+          retention-days: 30
+          if-no-files-found: error
+          path: /tmp/esasky-006-schema/
