@@ -10,7 +10,9 @@ urls=[
  ("root","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/"),
  ("single_root","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/analysis_products_single/"),
  ("date","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/analysis_products_single/140116/"),
+ ("data_team_root","https://cloud.datacentral.org.au/teamdata/GALAH/"),
  ("example_dir","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/analysis_products_single/140116/140116004301057/"),
+ ("correct_allspec","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/analysis_products_single/140116/140116004301057/140116004301057_single_fit_spectrum.fits"),
  ("example_allspec","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/analysis_products_single/140116/140116004301057/140116004301057_spectrum.fits"),
  ("reduced_parent","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/observations/"),
  ("example_reduced","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/observations/140116/spectra/com/1401160043010571.fits"),
@@ -23,7 +25,7 @@ adql="SELECT TOP 1 sobject_id,teff,logg,fe_h,phot_g_mean_mag,flag_sp FROM galah_
 for host in ("https://datacentral.org.au/vo/tap/sync","https://data.datacentral.org.au/vo/tap/sync",
              "https://datacentral.org.au/vo/tap/"):
     urls.append(("tiny_adql_"+host.split("//")[1].replace("/","_"),host+"?"+urlencode({"REQUEST":"doQuery","LANG":"ADQL","FORMAT":"csv","QUERY":adql,"MAXREC":2})))
-urls.append(("galah_tables", "https://datacentral.org.au/vo/tap/sync?"+urlencode({"REQUEST":"doQuery","LANG":"ADQL","FORMAT":"csv","QUERY":"SELECT TOP 15 table_name FROM TAP_SCHEMA.tables WHERE table_name LIKE '%galah%'","MAXREC":16})))
+urls.append(("galah_tables", "https://datacentral.org.au/vo/tap/sync?"+urlencode({"REQUEST":"doQuery","LANG":"ADQL","FORMAT":"csv","QUERY":"SELECT TOP 80 table_name FROM TAP_SCHEMA.tables WHERE table_name LIKE 'galah_dr4.%'","MAXREC":81})))
 result={"started_utc":datetime.now(timezone.utc).isoformat(),"requests":[]}
 for name,url in urls:
     item={"name":name,"url":url}
