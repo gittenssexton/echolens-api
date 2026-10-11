@@ -48,3 +48,12 @@ There were 16 additional catalog sources across the 25 cones; all candidate rows
 The highest-value missing evidence is **authentic original LAMOST observing metadata** keyed to `obsid`, especially the flagged spectrum. The [official LAMOST DR9 v2 LRS General Catalog specification](https://www.lamost.org/dr9/v2.0/doc/lr-data-production-description) explicitly provides observation time and fiber offset fields. Its public SQL/FTP entry routes may require sign-in; no undocumented anonymous endpoint or fabricated observing date is acceptable. Use the existing strict `scripts/lamost_epoch_003h.py --official-csv` ingestion after retrieving an official CSV/FITS export; only then compare Gaia positions at the actual observation epoch and model fiber-pointing/offset uncertainty.
 
 A scientifically useful next hypothesis test, **after crossmatch certification**, will ask whether a genuinely matched stellar cohort has statistically distinguishable electromagnetic residuals under astrophysical null models. This pilot cannot answer that question.
+
+
+---
+
+### Research update (2026-10-11; Experiment 006B, later evidence)
+
+This report preserves its original observations and interpretation at the time. Subsequent exact-obsid archival retrieval from the public **ESA ESASky LAMOST DR9 LRS General** table shows that the highlighted `obsid=655310123` was **deliberately fiber-offset**: `offsets=1`, `offsets_v=4.89 arcsec`, observed fiber input-to-pointing separation **4.8853 arcsec**, observation date **2018-03-12 (MJD 58189)**. This directly accounts for the dominant part of the prior **5.1201 arcsec** Gaia-to-fiber offset and makes it **incorrect to continue treating that displacement as an unexplained stellar signal**. The original VizieR activity-table and ESA mirror fiber coordinates agree to recorded precision. ESA's Gaia ID for this record is `-9999` (missing), so a fully independently certified Gaia source association **still requires work**.
+
+See the full **[Experiment 006B measured-data report](../experiment_006/RESULTS.md)** and archive. This update is an audit annotation, not a retroactive change of the older preregistered findings.
