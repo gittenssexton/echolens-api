@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "importer_version": "gaia-registry-v1",
+  "catalog": "Gaia",
+  "release": "DR3",
+  "provider": "irsa",
+  "table": "gaia_dr3_source",
+  "endpoint": "https://irsa.ipac.caltech.edu/TAP/sync",
+  "request_url": "https://irsa.ipac.caltech.edu/TAP/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=fits&QUERY=SELECT+TOP+10000+%2A+FROM+gaia_dr3_source%0AWHERE+random_index+%3C+1000000%0AAND+classprob_dsc_combmod_star+%3E%3D+0.9%0AORDER+BY+random_index+ASC&MAXREC=10001",
+  "response_url": "https://irsa.ipac.caltech.edu/TAP/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=fits&QUERY=SELECT+TOP+10000+%2A+FROM+gaia_dr3_source%0AWHERE+random_index+%3C+1000000%0AAND+classprob_dsc_combmod_star+%3E%3D+0.9%0AORDER+BY+random_index+ASC&MAXREC=10001",
+  "request_parameters": {
+    "REQUEST": "doQuery",
+    "LANG": "ADQL",
+    "FORMAT": "fits",
+    "QUERY": "SELECT TOP 10000 * FROM gaia_dr3_source\nWHERE random_index < 1000000\nAND classprob_dsc_combmod_star >= 0.9\nORDER BY random_index ASC",
+    "MAXREC": "10001"
+  },
+  "query": "SELECT TOP 10000 * FROM gaia_dr3_source\nWHERE random_index < 1000000\nAND classprob_dsc_combmod_star >= 0.9\nORDER BY random_index ASC",
+  "format": "FITS",
+  "retrieved_at": "2026-10-11T03:08:46.721143+00:00",
+  "expected_rows": 10000,
+  "raw_sha256": "d193d7e144d5a7fc9f3d877a9323fc3c68ee2baf05b966d997392309a5248fb0",
+  "response_metadata": {
+    "Content-Type": "application/fits",
+    "Date": "Sun, 11 Oct 2026 03:08:42 GMT",
+    "ETag": null,
+    "Last-Modified": null
+  },
+  "metadata_file": "gaia_dr3.fields.vot.xml.gz",
+  "metadata_sha256": "93260e0dfe7be1606ab41bf50cfe9a5cb76a055fd0d4ea9900759a429e06c349",
+  "metadata_request_url": "https://irsa.ipac.caltech.edu/TAP/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=votable&QUERY=SELECT+TOP+1+%2A+FROM+gaia_dr3_source%0AWHERE+random_index+%3C+1000000%0AAND+classprob_dsc_combmod_star+%3E%3D+0.9%0AORDER+BY+random_index+ASC&MAXREC=10001",
+  "documentation_url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+  "mirror_documentation_url": "https://irsa.ipac.caltech.edu/data/Gaia/dr3/gaia_dr3_source_colDescriptions.html",
+  "selection": "classification-selected pilot; not a volume-complete census or confirmed non-technological controls",
+  "attribution": "ESA/Gaia/DPAC; Gaia DR3 (Gaia Collaboration, Vallenari et al. 2023); served by NASA/IPAC IRSA",
+  "transport_padding_rows": 9
+}
