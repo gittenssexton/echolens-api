@@ -10739,7 +10739,7 @@
       "candidates": [
         {
           "allwise_source_id": "2533m561_ac51-067952",
-          "separation_arcsec": 0.177953,
+          "separation_arcsec": 0.177952,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
