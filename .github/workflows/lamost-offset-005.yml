@@ -1,0 +1,52 @@
+name: Experiment 005 LAMOST bright fiber-offset audit (research only)
+on:
+  push:
+    branches: [experiment/lamost-offset-audit-005]
+    paths:
+      - .github/workflows/lamost-offset-005.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install existing science dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Rebuild Gaia sample and run complete unit tests
+        run: |
+          python -m scripts.import_gaia
+          python -m pytest -q
+      - name: Restore original immutable real LAMOST and Gaia audit results
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/lamost-003-original /tmp/gaia-003g-original
+          gh run download 38146071576 --repo gittenssexton/echolens-api -n echolens-lamost-003-provenance -D /tmp/lamost-003-original
+          gh run download 38146667656 --repo gittenssexton/echolens-api -n echolens-003g-gaia-astrometry -D /tmp/gaia-003g-original
+          test -n "$(find /tmp/lamost-003-original -name results.json -print -quit)"
+          test -n "$(find /tmp/gaia-003g-original -name results.json -print -quit)"
+      - name: Analyze real observations twice with no new data requests
+        run: |
+          l="$(find /tmp/lamost-003-original -name results.json -print -quit)"
+          g="$(find /tmp/gaia-003g-original -name results.json -print -quit)"
+          python -m scripts.lamost_offset_005 --lamost-results "$l" --gaia-results "$g" --output /tmp/lamost-offset-005-A
+          python -m scripts.lamost_offset_005 --lamost-results "$l" --gaia-results "$g" --output /tmp/lamost-offset-005-B
+          cmp /tmp/lamost-offset-005-A/results.json /tmp/lamost-offset-005-B/results.json
+      - name: Check only documented official public DR9 catalogue link access
+        run: python -m scripts.lamost_access_005
+      - name: Archive derived results and official access result
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-lamost-offset-005
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            /tmp/lamost-offset-005-A/results.json
+            reports/experiment_005/access_check.json
