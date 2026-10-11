@@ -1,0 +1,12 @@
+{
+  "byte_identical_offline_replays": true,
+  "output_sha256": {
+    "summary.json": "4706497485d2b616576d2894fd3811bc095f6f6eaf69dc48e5a37129d43e2feb",
+    "results.json": "e7d809f1f9e1a91fbb1854e85a88ec4c82a0f649f2836e413096ed0f741540ed"
+  },
+  "local_tests_passed": 35,
+  "local_test_warnings": 1,
+  "github_ci_code_commit": "cc6bc70b45ed5672f82217603cc69640506990e4",
+  "github_ci_run": 38143064162,
+  "github_ci_conclusion": "success"
+}
