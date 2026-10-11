@@ -46,6 +46,15 @@ reproducibility guarantee; a later live query may reflect archive changes.
 
 [Experiment protocol](docs/EXPERIMENT_001.md) · [Audit/schema/integration](docs/REGISTRY.md)
 
+## Sample diagnostics
+
+After rebuilding the registry, install `requirements-analysis.txt` and run
+`python -m scripts.sample_diagnostics`. This generates `reports/sample_diagnostics.json`
+and a sky-coverage and measurement-quality figure. Distribution counts explicitly
+include missing values and values outside displayed ranges. These describe sample
+and reference-selection biases; they are not anomaly scores. No distance is inferred
+by inverting noisy parallaxes. The analysis dependency is separate from API dependencies.
+
 ## Deployment safety
 
 Work is proposed on `feat/stellar-registry-gaia-dr3`; do not merge or deploy until
