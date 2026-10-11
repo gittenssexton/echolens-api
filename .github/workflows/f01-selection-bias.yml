@@ -5,6 +5,7 @@ on:
       - research/f01-selection-bias-20261011
     paths:
       - .github/workflows/f01-selection-bias.yml
+      - scripts/f01_selection_bias.py
   workflow_dispatch:
 permissions:
   contents: read
