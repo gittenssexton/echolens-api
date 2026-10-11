@@ -1,0 +1,39 @@
+name: Experiment 003 independent spectroscopy (development only)
+on:
+  push:
+    branches: [experiment/lamost-independent-controls-003]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  external_spectroscopy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned science dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Validate frozen Gaia registry and all unit tests
+        run: |
+          python -m scripts.import_gaia
+          python -m pytest -q
+      - name: Fetch exact preregistered LAMOST observations from CDS
+        run: python -m scripts.lamost_controls_003 --fetch --output /tmp/lamost-003-first
+      - name: Independently replay observations twice with no network
+        run: |
+          python -m scripts.lamost_controls_003 --output /tmp/lamost-003-second
+          python -m scripts.lamost_controls_003 --output /tmp/lamost-003-third
+          cmp /tmp/lamost-003-first/results.json /tmp/lamost-003-second/results.json
+          cmp /tmp/lamost-003-second/results.json /tmp/lamost-003-third/results.json
+      - name: Archive raw VizieR responses and derived results
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-lamost-003-provenance
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            data/lamost_003
+            /tmp/lamost-003-first/results.json
