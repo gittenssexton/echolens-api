@@ -1,4 +1,5 @@
 name: Experiment 008 — frozen stellar reference cohort feasibility
+# Engineering rerun: Gaia duplicated_source native integer 0/1 semantically equals False/True.
 on:
   push:
     branches: [experiment/stellar-reference-cohort-008]
