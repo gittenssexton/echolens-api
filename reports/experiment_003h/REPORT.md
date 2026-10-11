@@ -43,3 +43,12 @@ The remaining 246 PM-assessable pairs all require actual observation epoch/fiber
 With dated fiber coordinates and fiber-offset information available, implement actual epoch-aware Gaia propagation with uncertainties and compare alternatives, including nearest Gaia neighboring objects and crowding. Do not assign stars to clean controls until those data and astrophysical characterization pass an independently registered quality criterion.
 
 **No astrobiological, technosignature, or anomalous stellar light result is claimed.**
+
+
+---
+
+### Research update (2026-10-11; Experiment 006B, later evidence)
+
+This report preserves its original observations and interpretation at the time. Subsequent exact-obsid archival retrieval from the public **ESA ESASky LAMOST DR9 LRS General** table shows that the highlighted `obsid=655310123` was **deliberately fiber-offset**: `offsets=1`, `offsets_v=4.89 arcsec`, observed fiber input-to-pointing separation **4.8853 arcsec**, observation date **2018-03-12 (MJD 58189)**. This directly accounts for the dominant part of the prior **5.1201 arcsec** Gaia-to-fiber offset and makes it **incorrect to continue treating that displacement as an unexplained stellar signal**. The original VizieR activity-table and ESA mirror fiber coordinates agree to recorded precision. ESA's Gaia ID for this record is `-9999` (missing), so a fully independently certified Gaia source association **still requires work**.
+
+See the full **[Experiment 006B measured-data report](../experiment_006/RESULTS.md)** and archive. This update is an audit annotation, not a retroactive change of the older preregistered findings.
