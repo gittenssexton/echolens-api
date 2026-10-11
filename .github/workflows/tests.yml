@@ -13,3 +13,8 @@ jobs:
       - run: pip install -r requirements-dev.txt
       - run: python -m scripts.import_gaia
       - run: python -m pytest -q
+      - name: Replay frozen WISE pilot offline
+        run: |
+          python -m scripts.wise_pilot replay --output /tmp/wise-replay
+          cmp reports/experiment_001b/results.json /tmp/wise-replay/results.json
+          cmp reports/experiment_001b/observations.json /tmp/wise-replay/observations.json

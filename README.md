@@ -62,10 +62,24 @@ include missing values and values outside displayed ranges. These describe sampl
 and reference-selection biases; they are not anomaly scores. No distance is inferred
 by inverting noisy parallaxes. The analysis dependency is separate from API dependencies.
 
+## WISE coverage pilot
+
+Experiment 001B freezes 100 well-measured Gaia references and retrieves real
+AllWISE observations without modifying the serving registry. See the
+[protocol](docs/EXPERIMENT_001B.md), its
+[transport amendment](docs/EXPERIMENT_001B_TRANSPORT_AMENDMENT.md), and
+[results](reports/experiment_001b/REPORT.md). Replay the committed observations with
+`python -m scripts.wise_pilot replay --output /tmp/wise-replay`; `fetch` explicitly
+accesses the archive and is not needed for reproduction. Install
+`requirements-analysis.txt` for `python -m scripts.wise_pilot_report`.
+Associations and quality screens are derived results, separate from measurements;
+no infrared-excess or technology score is calculated.
+
 ## Deployment safety
 
-Work is proposed on `feat/stellar-registry-gaia-dr3`; do not merge or deploy until
-review. Render's start command is unchanged. No Gaia download happens at startup
+The registry foundation was merged in PR #2. The WISE pilot remains on its
+experiment branch for review; it does not change Render's start command.
+No Gaia download happens at startup
 or inside an API request. For a later reviewed deployment, build the database in
 Render's build phase with `python -m scripts.import_gaia` after installing requirements,
 or provision the database at ECHOLENS_DB_PATH. Without that step only registry
