@@ -2,7 +2,7 @@ name: Research F01 IRSA mirror bounded retry
 on:
   push:
     branches: [research/f01-selection-bias-20261011]
-    paths: [.github/workflows/f01-irsa-mirror.yml]
+    paths: [.github/workflows/f01-irsa-mirror.yml, scripts/f01_irsa_mirror.py]
   workflow_dispatch:
 permissions:
   contents: read
