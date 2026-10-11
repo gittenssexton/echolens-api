@@ -82,3 +82,13 @@ def test_fiber_geometry_and_date_not_crossmatch_claim():
     assert ex.angular_arcsec(359.999,0,.001,0)==pytest.approx(7.2,rel=1e-6)
     assert ex.check_date("2018-01-01",58119)=="consistent_within_2_days"
     assert ex.check_date(None,58119)=="missing_date_or_mjd"
+
+
+def test_invalid_published_gaia_identifier_is_retained_not_fabricated():
+    r=row()
+    r["gaia_source_id"]="-9999"
+    fields,records=ex.parse_batch(xml([r]),["655310123"])
+    assert records[0]["gaia_source_id"]=="-9999"
+    with pytest.raises(ValueError):
+        ex.exact_id(records[0]["gaia_source_id"])
+    assert records[0]["obsid"]=="655310123"
