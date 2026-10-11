@@ -23,6 +23,8 @@ ENDPOINT = "https://irsa.ipac.caltech.edu/TAP/sync"
 FLAGGED_OBSID = "655310123"
 SALT = "echolens-004-v1:"
 COUNT = 25
+EXPECTED_LAMOST_SHA = "efc4f3eaf5f5e1df8b60aa1897ffd93d44c3b05fe69318b27d3769fddb342e51"
+EXPECTED_GAIA_AUDIT_SHA = "d11e0c62eaa8aa26b2fe92fc30b0ca93891459caf4878d89cf2285fc0527a748"
 RADIUS_ARCSEC = 12.
 COLUMNS = (
     "source_id", "ra", "dec", "ref_epoch", "pmra", "pmdec", "ra_error",
@@ -57,6 +59,8 @@ def separation_arcsec(ra1, dec1, ra2, dec2):
 def frozen_selection(lamost_path, gaia_path):
     lamost, lhash = read_json(lamost_path)
     audit, ahash = read_json(gaia_path)
+    if lhash != EXPECTED_LAMOST_SHA or ahash != EXPECTED_GAIA_AUDIT_SHA:
+        raise ValueError("Original frozen result snapshot checksum mismatch")
     if lamost.get("experiment") != "003" or audit.get("experiment") != "003G":
         raise ValueError("Expected frozen LAMOST 003 and Gaia 003G results")
     spectra = lamost.get("records", [])
