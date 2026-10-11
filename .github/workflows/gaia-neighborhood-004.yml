@@ -1,0 +1,51 @@
+name: Experiment 004 Gaia neighborhood (research only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  neighbor_feasibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install scientific dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Run complete Gaia offline registry and transport tests
+        run: |
+          python -m scripts.import_gaia
+          python -m pytest -q
+      - name: Restore original 003 and 003G result snapshots, no re-fetch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/lamost-003 /tmp/gaia-003g
+          gh run download 38146071576 -R gittenssexton/echolens-api -n echolens-lamost-003-provenance -D /tmp/lamost-003
+          gh run download 38146667656 -R gittenssexton/echolens-api -n echolens-003g-gaia-astrometry -D /tmp/gaia-003g
+          find /tmp/lamost-003 -name results.json
+          find /tmp/gaia-003g -name results.json
+      - name: Fetch exactly 25 preregistered real Gaia neighborhoods
+        run: |
+          l="$(find /tmp/lamost-003 -name results.json -print -quit)"
+          g="$(find /tmp/gaia-003g -name results.json -print -quit)"
+          test -n "$l" && test -n "$g"
+          python -m scripts.gaia_neighborhood_004 --lamost-results "$l" --gaia-results "$g" --fetch --output /tmp/neighbor-004-first
+      - name: Replay identical archived results with no additional requests
+        run: |
+          l="$(find /tmp/lamost-003 -name results.json -print -quit)"
+          g="$(find /tmp/gaia-003g -name results.json -print -quit)"
+          python -m scripts.gaia_neighborhood_004 --lamost-results "$l" --gaia-results "$g" --output /tmp/neighbor-004-second
+          cmp /tmp/neighbor-004-first/results.json /tmp/neighbor-004-second/results.json
+      - name: Preserve original Gaia XML/queries/checksums and all inferred alternatives
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-gaia-neighborhood-004
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            data/gaia_neighbors_004/
+            /tmp/neighbor-004-first/results.json
