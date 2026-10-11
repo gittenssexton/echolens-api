@@ -1,0 +1,54 @@
+name: Experiment 007 — ESA DR8 coverage and Gaia source-ID audit
+on:
+  push:
+    branches: [experiment/catalog-crossid-audit-007]
+    paths: [.github/workflows/catalog-crossid-007.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  catalog_audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install original scientific requirements
+        run: pip install -r requirements-dev.txt
+      - name: Rebuild original Gaia pilot and run full tests
+        run: |
+          python -m scripts.import_gaia
+          python -m pytest -q
+      - name: Restore immutable original Gaia 003G and ESA 006B data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/esa-006b-original /tmp/gaia-003g-original
+          gh run download 38152809325 -R gittenssexton/echolens-api -n echolens-esasky-006b-real-obsids -D /tmp/esa-006b-original
+          gh run download 38146667656 -R gittenssexton/echolens-api -n echolens-003g-gaia-astrometry -D /tmp/gaia-003g-original
+          test -n "$(find /tmp/esa-006b-original -name results.json -print -quit)"
+          test -n "$(find /tmp/gaia-003g-original -name results.json -print -quit)"
+      - name: Acquire exact four Gaia DR3 IDs and nine earlier ESA DR8 obsids
+        run: |
+          esa="$(find /tmp/esa-006b-original -name results.json -print -quit)"
+          gaia="$(find /tmp/gaia-003g-original -name results.json -print -quit)"
+          python -m scripts.catalog_crossid_007 --esa006b-results "$esa" --gaia003g-results "$gaia" --fetch --output /tmp/catalog-007-first
+      - name: Verify byte-identical independent offline replay
+        run: |
+          esa="$(find /tmp/esa-006b-original -name results.json -print -quit)"
+          gaia="$(find /tmp/gaia-003g-original -name results.json -print -quit)"
+          python -m scripts.catalog_crossid_007 --esa006b-results "$esa" --gaia003g-results "$gaia" --output /tmp/catalog-007-second
+          cmp /tmp/catalog-007-first/results.json /tmp/catalog-007-second/results.json
+      - name: Preserve original ESA/IRSA raw observations and results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-catalog-crossid-007
+          retention-days: 30
+          if-no-files-found: warn
+          path: |
+            data/catalog_crossid_007/
+            /tmp/catalog-007-first/results.json
