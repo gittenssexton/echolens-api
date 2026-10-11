@@ -51,7 +51,7 @@ def test_preregistered_query_and_reject_duplicate_substitution():
     assert "TOP 100" in q
     with pytest.raises(ValueError,match="Invalid sorted"):
         ex.query_for(["12","11"])
-    with pytest.raises(ValueError,match="Unrequested or duplicate"):
+    with pytest.raises(ValueError,match="Unexpected ESA TAP row count"):
         ex.parse_batch(xml([row(),row()]),["655310123"])
     with pytest.raises(ValueError,match="Unrequested or duplicate"):
         ex.parse_batch(xml([row()]),["655310124"])
