@@ -1,0 +1,23 @@
+{
+  "image_cutouts_preserved": 20,
+  "image_metadata_responses_preserved": 5,
+  "all_response_hashes_validated": true,
+  "pilot_results_and_summary_unchanged": true,
+  "selected_counterpart_internal_2mass_keys_agree": 5,
+  "new_covariance_tests_passed": 4,
+  "pilot_and_covariance_tests_passed_together": 13,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "versions": {
+    "astropy": "7.2.0",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "pytest": "8.3.5",
+    "pydantic": "2.11.4"
+  },
+  "scientific_status": "conditional review diagnostics; no final acceptance or excess result",
+  "github_ci_code_commit": "40fa98747885e043a2eef7cd19f9a3687439bfb8",
+  "github_ci_run": 38158710841,
+  "github_ci_conclusion": "success",
+  "full_local_regression_tests_passed": 39,
+  "full_local_regression_warnings": 1
+}
