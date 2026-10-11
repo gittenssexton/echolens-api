@@ -1,0 +1,53 @@
+name: Experiment 003G exact Gaia lookup (development only)
+on:
+  push:
+    branches: [experiment/lamost-independent-controls-003]
+    paths:
+      - docs/EXPERIMENT_003_GAIA_AUDIT.md
+      - scripts/lamost_gaia_audit_003.py
+      - tests/test_lamost_gaia_audit_003.py
+      - .github/workflows/gaia-audit-003.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  exact_id_audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install science dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Restore exact frozen Experiment 003 LAMOST acquisition
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/lamost-frozen data
+          gh run download 38146071576 --repo gittenssexton/echolens-api -n echolens-lamost-003-provenance -D /tmp/lamost-frozen
+          src="$(find /tmp/lamost-frozen -type f -path '*/lamost_003/selection.json' -print -quit)"
+          test -n "$src"
+          cp -a "$(dirname "$src")" data/lamost_003
+          test -f data/lamost_003/manifest.json
+      - name: Rebuild Gaia DR3 pilot and run tests
+        run: |
+          python -m scripts.import_gaia
+          python -m pytest -q
+      - name: Fetch exact Gaia DR3 IDs for all 250 LAMOST sources
+        run: python -m scripts.lamost_gaia_audit_003 --fetch --output /tmp/gaia-audit-first
+      - name: Verify no-network deterministic replay
+        run: |
+          python -m scripts.lamost_gaia_audit_003 --output /tmp/gaia-audit-second
+          cmp /tmp/gaia-audit-first/results.json /tmp/gaia-audit-second/results.json
+      - name: Archive native Gaia replies and derived diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-003g-gaia-astrometry
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            data/lamost_gaia_003/
+            /tmp/gaia-audit-first/results.json
