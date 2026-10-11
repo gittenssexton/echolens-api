@@ -1,0 +1,68 @@
+name: Experiment 008 — frozen stellar reference cohort feasibility
+# Engineering rerun: Gaia duplicated_source native integer 0/1 semantically equals False/True.
+on:
+  push:
+    branches: [experiment/stellar-reference-cohort-008]
+    paths: [.github/workflows/stellar-reference-008.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evaluate_frozen_008:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned existing science requirements
+        run: pip install -r requirements-dev.txt
+      - name: Build original 10,000 Gaia sample and run entire test suite
+        run: |
+          python -m scripts.import_gaia
+          python -m pytest -q
+      - name: Restore immutable original catalog artifacts by exact finished run ID
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/input003 /tmp/input003g /tmp/input006b /tmp/input007
+          gh run download 38146071576 -R gittenssexton/echolens-api -n echolens-lamost-003-provenance -D /tmp/input003
+          gh run download 38146667656 -R gittenssexton/echolens-api -n echolens-003g-gaia-astrometry -D /tmp/input003g
+          gh run download 38152809325 -R gittenssexton/echolens-api -n echolens-esasky-006b-real-obsids -D /tmp/input006b
+          gh run download 38157271013 -R gittenssexton/echolens-api -n echolens-catalog-crossid-007 -D /tmp/input007
+          for folder in /tmp/input003 /tmp/input003g /tmp/input006b /tmp/input007; do
+            test -n "$(find "$folder" -name results.json -print -quit)"
+          done
+      - name: Apply preregistered 250-spectrum filters and withheld matching twice
+        run: |
+          l="$(find /tmp/input003 -name results.json -print -quit)"
+          g="$(find /tmp/input003g -name results.json -print -quit)"
+          e="$(find /tmp/input006b -name results.json -print -quit)"
+          c="$(find /tmp/input007 -name results.json -print -quit)"
+          python -m scripts.stellar_reference_008 --lamost003 "$l" --gaia003g "$g" --esa006b "$e" --conflicts007 "$c" --output /tmp/echo008-first
+          python -m scripts.stellar_reference_008 --lamost003 "$l" --gaia003g "$g" --esa006b "$e" --conflicts007 "$c" --output /tmp/echo008-second
+          cmp /tmp/echo008-first/results.json /tmp/echo008-second/results.json
+      - name: Summarize registered feasibility without modifying scientific cutoffs
+        run: |
+          python - <<'PY'
+          import json
+          result=json.load(open('/tmp/echo008-first/results.json'))
+          print(json.dumps({
+            'provisional_reference_candidates': result['provisional_reference_candidates'],
+            'ordered_gate_attrition': result['ordered_gate_attrition'],
+            'matching_status': result['matching']['status'],
+            'matching_count': result['matching']['match_count'],
+            'criterion_met': result['matching']['criterion_met'],
+            'science_ready_certified_ordinary_controls': result['science_ready_certified_ordinary_controls'],
+          },indent=2))
+          PY
+      - name: Archive complete real-data cohort audit and all 250 rejection reasons
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-stellar-reference-008
+          retention-days: 30
+          if-no-files-found: warn
+          path: /tmp/echo008-first/results.json
