@@ -1,0 +1,27 @@
+name: Gaia DR3 10k pilot import
+
+on:
+  workflow_dispatch:
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download, validate, and import 10,000 Gaia DR3 sources
+        run: python -m scripts.import_gaia --fetch --db data/echolens.sqlite
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Save scientific data and manifest as a workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-gaia-dr3-10000
+          path: |
+            data/echolens.sqlite
+            data/raw/gaia_dr3_pilot_10000.csv
+            data/gaia_dr3_pilot_manifest.json
+          retention-days: 30
