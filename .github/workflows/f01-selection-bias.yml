@@ -1,0 +1,32 @@
+name: Research F01 Gaia selection-bias acquisition
+on:
+  push:
+    branches:
+      - research/f01-selection-bias-20261011
+    paths:
+      - .github/workflows/f01-selection-bias.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  collect-f01:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install FITS parser
+        run: pip install astropy==7.2.0
+      - name: Retrieve and validate registered selection frame
+        run: python -m scripts.f01_selection_bias
+      - name: Archive raw responses and provenance (even on archive failure)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-f01-selection-bias-20261011
+          path: f01_output/
+          if-no-files-found: warn
+          retention-days: 30
+          compression-level: 6
