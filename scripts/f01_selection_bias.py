@@ -87,7 +87,7 @@ def acquire(name, query, fmt, filename):
         log["raw_response_file"] = filename+".archive_response"
         log["sha256"] = sha(raw)
         log["bytes"] = len(raw)
-        parsed = gzip.decompress(raw) if raw[:2] == b"\\x1f\\x8b" else raw
+        parsed = gzip.decompress(raw) if raw[:2] == bytes([31, 139]) else raw
         out = ROOT / filename
         out.write_bytes(parsed)
         log["parsed_sha256"] = sha(parsed)
