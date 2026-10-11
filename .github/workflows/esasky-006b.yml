@@ -1,4 +1,5 @@
 name: Experiment 006B — exact ESA DR9 spectrum dates and fiber offsets
+# Fixture correction: excess rows intentionally rejected before duplicate detection.
 on:
   push:
     branches: [experiment/lamost-esasky-epoch-006]
