@@ -17,3 +17,15 @@ jobs:
         run: |
           python -m scripts.control_matching --output /tmp/echolens-001a
           cmp /tmp/echolens-001a/results.json reports/experiment_001a/results.json
+      - name: Run registered reference-overlap study twice, offline
+        run: |
+          python -m scripts.control_overlap_002a --output /tmp/echolens-002a-first
+          python -m scripts.control_overlap_002a --output /tmp/echolens-002a-second
+          cmp /tmp/echolens-002a-first/results.json /tmp/echolens-002a-second/results.json
+      - name: Preserve derived experiment 002A outputs for scientific review
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-control-overlap-002a
+          retention-days: 30
+          if-no-files-found: error
+          path: /tmp/echolens-002a-first/results.json
