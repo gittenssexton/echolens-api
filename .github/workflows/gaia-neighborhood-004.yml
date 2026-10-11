@@ -1,7 +1,5 @@
 name: Experiment 004 Gaia neighborhood (research only)
 on:
-  push:
-    branches: [experiment/gaia-neighborhood-004]
   workflow_dispatch:
 permissions:
   contents: read
