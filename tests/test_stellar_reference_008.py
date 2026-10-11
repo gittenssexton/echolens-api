@@ -124,3 +124,17 @@ def test_missing_original_stellar_coordinates_cannot_pass_position():
 def test_spherical_separation_handles_ra_wrapping():
     assert ex.geocoord_sep_arcsec(359.999,0,.001,0)==pytest.approx(7.2,rel=1e-6)
     assert ex.geocoord_sep_arcsec(34,22,34,22)==0.0
+
+
+
+def test_gaia_native_tap_duplicate_flag_as_integer_zero_one():
+    # The original IRSA Gaia DR3 VOTable carries duplicated_source as 0 or 1,
+    # not Python False/True. This test enforces the same registered boolean cut.
+    l,g,e=fixture()
+    g["123"]["gaia_record"]["duplicated_source"]=0
+    no_duplicate=ex.quality_record("123",l,g,e)
+    assert no_duplicate["quality_candidate"]
+    g["123"]["gaia_record"]["duplicated_source"]=1
+    duplicate=ex.quality_record("123",l,g,e)
+    assert not duplicate["quality_candidate"]
+    assert "Gaia_duplicate_flag_or_missing" in duplicate["all_gate_failure_reasons"]
