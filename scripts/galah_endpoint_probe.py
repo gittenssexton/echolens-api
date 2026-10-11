@@ -10,7 +10,9 @@ urls=[
  ("root","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/"),
  ("single_root","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/analysis_products_single/"),
  ("date","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/analysis_products_single/140116/"),
+ ("example_dir","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/analysis_products_single/140116/140116004301057/"),
  ("example_allspec","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/analysis_products_single/140116/140116004301057/140116004301057_spectrum.fits"),
+ ("reduced_parent","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/observations/"),
  ("example_reduced","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/observations/140116/spectra/com/1401160043010571.fits"),
  ("galah_dr3_example","https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR3/spectra/"),
  ("tap_available","https://datacentral.org.au/vo/tap/availability"),
@@ -21,6 +23,7 @@ adql="SELECT TOP 1 sobject_id,teff,logg,fe_h,phot_g_mean_mag,flag_sp FROM galah_
 for host in ("https://datacentral.org.au/vo/tap/sync","https://data.datacentral.org.au/vo/tap/sync",
              "https://datacentral.org.au/vo/tap/"):
     urls.append(("tiny_adql_"+host.split("//")[1].replace("/","_"),host+"?"+urlencode({"REQUEST":"doQuery","LANG":"ADQL","FORMAT":"csv","QUERY":adql,"MAXREC":2})))
+urls.append(("galah_tables", "https://datacentral.org.au/vo/tap/sync?"+urlencode({"REQUEST":"doQuery","LANG":"ADQL","FORMAT":"csv","QUERY":"SELECT TOP 15 table_name FROM TAP_SCHEMA.tables WHERE table_name LIKE '%galah%'","MAXREC":16})))
 result={"started_utc":datetime.now(timezone.utc).isoformat(),"requests":[]}
 for name,url in urls:
     item={"name":name,"url":url}
@@ -38,6 +41,8 @@ for name,url in urls:
             break
         except Exception as e:
             item["error"]=str(e)
-    print(name,item.get("status"),item.get("error",""),flush=True)
+            if isinstance(e,HTTPError):
+                item["error_body"]=e.read(5000).decode("utf-8","replace")
+    print(name,item.get("status"),item.get("error",""), item.get("error_body","")[:500], flush=True)
 result["finished_utc"]=datetime.now(timezone.utc).isoformat()
 (root/"network_probes.json").write_text(json.dumps(result,indent=2)+"\n")
