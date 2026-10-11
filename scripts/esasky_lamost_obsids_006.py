@@ -114,8 +114,10 @@ def parse_batch(data, expected):
             not 55000 <= r["mjd"] <= 60000):
             raise ValueError("MJD outside observational range")
         r["obsid"]=oid
+        # A missing or sentinel Gaia ID is an ESA catalog quality finding,
+        # not a reason to discard the genuine spectrum/offset/date record.
         if r.get("gaia_source_id") is not None:
-            r["gaia_source_id"]=exact_id(r["gaia_source_id"])
+            r["gaia_source_id"]=str(r["gaia_source_id"]).strip()
     if ids!=sorted(ids,key=int):
         raise ValueError("ESASky returned unsorted obsids")
     return fields,rows
@@ -229,7 +231,12 @@ def replay(directory, original, output):
             result_rows.append({"obsid":obsid,"status":"missing_in_esa_mirror",
                                 "published_gaia_source_id":base["gaia_id"],"esa_record":None})
             continue
-        gaia_ok=r.get("gaia_source_id")==base["gaia_id"]
+        esa_id=r.get("gaia_source_id")
+        try:
+            esa_valid_id=exact_id(esa_id)
+        except ValueError:
+            esa_valid_id=None
+        gaia_ok=esa_valid_id==base["gaia_id"]
         start=rounded_sep(r["ra"],r["dec"],r["ra_obs"],r["dec_obs"])
         vie=rounded_sep(source["RAJ2000"],source["DEJ2000"],
                         r["ra_obs"],r["dec_obs"])
@@ -239,6 +246,8 @@ def replay(directory, original, output):
             "obsid":obsid,"status":"esa_observation_found",
             "published_gaia_source_id":base["gaia_id"],
             "esa_published_gaia_id_agrees":gaia_ok,
+            "esa_published_gaia_id_wellformed":esa_valid_id is not None,
+            "esa_published_gaia_id_raw":esa_id,
             "date_mjd_check":date_status,
             "esa_published_obsdate":r.get("obsdate"),
             "esa_published_mjd":r.get("mjd"),
@@ -261,6 +270,9 @@ def replay(directory, original, output):
         "expected_obsids":250,"resolved_esa_obsids":len(by_id),
         "missing_esa_obsids":250-len(by_id),
         "published_gaia_id_matches":sum(r.get("esa_published_gaia_id_agrees") is True for r in result_rows),
+        "esa_gaia_id_missing_or_invalid":sum(
+            r.get("status")=="esa_observation_found" and
+            not r.get("esa_published_gaia_id_wellformed",False) for r in result_rows),
         "esa_offset_flag_on":sum(r.get("esa_offset_flag") in (1,True) for r in result_rows),
         "esa_offset_flag_off":sum(r.get("esa_offset_flag") in (0,False) for r in result_rows),
         "date_mjd_inconsistent":sum(r.get("date_mjd_check")=="date_mjd_discrepancy_over_2_days" for r in result_rows),
