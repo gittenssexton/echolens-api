@@ -21,7 +21,7 @@
       "candidates": [
         {
           "allwise_source_id": "0279m137_ac51-013229",
-          "separation_arcsec": 0.047864,
+          "separation_arcsec": 0.04786,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -117,7 +117,7 @@
       "candidates": [
         {
           "allwise_source_id": "2965p363_ac51-046012",
-          "separation_arcsec": 0.048664,
+          "separation_arcsec": 0.04866,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -204,7 +204,7 @@
       "candidates": [
         {
           "allwise_source_id": "2675m243_ac51-029303",
-          "separation_arcsec": 0.190127,
+          "separation_arcsec": 0.19013,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -289,7 +289,7 @@
       "candidates": [
         {
           "allwise_source_id": "0387p575_ac51-013579",
-          "separation_arcsec": 0.083668,
+          "separation_arcsec": 0.08367,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -371,7 +371,7 @@
         },
         {
           "allwise_source_id": "0387p575_ac51-014134",
-          "separation_arcsec": 10.813609,
+          "separation_arcsec": 10.81361,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -463,7 +463,7 @@
       "candidates": [
         {
           "allwise_source_id": "1606m394_ac51-004959",
-          "separation_arcsec": 0.065018,
+          "separation_arcsec": 0.06502,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -546,7 +546,7 @@
       "candidates": [
         {
           "allwise_source_id": "2752m016_ac51-049356",
-          "separation_arcsec": 0.030392,
+          "separation_arcsec": 0.03039,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -626,7 +626,7 @@
       "candidates": [
         {
           "allwise_source_id": "0573p302_ac51-012003",
-          "separation_arcsec": 0.102502,
+          "separation_arcsec": 0.1025,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -711,7 +711,7 @@
       "candidates": [
         {
           "allwise_source_id": "0558p136_ac51-041303",
-          "separation_arcsec": 0.128633,
+          "separation_arcsec": 0.12863,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -794,7 +794,7 @@
       "candidates": [
         {
           "allwise_source_id": "1134p030_ac51-052342",
-          "separation_arcsec": 0.034156,
+          "separation_arcsec": 0.03416,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -870,7 +870,7 @@
       "candidates": [
         {
           "allwise_source_id": "2699m879_ac51-030687",
-          "separation_arcsec": 0.103209,
+          "separation_arcsec": 0.10321,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -951,7 +951,7 @@
       "candidates": [
         {
           "allwise_source_id": "0720m788_ac51-027804",
-          "separation_arcsec": 0.060551,
+          "separation_arcsec": 0.06055,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -1031,7 +1031,7 @@
       "candidates": [
         {
           "allwise_source_id": "2965p287_ac51-032686",
-          "separation_arcsec": 0.078644,
+          "separation_arcsec": 0.07864,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -1108,7 +1108,7 @@
         },
         {
           "allwise_source_id": "2965p287_ac51-045929",
-          "separation_arcsec": 9.908687,
+          "separation_arcsec": 9.90869,
           "comparison_epoch_mjd_tt": 55401.17004577,
           "epoch_method": "stationary_approximate_w1_mean_epoch",
           "eligible": false,
@@ -1202,7 +1202,7 @@
       "candidates": [
         {
           "allwise_source_id": "3299m879_ac51-034202",
-          "separation_arcsec": 0.007937,
+          "separation_arcsec": 0.00794,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -1276,7 +1276,7 @@
         },
         {
           "allwise_source_id": "3299m879_ac51-034583",
-          "separation_arcsec": 13.467281,
+          "separation_arcsec": 13.46728,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -1358,7 +1358,7 @@
       "candidates": [
         {
           "allwise_source_id": "3295p575_ac51-059863",
-          "separation_arcsec": 0.044252,
+          "separation_arcsec": 0.04425,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -1431,7 +1431,7 @@
         },
         {
           "allwise_source_id": "3295p575_ac51-060483",
-          "separation_arcsec": 13.649975,
+          "separation_arcsec": 13.64998,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -1515,7 +1515,7 @@
       "candidates": [
         {
           "allwise_source_id": "2730m606_ac51-050093",
-          "separation_arcsec": 0.075548,
+          "separation_arcsec": 0.07555,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -1595,7 +1595,7 @@
       "candidates": [
         {
           "allwise_source_id": "2138m470_ac51-053862",
-          "separation_arcsec": 0.069349,
+          "separation_arcsec": 0.06935,
           "comparison_epoch_mjd_tt": 55319.44128041,
           "epoch_method": "stationary_approximate_w1_mean_epoch",
           "eligible": true,
@@ -1678,7 +1678,7 @@
         },
         {
           "allwise_source_id": "2138m470_ac51-053861",
-          "separation_arcsec": 6.687518,
+          "separation_arcsec": 6.68752,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -1774,7 +1774,7 @@
       "candidates": [
         {
           "allwise_source_id": "1658m425_ac51-018400",
-          "separation_arcsec": 0.098974,
+          "separation_arcsec": 0.09897,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -1859,7 +1859,7 @@
       "candidates": [
         {
           "allwise_source_id": "2236m652_ac51-024210",
-          "separation_arcsec": 0.236059,
+          "separation_arcsec": 0.23606,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -1929,7 +1929,7 @@
         },
         {
           "allwise_source_id": "2236m652_ac51-025489",
-          "separation_arcsec": 14.155937,
+          "separation_arcsec": 14.15594,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -2015,7 +2015,7 @@
       "candidates": [
         {
           "allwise_source_id": "2336m197_ac51-000149",
-          "separation_arcsec": 0.130836,
+          "separation_arcsec": 0.13084,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -2090,7 +2090,7 @@
         },
         {
           "allwise_source_id": "2336m197_ac51-001281",
-          "separation_arcsec": 14.502994,
+          "separation_arcsec": 14.50299,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -2179,7 +2179,7 @@
       "candidates": [
         {
           "allwise_source_id": "2782p302_ac51-039887",
-          "separation_arcsec": 0.082088,
+          "separation_arcsec": 0.08209,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -2256,7 +2256,7 @@
         },
         {
           "allwise_source_id": "2782p302_ac51-039853",
-          "separation_arcsec": 13.527971,
+          "separation_arcsec": 13.52797,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -2344,7 +2344,7 @@
       "candidates": [
         {
           "allwise_source_id": "3279p530_ac51-046784",
-          "separation_arcsec": 0.314973,
+          "separation_arcsec": 0.31497,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -2495,7 +2495,7 @@
         },
         {
           "allwise_source_id": "1506m803_ac51-017651",
-          "separation_arcsec": 0.317701,
+          "separation_arcsec": 0.3177,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -2645,7 +2645,7 @@
         },
         {
           "allwise_source_id": "1092m107_ac51-033222",
-          "separation_arcsec": 13.934598,
+          "separation_arcsec": 13.9346,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -2726,7 +2726,7 @@
       "candidates": [
         {
           "allwise_source_id": "2997m122_ac51-056205",
-          "separation_arcsec": 0.101719,
+          "separation_arcsec": 0.10172,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -2811,7 +2811,7 @@
       "candidates": [
         {
           "allwise_source_id": "1180m591_ac51-025015",
-          "separation_arcsec": 0.035363,
+          "separation_arcsec": 0.03536,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -2899,7 +2899,7 @@
       "candidates": [
         {
           "allwise_source_id": "1578m531_ac51-065636",
-          "separation_arcsec": 6.977321,
+          "separation_arcsec": 6.97732,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -2977,7 +2977,7 @@
         },
         {
           "allwise_source_id": "1578m531_ac51-065712",
-          "separation_arcsec": 10.596548,
+          "separation_arcsec": 10.59655,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -3064,7 +3064,7 @@
       "candidates": [
         {
           "allwise_source_id": "1763m334_ac51-002693",
-          "separation_arcsec": 0.037227,
+          "separation_arcsec": 0.03723,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -3134,7 +3134,7 @@
         },
         {
           "allwise_source_id": "1763m334_ac51-003091",
-          "separation_arcsec": 14.407683,
+          "separation_arcsec": 14.40768,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -3304,7 +3304,7 @@
       "candidates": [
         {
           "allwise_source_id": "2969m107_ac51-061028",
-          "separation_arcsec": 0.028502,
+          "separation_arcsec": 0.0285,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -3388,7 +3388,7 @@
       "candidates": [
         {
           "allwise_source_id": "2608p302_ac51-015591",
-          "separation_arcsec": 0.126448,
+          "separation_arcsec": 0.12645,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -3471,7 +3471,7 @@
       "candidates": [
         {
           "allwise_source_id": "1301p272_ac51-045320",
-          "separation_arcsec": 0.067042,
+          "separation_arcsec": 0.06704,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -3543,7 +3543,7 @@
         },
         {
           "allwise_source_id": "1301p272_ac51-047591",
-          "separation_arcsec": 10.050429,
+          "separation_arcsec": 10.05043,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -3719,7 +3719,7 @@
         },
         {
           "allwise_source_id": "1480m546_ac51-044338",
-          "separation_arcsec": 12.467008,
+          "separation_arcsec": 12.46701,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -3878,7 +3878,7 @@
         },
         {
           "allwise_source_id": "3381p469_ac51-062874",
-          "separation_arcsec": 12.871566,
+          "separation_arcsec": 12.87157,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -3962,7 +3962,7 @@
       "candidates": [
         {
           "allwise_source_id": "3434m243_ac51-008252",
-          "separation_arcsec": 0.006632,
+          "separation_arcsec": 0.00663,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -4129,7 +4129,7 @@
       "candidates": [
         {
           "allwise_source_id": "1680m606_ac51-024066",
-          "separation_arcsec": 0.237895,
+          "separation_arcsec": 0.2379,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -4292,7 +4292,7 @@
         },
         {
           "allwise_source_id": "2671m379_ac51-041235",
-          "separation_arcsec": 13.353745,
+          "separation_arcsec": 13.35375,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -4381,7 +4381,7 @@
       "candidates": [
         {
           "allwise_source_id": "3223p696_ac51-025535",
-          "separation_arcsec": 0.053405,
+          "separation_arcsec": 0.05341,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -4462,7 +4462,7 @@
       "candidates": [
         {
           "allwise_source_id": "1627m152_ac51-037394",
-          "separation_arcsec": 0.036813,
+          "separation_arcsec": 0.03681,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -4542,7 +4542,7 @@
       "candidates": [
         {
           "allwise_source_id": "2144m546_ac51-059549",
-          "separation_arcsec": 0.296831,
+          "separation_arcsec": 0.29683,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -4625,7 +4625,7 @@
         },
         {
           "allwise_source_id": "2144m546_ac51-059413",
-          "separation_arcsec": 10.138591,
+          "separation_arcsec": 10.13859,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -4702,7 +4702,7 @@
         },
         {
           "allwise_source_id": "2144m546_ac51-059352",
-          "separation_arcsec": 13.558057,
+          "separation_arcsec": 13.55806,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -4785,7 +4785,7 @@
       "candidates": [
         {
           "allwise_source_id": "0054p348_ac51-005333",
-          "separation_arcsec": 0.030203,
+          "separation_arcsec": 0.0302,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -4862,7 +4862,7 @@
       "candidates": [
         {
           "allwise_source_id": "2784m197_ac51-026634",
-          "separation_arcsec": 0.045275,
+          "separation_arcsec": 0.04528,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -5015,7 +5015,7 @@
         },
         {
           "allwise_source_id": "1300m031_ac51-011436",
-          "separation_arcsec": 14.381952,
+          "separation_arcsec": 14.38195,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -5099,7 +5099,7 @@
       "candidates": [
         {
           "allwise_source_id": "1816m258_ac51-057457",
-          "separation_arcsec": 0.085133,
+          "separation_arcsec": 0.08513,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -5176,7 +5176,7 @@
         },
         {
           "allwise_source_id": "1816m258_ac51-057597",
-          "separation_arcsec": 14.228906,
+          "separation_arcsec": 14.22891,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -5266,7 +5266,7 @@
       "candidates": [
         {
           "allwise_source_id": "0652m319_ac51-057268",
-          "separation_arcsec": 0.008312,
+          "separation_arcsec": 0.00831,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -5352,7 +5352,7 @@
       "candidates": [
         {
           "allwise_source_id": "0617p287_ac51-002461",
-          "separation_arcsec": 0.251424,
+          "separation_arcsec": 0.25142,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -5437,7 +5437,7 @@
       "candidates": [
         {
           "allwise_source_id": "1045m833_ac51-010054",
-          "separation_arcsec": 0.035601,
+          "separation_arcsec": 0.0356,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -5517,7 +5517,7 @@
       "candidates": [
         {
           "allwise_source_id": "2497m440_ac51-023299",
-          "separation_arcsec": 9.938233,
+          "separation_arcsec": 9.93823,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -5604,7 +5604,7 @@
         },
         {
           "allwise_source_id": "2497m440_ac51-024304",
-          "separation_arcsec": 12.109681,
+          "separation_arcsec": 12.10968,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -5784,7 +5784,7 @@
       "candidates": [
         {
           "allwise_source_id": "2974m076_ac51-008545",
-          "separation_arcsec": 0.283132,
+          "separation_arcsec": 0.28313,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -5956,7 +5956,7 @@
       "candidates": [
         {
           "allwise_source_id": "3172p484_ac51-009202",
-          "separation_arcsec": 1.232519,
+          "separation_arcsec": 1.23252,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -6038,7 +6038,7 @@
       "candidates": [
         {
           "allwise_source_id": "1239m515_ac51-022127",
-          "separation_arcsec": 0.029037,
+          "separation_arcsec": 0.02904,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -6122,7 +6122,7 @@
       "candidates": [
         {
           "allwise_source_id": "1072m197_ac51-058640",
-          "separation_arcsec": 0.176265,
+          "separation_arcsec": 0.17627,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -6196,7 +6196,7 @@
         },
         {
           "allwise_source_id": "1072m197_ac51-060069",
-          "separation_arcsec": 13.943528,
+          "separation_arcsec": 13.94353,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -6284,7 +6284,7 @@
       "candidates": [
         {
           "allwise_source_id": "3113p333_ac51-060728",
-          "separation_arcsec": 0.660139,
+          "separation_arcsec": 0.66014,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -6365,7 +6365,7 @@
         },
         {
           "allwise_source_id": "3113p333_ac51-060729",
-          "separation_arcsec": 6.791463,
+          "separation_arcsec": 6.79146,
           "comparison_epoch_mjd_tt": 55410.28903265,
           "epoch_method": "stationary_approximate_w1_mean_epoch",
           "eligible": false,
@@ -6446,7 +6446,7 @@
         },
         {
           "allwise_source_id": "3113p333_ac51-062040",
-          "separation_arcsec": 14.728275,
+          "separation_arcsec": 14.72828,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -6532,7 +6532,7 @@
       "candidates": [
         {
           "allwise_source_id": "2263m667_ac51-020812",
-          "separation_arcsec": 0.323494,
+          "separation_arcsec": 0.32349,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -6617,7 +6617,7 @@
       "candidates": [
         {
           "allwise_source_id": "3012m546_ac51-053169",
-          "separation_arcsec": 0.006697,
+          "separation_arcsec": 0.0067,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -6698,7 +6698,7 @@
       "candidates": [
         {
           "allwise_source_id": "2706m546_ac51-051781",
-          "separation_arcsec": 0.135151,
+          "separation_arcsec": 0.13515,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -6779,7 +6779,7 @@
       "candidates": [
         {
           "allwise_source_id": "0716p075_ac51-034851",
-          "separation_arcsec": 0.026188,
+          "separation_arcsec": 0.02619,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -6865,7 +6865,7 @@
       "candidates": [
         {
           "allwise_source_id": "2264m758_ac51-043725",
-          "separation_arcsec": 0.401947,
+          "separation_arcsec": 0.40195,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -6937,7 +6937,7 @@
         },
         {
           "allwise_source_id": "2264m758_ac51-044255",
-          "separation_arcsec": 12.314809,
+          "separation_arcsec": 12.31481,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -7020,7 +7020,7 @@
       "candidates": [
         {
           "allwise_source_id": "0774p060_ac51-051084",
-          "separation_arcsec": 0.192379,
+          "separation_arcsec": 0.19238,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -7101,7 +7101,7 @@
       "candidates": [
         {
           "allwise_source_id": "1981m637_ac51-017915",
-          "separation_arcsec": 0.482212,
+          "separation_arcsec": 0.48221,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -7189,7 +7189,7 @@
       "candidates": [
         {
           "allwise_source_id": "2027m652_ac51-021142",
-          "separation_arcsec": 13.145316,
+          "separation_arcsec": 13.14532,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -7425,7 +7425,7 @@
         },
         {
           "allwise_source_id": "2757m243_ac51-051009",
-          "separation_arcsec": 12.576003,
+          "separation_arcsec": 12.576,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -7513,7 +7513,7 @@
       "candidates": [
         {
           "allwise_source_id": "2229m500_ac51-008538",
-          "separation_arcsec": 1.169764,
+          "separation_arcsec": 1.16976,
           "comparison_epoch_mjd_tt": 55341.32069253,
           "epoch_method": "stationary_approximate_w1_mean_epoch",
           "eligible": true,
@@ -7594,7 +7594,7 @@
         },
         {
           "allwise_source_id": "2229m500_ac51-008537",
-          "separation_arcsec": 6.196032,
+          "separation_arcsec": 6.19603,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -7688,7 +7688,7 @@
       "candidates": [
         {
           "allwise_source_id": "0378m016_ac51-033155",
-          "separation_arcsec": 0.026247,
+          "separation_arcsec": 0.02625,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -7853,7 +7853,7 @@
       "candidates": [
         {
           "allwise_source_id": "1086m137_ac51-044890",
-          "separation_arcsec": 0.053622,
+          "separation_arcsec": 0.05362,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -7933,7 +7933,7 @@
       "candidates": [
         {
           "allwise_source_id": "1083m258_ac51-025881",
-          "separation_arcsec": 0.116286,
+          "separation_arcsec": 0.11629,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -8014,7 +8014,7 @@
       "candidates": [
         {
           "allwise_source_id": "3112p166_ac51-019328",
-          "separation_arcsec": 13.436025,
+          "separation_arcsec": 13.43603,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -8101,7 +8101,7 @@
       "candidates": [
         {
           "allwise_source_id": "0069p651_ac51-025511",
-          "separation_arcsec": 0.186715,
+          "separation_arcsec": 0.18672,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -8274,7 +8274,7 @@
       "candidates": [
         {
           "allwise_source_id": "0908p242_ac51-058115",
-          "separation_arcsec": 2.501939,
+          "separation_arcsec": 2.50194,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -8348,7 +8348,7 @@
         },
         {
           "allwise_source_id": "0908p242_ac51-058130",
-          "separation_arcsec": 9.147331,
+          "separation_arcsec": 9.14733,
           "comparison_epoch_mjd_tt": 55362.3760887,
           "epoch_method": "stationary_approximate_w1_mean_epoch",
           "eligible": false,
@@ -8432,7 +8432,7 @@
         },
         {
           "allwise_source_id": "0908p242_ac51-059278",
-          "separation_arcsec": 14.733782,
+          "separation_arcsec": 14.73378,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -8520,7 +8520,7 @@
       "candidates": [
         {
           "allwise_source_id": "2603m576_ac51-000497",
-          "separation_arcsec": 0.303465,
+          "separation_arcsec": 0.30347,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -8590,7 +8590,7 @@
         },
         {
           "allwise_source_id": "2603m576_ac51-000419",
-          "separation_arcsec": 10.642088,
+          "separation_arcsec": 10.64209,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -8672,7 +8672,7 @@
       "candidates": [
         {
           "allwise_source_id": "0900p772_ac51-040599",
-          "separation_arcsec": 0.080052,
+          "separation_arcsec": 0.08005,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -8752,7 +8752,7 @@
         },
         {
           "allwise_source_id": "0900p772_ac51-040600",
-          "separation_arcsec": 12.377751,
+          "separation_arcsec": 12.37775,
           "comparison_epoch_mjd_tt": 55378.4055283,
           "epoch_method": "stationary_approximate_w1_mean_epoch",
           "eligible": false,
@@ -8832,7 +8832,7 @@
         },
         {
           "allwise_source_id": "0900p772_ac51-040567",
-          "separation_arcsec": 14.355943,
+          "separation_arcsec": 14.35594,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -8915,7 +8915,7 @@
       "candidates": [
         {
           "allwise_source_id": "1305m364_ac51-057764",
-          "separation_arcsec": 1.204438,
+          "separation_arcsec": 1.20444,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -8987,7 +8987,7 @@
         },
         {
           "allwise_source_id": "1305m364_ac51-057671",
-          "separation_arcsec": 13.462168,
+          "separation_arcsec": 13.46217,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -9068,7 +9068,7 @@
       "candidates": [
         {
           "allwise_source_id": "3237p454_ac51-008347",
-          "separation_arcsec": 0.052597,
+          "separation_arcsec": 0.0526,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -9153,7 +9153,7 @@
       "candidates": [
         {
           "allwise_source_id": "2529p136_ac51-033899",
-          "separation_arcsec": 0.046348,
+          "separation_arcsec": 0.04635,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -9234,7 +9234,7 @@
       "candidates": [
         {
           "allwise_source_id": "2624m197_ac51-048526",
-          "separation_arcsec": 0.060348,
+          "separation_arcsec": 0.06035,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -9309,7 +9309,7 @@
         },
         {
           "allwise_source_id": "2624m197_ac51-047845",
-          "separation_arcsec": 11.435886,
+          "separation_arcsec": 11.43589,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -9389,7 +9389,7 @@
         },
         {
           "allwise_source_id": "2624m197_ac51-049349",
-          "separation_arcsec": 13.823073,
+          "separation_arcsec": 13.82307,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -9476,7 +9476,7 @@
       "candidates": [
         {
           "allwise_source_id": "3145m379_ac51-021421",
-          "separation_arcsec": 0.035927,
+          "separation_arcsec": 0.03593,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -9561,7 +9561,7 @@
       "candidates": [
         {
           "allwise_source_id": "1733m561_ac51-007939",
-          "separation_arcsec": 0.429791,
+          "separation_arcsec": 0.42979,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -9633,7 +9633,7 @@
         },
         {
           "allwise_source_id": "1733m561_ac51-008028",
-          "separation_arcsec": 12.285851,
+          "separation_arcsec": 12.28585,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -9709,7 +9709,7 @@
         },
         {
           "allwise_source_id": "1733m561_ac51-007992",
-          "separation_arcsec": 13.920891,
+          "separation_arcsec": 13.92089,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -9794,7 +9794,7 @@
       "candidates": [
         {
           "allwise_source_id": "1991m546_ac51-044134",
-          "separation_arcsec": 0.273368,
+          "separation_arcsec": 0.27337,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -9878,7 +9878,7 @@
         },
         {
           "allwise_source_id": "1991m546_ac51-044135",
-          "separation_arcsec": 11.782517,
+          "separation_arcsec": 11.78252,
           "comparison_epoch_mjd_tt": 55335.84145804,
           "epoch_method": "stationary_approximate_w1_mean_epoch",
           "eligible": false,
@@ -9973,7 +9973,7 @@
       "candidates": [
         {
           "allwise_source_id": "2360m515_ac51-006752",
-          "separation_arcsec": 9.593798,
+          "separation_arcsec": 9.5938,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -10050,7 +10050,7 @@
         },
         {
           "allwise_source_id": "2360m515_ac51-005504",
-          "separation_arcsec": 14.822176,
+          "separation_arcsec": 14.82218,
           "comparison_epoch_mjd_tt": 55339.24487241,
           "epoch_method": "stationary_approximate_w1_mean_epoch",
           "eligible": false,
@@ -10138,7 +10138,7 @@
         },
         {
           "allwise_source_id": "2360m515_ac51-005503",
-          "separation_arcsec": 14.955351,
+          "separation_arcsec": 14.95535,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -10234,7 +10234,7 @@
       "candidates": [
         {
           "allwise_source_id": "3002p212_ac51-002013",
-          "separation_arcsec": 0.210521,
+          "separation_arcsec": 0.21052,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -10315,7 +10315,7 @@
         },
         {
           "allwise_source_id": "3002p212_ac51-001990",
-          "separation_arcsec": 12.631519,
+          "separation_arcsec": 12.63152,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -10406,7 +10406,7 @@
       "candidates": [
         {
           "allwise_source_id": "1685m440_ac51-040953",
-          "separation_arcsec": 0.028764,
+          "separation_arcsec": 0.02876,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -10567,7 +10567,7 @@
       "candidates": [
         {
           "allwise_source_id": "2076m576_ac51-037183",
-          "separation_arcsec": 0.089015,
+          "separation_arcsec": 0.08902,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -10657,7 +10657,7 @@
       "candidates": [
         {
           "allwise_source_id": "0197p408_ac51-030618",
-          "separation_arcsec": 0.013774,
+          "separation_arcsec": 0.01377,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -10739,7 +10739,7 @@
       "candidates": [
         {
           "allwise_source_id": "2533m561_ac51-067952",
-          "separation_arcsec": 0.177952,
+          "separation_arcsec": 0.17795,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -10912,7 +10912,7 @@
       "candidates": [
         {
           "allwise_source_id": "1424m409_ac51-015917",
-          "separation_arcsec": 0.029962,
+          "separation_arcsec": 0.02996,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -11072,7 +11072,7 @@
         },
         {
           "allwise_source_id": "2871p439_ac51-008570",
-          "separation_arcsec": 11.731426,
+          "separation_arcsec": 11.73143,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -11257,7 +11257,7 @@
       "candidates": [
         {
           "allwise_source_id": "2858p318_ac51-047395",
-          "separation_arcsec": 0.177149,
+          "separation_arcsec": 0.17715,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -11341,7 +11341,7 @@
       "candidates": [
         {
           "allwise_source_id": "0937p030_ac51-001089",
-          "separation_arcsec": 0.213271,
+          "separation_arcsec": 0.21327,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -11426,7 +11426,7 @@
       "candidates": [
         {
           "allwise_source_id": "3520m682_ac51-017874",
-          "separation_arcsec": 0.018276,
+          "separation_arcsec": 0.01828,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -11497,7 +11497,7 @@
         },
         {
           "allwise_source_id": "3520m682_ac51-019840",
-          "separation_arcsec": 8.828755,
+          "separation_arcsec": 8.82876,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -11575,7 +11575,7 @@
         },
         {
           "allwise_source_id": "3520m682_ac51-020178",
-          "separation_arcsec": 12.872841,
+          "separation_arcsec": 12.87284,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -11662,7 +11662,7 @@
       "candidates": [
         {
           "allwise_source_id": "3480p605_ac51-012971",
-          "separation_arcsec": 0.153059,
+          "separation_arcsec": 0.15306,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -11743,7 +11743,7 @@
       "candidates": [
         {
           "allwise_source_id": "3085m016_ac51-015476",
-          "separation_arcsec": 0.116221,
+          "separation_arcsec": 0.11622,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -11830,7 +11830,7 @@
       "candidates": [
         {
           "allwise_source_id": "1193m364_ac51-003237",
-          "separation_arcsec": 0.054918,
+          "separation_arcsec": 0.05492,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -11911,7 +11911,7 @@
       "candidates": [
         {
           "allwise_source_id": "0181p030_ac51-027020",
-          "separation_arcsec": 0.111078,
+          "separation_arcsec": 0.11108,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -11987,7 +11987,7 @@
       "candidates": [
         {
           "allwise_source_id": "1552m485_ac51-050379",
-          "separation_arcsec": 0.087817,
+          "separation_arcsec": 0.08782,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -12070,7 +12070,7 @@
       "candidates": [
         {
           "allwise_source_id": "2834m228_ac51-000945",
-          "separation_arcsec": 0.726414,
+          "separation_arcsec": 0.72641,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -12147,7 +12147,7 @@
         },
         {
           "allwise_source_id": "2834m228_ac51-000673",
-          "separation_arcsec": 14.396315,
+          "separation_arcsec": 14.39632,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -12235,7 +12235,7 @@
       "candidates": [
         {
           "allwise_source_id": "3077p363_ac51-046709",
-          "separation_arcsec": 0.106819,
+          "separation_arcsec": 0.10682,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": true,
@@ -12308,7 +12308,7 @@
         },
         {
           "allwise_source_id": "3077p363_ac51-047908",
-          "separation_arcsec": 13.269152,
+          "separation_arcsec": 13.26915,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
@@ -12393,7 +12393,7 @@
         },
         {
           "allwise_source_id": "3077p363_ac51-047955",
-          "separation_arcsec": 13.284739,
+          "separation_arcsec": 13.28474,
           "comparison_epoch_mjd_tt": 55400.0,
           "epoch_method": "motion_fit_epoch",
           "eligible": false,
