@@ -98,6 +98,9 @@ def quality(row,survey,band):
 def associate(g,rows,survey):
     result=[]
     for row in rows:
+        row=dict(row)
+        # Catalog identifiers are text in derived JSON to survive browser parsing.
+        if row.get('cntr') is not None:row['cntr']=str(row['cntr'])
         if survey=='wise' and row.get('ra_pm') is not None and row.get('dec_pm') is not None:
             year=Time(55400,format='mjd',scale='tt').jyear;coords=(row['ra_pm'],row['dec_pm']);epoch='motion-fit MJD 55400 TT'
         elif survey=='wise':
