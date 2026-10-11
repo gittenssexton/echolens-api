@@ -13,3 +13,7 @@ jobs:
       - run: pip install -r requirements-dev.txt
       - run: python -m scripts.import_gaia
       - run: python -m pytest -q
+      - name: Replay registered control-matching experiment
+        run: |
+          python -m scripts.control_matching --output /tmp/echolens-001a
+          cmp /tmp/echolens-001a/results.json reports/experiment_001a/results.json
