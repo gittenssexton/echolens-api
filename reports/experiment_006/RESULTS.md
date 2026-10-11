@@ -69,3 +69,14 @@ Related source documentation:
 4. If warranted, retrieve original official LAMOST DR9 v2 FITS header `OFFSET`, `OFFSET_V`, `DATE-OBS` for one independent authority check. No new ranking, technosignature probability or Render change.
 
 **No changes** to deployed Render, production registry, source measurements, branch `main` or older historical results.
+
+
+---
+
+### Experiment 007 follow-up — recovered source-ID/coverage evidence (2026-10-11)
+
+The original findings above are preserved. Subsequent preregistered **[Experiment 007](../experiment_007/REPORT.md)** retrieved all **four disputed Gaia DR3 IDs** and the exact **nine obsids absent in ESA DR9**. All nine are present in the ESA **DR8 LRS** mirror, have Gaia IDs agreeing with the originally published activity catalog, and have no documented deliberate fiber offsets. These were release/version-coverage gaps, not missing astrophysical observations.
+
+For the two other disputed spectrum associations (`235608062`, `844313076`), each **pair of conflicting Gaia IDs exists**. In both cases, the activity catalog Gaia ID is closer to the original LAMOST target/fiber than the ESA DR9-associated Gaia ID (approximately 0.271" versus 1.954", and 0.090" versus 1.271", after simple PM propagation). The ESA mirror Gaia magnitudes correspond to its own alternate IDs; this is a **real catalog counterpart ambiguity**, not a missing-source or numeric-representation artifact. It requires full fiber/astrometry quality review; nothing was automatically reassigned.
+
+These newer results refine the release-provenance picture and do **not** reverse the deliberately offset fiber explanation for `655310123` or certify that Gaia identifier.
