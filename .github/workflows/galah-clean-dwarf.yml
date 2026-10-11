@@ -1,0 +1,26 @@
+name: Research clean FGK dwarf GALAH DR4 full visit audit
+on:
+  push:
+    branches: [research/f01-selection-bias-20261011]
+    paths: [.github/workflows/galah-clean-dwarf.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install astropy==7.2.0
+      - run: python -m scripts.galah_clean_dwarf_audit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: galah-dr4-verified-clean-fgk-dwarf
+          path: galah_clean_dwarf_audit/
+          retention-days: 30
+          if-no-files-found: warn
