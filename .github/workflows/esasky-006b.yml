@@ -1,0 +1,54 @@
+name: Experiment 006B — exact ESA DR9 spectrum dates and fiber offsets
+on:
+  push:
+    branches: [experiment/lamost-esasky-epoch-006]
+    paths: [.github/workflows/esasky-006b.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  esasky_250:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install existing requirements
+        run: pip install -r requirements-dev.txt
+      - name: Rebuild frozen Gaia sample and test every study
+        run: |
+          python -m scripts.import_gaia
+          python -m pytest -q
+      - name: Restore exact original 250 real LAMOST and Gaia audit results
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/original-lamost-003 /tmp/original-gaia-003g
+          gh run download 38146071576 -R gittenssexton/echolens-api -n echolens-lamost-003-provenance -D /tmp/original-lamost-003
+          gh run download 38146667656 -R gittenssexton/echolens-api -n echolens-003g-gaia-astrometry -D /tmp/original-gaia-003g
+          test -n "$(find /tmp/original-lamost-003 -name results.json -print -quit)"
+          test -n "$(find /tmp/original-gaia-003g -name results.json -print -quit)"
+      - name: Retrieve 250 exact ESA LAMOST DR9 obsid fiber records in batches of 25
+        run: |
+          l="$(find /tmp/original-lamost-003 -name results.json -print -quit)"
+          g="$(find /tmp/original-gaia-003g -name results.json -print -quit)"
+          python -m scripts.esasky_lamost_obsids_006 --lamost-results "$l" --gaia-results "$g" --fetch --output /tmp/esasky-006b-one
+      - name: Reconstruct twice offline and check byte-identical results
+        run: |
+          l="$(find /tmp/original-lamost-003 -name results.json -print -quit)"
+          g="$(find /tmp/original-gaia-003g -name results.json -print -quit)"
+          python -m scripts.esasky_lamost_obsids_006 --lamost-results "$l" --gaia-results "$g" --output /tmp/esasky-006b-two
+          cmp /tmp/esasky-006b-one/results.json /tmp/esasky-006b-two/results.json
+      - name: Archive all original ESA TAP XML replies, metadata and derived results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-esasky-006b-real-obsids
+          retention-days: 30
+          if-no-files-found: warn
+          path: |
+            data/esasky_lamost_006/
+            /tmp/esasky-006b-one/results.json
