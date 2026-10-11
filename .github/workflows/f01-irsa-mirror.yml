@@ -1,0 +1,26 @@
+name: Research F01 IRSA mirror bounded retry
+on:
+  push:
+    branches: [research/f01-selection-bias-20261011]
+    paths: [.github/workflows/f01-irsa-mirror.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  f01-irsa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 26
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install astropy==7.2.0
+      - run: python -m scripts.f01_irsa_mirror
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: echolens-f01-irsa-mirror-20261011
+          path: f01_irsa_output/
+          retention-days: 30
+          if-no-files-found: warn
