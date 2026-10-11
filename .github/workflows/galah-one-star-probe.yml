@@ -2,7 +2,7 @@ name: Research GALAH DR4 one-star endpoint probe
 on:
   push:
     branches: [research/f01-selection-bias-20261011]
-    paths: [.github/workflows/galah-one-star-probe.yml]
+    paths: [.github/workflows/galah-one-star-probe.yml, scripts/galah_endpoint_probe.py]
   workflow_dispatch:
 permissions:
   contents: read
