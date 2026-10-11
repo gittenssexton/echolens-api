@@ -32,6 +32,16 @@ jobs:
           gh run download 38146667656 -R gittenssexton/echolens-api -n echolens-003g-gaia-astrometry -D /tmp/original-gaia-003g
           test -n "$(find /tmp/original-lamost-003 -name results.json -print -quit)"
           test -n "$(find /tmp/original-gaia-003g -name results.json -print -quit)"
+      - name: Restore already checked first 8 ESA responses from failed acquisition
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/esa-006b-cached data/esasky_lamost_006
+          gh run download 38152542000 -R gittenssexton/echolens-api -n echolens-esasky-006b-real-obsids -D /tmp/esa-006b-cached
+          f="$(find /tmp/esa-006b-cached -type f -path '*/esasky_lamost_006/selection.json' -print -quit)"
+          test -n "$f"
+          cp -a "$(dirname "$f")/." data/esasky_lamost_006/
+          test -f data/esasky_lamost_006/batch_07.xml.gz
       - name: Retrieve 250 exact ESA LAMOST DR9 obsid fiber records in batches of 25
         run: |
           l="$(find /tmp/original-lamost-003 -name results.json -print -quit)"
