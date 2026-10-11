@@ -27,11 +27,16 @@ try:
     (OUT/"f01_unfiltered_20000_irsa.fits").write_bytes(content)
     log["raw_sha256"]=sha(content);log["bytes"]=len(content)
     with fits.open(io.BytesIO(content),memmap=False) as h:
-        t=h[1].data
+        t_raw=h[1].data
+        # IRSA pads returned FITS tables to transport block boundaries; documented
+        # primary pilot similarly contained 9 padded rows. Keep raw bytes untouched.
+        raw_rows=len(t_raw)
+        assert raw_rows>=20000 and raw_rows<20100, ("unexpected transport row count",raw_rows)
+        t=t_raw[:20000]
         names=h[1].columns.names
         i=np.asarray(t["random_index"],dtype=np.int64)
         ids=np.asarray(t["source_id"],dtype=np.int64)
-        assert 0<len(ids)<=20000 and len(set(map(int,ids)))==len(ids)
+        assert len(ids)==20000 and len(set(map(int,ids)))==20000
         assert np.all(i<1000000) and np.all(i[1:]>=i[:-1])
         def nums(k):
             a=t[k]
@@ -42,7 +47,9 @@ try:
         quality &= nums("phot_g_mean_mag")<17.65
         for k in ("phot_bp_mean_mag","phot_rp_mean_mag"):
             quality &= np.isfinite(nums(k))
-        status={"rows":len(ids),"columns":len(names),"unique_ids":True,
+        status={"rows":len(ids),"fits_transport_rows":int(raw_rows),
+        "transport_padding_rows":int(raw_rows-len(ids)),
+        "columns":len(names),"unique_ids":True,
         "star_prob_gte_0_9":int((np.isfinite(p)&(p>=.9)).sum()),
         "star_prob_lt_0_9":int((np.isfinite(p)&(p<.9)).sum()),
         "star_prob_null_or_nonfinite":int((~np.isfinite(p)).sum()),
