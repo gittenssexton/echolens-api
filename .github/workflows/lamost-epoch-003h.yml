@@ -1,0 +1,46 @@
+name: LAMOST epoch window audit 003H (development)
+on:
+  push:
+    branches: [experiment/lamost-epoch-review-003h]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-dev.txt
+      - name: Validate all frozen Gaia tests and new date-policy tests
+        run: |
+          python -m scripts.import_gaia
+          python -m pytest -q
+      - name: Restore exact previous LAMOST and Gaia immutable result artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/lamost-003-input /tmp/gaia-003g-input
+          gh run download 38146071576 -R gittenssexton/echolens-api -n echolens-lamost-003-provenance -D /tmp/lamost-003-input
+          gh run download 38146667656 -R gittenssexton/echolens-api -n echolens-003g-gaia-astrometry -D /tmp/gaia-003g-input
+          find /tmp/lamost-003-input -name results.json
+          find /tmp/gaia-003g-input -name results.json
+      - name: Run two byte-identical epoch-envelope audits without new network acquisition
+        run: |
+          l="$(find /tmp/lamost-003-input -name results.json -print -quit)"
+          g="$(find /tmp/gaia-003g-input -name results.json -print -quit)"
+          test -n "$l" && test -n "$g"
+          python -m scripts.lamost_epoch_003h --lamost-results "$l" --gaia-results "$g" --output /tmp/epoch-003h-first
+          python -m scripts.lamost_epoch_003h --lamost-results "$l" --gaia-results "$g" --output /tmp/epoch-003h-second
+          cmp /tmp/epoch-003h-first/results.json /tmp/epoch-003h-second/results.json
+      - name: Archive scientific audit and exact reproducibility evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-003h-epoch-review
+          if-no-files-found: error
+          retention-days: 30
+          path: /tmp/epoch-003h-first/results.json
