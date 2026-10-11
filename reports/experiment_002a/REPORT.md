@@ -23,6 +23,16 @@
 
 **Cumulative support:** With the fixed five-dimensional tolerances, 100 targets have an eligible control after the G-magnitude cut; 100 after the color cut; 97 after the absolute Galactic latitude cut; 95 after the parallax-SNR cut; 95 after RUWE. Matching uses the same squared tolerance-normalized distance order, one-to-one maximum-cardinality assignment and exact cut values as Experiment 001A. No rules were relaxed after the result.
 
+## Selection-bias diagnostics (observed Gaia data)
+
+| Catalog statistic (median) | All 10,000 stars, where available | 100 held-out clean targets | 431 clean controls |
+| --- | ---: | ---: | ---: |
+| Observed G magnitude | 19.58 | 15.56 | 15.75 |
+| BP−RP color (mag) | 1.53 | 1.18 | 1.26 |
+| Parallax / standard error | 1.16 | 21.88 | 18.71 |
+
+All-catalog medians omit missing values and are descriptive, not matched comparisons. The >4 magnitude difference in typical G emphasizes why the clean-star result cannot be extended to faint targets.
+
 ## Scientific interpretation / how NOT to use this result
 
 This result shows that, **conditional on an intentionally bright/high-SNR Gaia selection**, internally comparable reference-screen sources can be withheld and paired without control reuse. It does not validate the clean screen's astrophysical labels; `NOT_AVAILABLE` variability does not prove stable luminosity. It does not validate comparisons to the general 10,000-source catalog.
@@ -39,7 +49,7 @@ cmp /tmp/echolens-002a-first/results.json /tmp/echolens-002a-second/results.json
 python -m pytest -q
 ```
 
-GitHub Actions [workflow run 38144476622](https://github.com/gittenssexton/echolens-api/actions/runs/38144476622) passed: the full test suite including new tests, the earlier registered 001A replay, two 002A runs and byte-for-byte equality of their `results.json` files. Its artifact [echolens-control-overlap-002a](https://github.com/gittenssexton/echolens-api/actions/runs/38144476622/artifacts/11704262702) contains all 100 source IDs/outcomes, 431 control IDs, potential matches, chosen pairs, scaled differences, distributions and frozen provenance. **The Actions artifact expires 2026-11-10; archive it durably before that date.** The executable procedure and frozen catalog permit re-creation after expiration.
+GitHub Actions [workflow run 38144476622](https://github.com/gittenssexton/echolens-api/actions/runs/38144476622) passed: the full test suite including new tests, the earlier registered 001A replay, two 002A runs and byte-for-byte equality of their `results.json` files. Its artifact [echolens-control-overlap-002a](https://github.com/gittenssexton/echolens-api/actions/runs/38144476622/artifacts/11704262702) contains all 100 source IDs/outcomes, 431 control IDs, potential matches, chosen pairs, scaled differences, distributions and frozen provenance. The Actions artifact expires 2026-11-10. **The full artifact has now also been archived durably** in the user's [Echo Lens Google Drive folder](https://drive.google.com/file/d/18SgRsbvRRGcRzxXrivucP3EbpClsYljV/view?usp=drivesdk), verified as a 33,381-byte ZIP of the 150,286-byte `results.json`. The executable procedure and frozen catalog independently permit re-creation.
 
 All observations, database schema, API endpoints, the `main` branch, and Render service are unchanged. This report is a derived experiment log, not a catalog measurement.
 
