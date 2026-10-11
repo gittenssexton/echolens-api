@@ -1,13 +1,14 @@
 """Read-only EchoLens F01 archive acquisition. Output is never an anomaly score."""
 from __future__ import annotations
-import gzip, hashlib, io, json, math, os, pathlib, sys, traceback, urllib.parse, urllib.request
+import gzip, hashlib, io, json, math, os, pathlib, sys, traceback, urllib.parse, urllib.request, time
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 import numpy as np
 from astropy.io import fits
 
 ROOT = pathlib.Path("f01_output")
 ROOT.mkdir(exist_ok=True)
-TAP = "https://gea.esac.esa.int/tap-server/tap/sync"
+TAP = "https://gea.esac.esa.int/tap-server/tap/async"
 QUERY = """SELECT TOP 20000 *
 FROM gaiadr3.gaia_source
 WHERE random_index < 1000000
@@ -38,28 +39,58 @@ def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 def acquire(name, query, fmt, filename):
-    params = {"REQUEST":"doQuery", "LANG":"ADQL",
+    """ESA TAP UWS async job: avoid synchronous /sync timeout on TOP 20000."""
+    params = {"PHASE":"run", "REQUEST":"doQuery", "LANG":"ADQL",
               "FORMAT":fmt, "QUERY":query, "MAXREC":"20001"}
     data = urllib.parse.urlencode(params).encode()
-    log = {"name":name, "adql":query, "method":"POST",
+    log = {"name":name, "adql":query, "method":"POST-UWS-async",
            "parameter_names":list(params), "format":fmt,
            "started_utc":datetime.now(timezone.utc).isoformat()}
     manifest["requests"].append(log)
     request = urllib.request.Request(
         TAP, data=data, method="POST",
-        headers={"User-Agent":"EchoLens-F01/0.1 (academic provenance audit)",
+        headers={"User-Agent":"EchoLens-F01/0.2 research archive provenance",
                  "Content-Type":"application/x-www-form-urlencoded"})
     try:
-        with urllib.request.urlopen(request, timeout=620) as response:
+        with urllib.request.urlopen(request, timeout=120) as response:
+            response.read()
+            joburl = response.url.rstrip("/")
+        if "/async/" not in joburl:
+            raise RuntimeError("No UWS job URL returned: " + joburl)
+        log["job_url"] = joburl
+        deadline = time.monotonic() + 1100
+        phase = "UNSEEN"
+        while time.monotonic() < deadline:
+            with urllib.request.urlopen(joburl, timeout=60) as response:
+                job_xml = response.read()
+            # TAP UWS phase element is namespaced.
+            root = ET.fromstring(job_xml)
+            statuses = [el.text.strip().upper() for el in root.iter()
+                        if el.tag.split("}")[-1] == "phase" and el.text]
+            phase = statuses[0] if statuses else "UNKNOWN"
+            log["last_phase"] = phase
+            if phase == "COMPLETED":
+                break
+            if phase in ("ABORTED","ERROR"):
+                (ROOT/(filename+".uws_error.xml")).write_bytes(job_xml)
+                raise RuntimeError("Gaia TAP async job failed: "+phase)
+            time.sleep(10)
+        if phase != "COMPLETED":
+            raise TimeoutError("Gaia TAP async job did not complete: "+phase)
+        with urllib.request.urlopen(joburl+"/results/result",timeout=240) as response:
             raw = response.read()
             log["http_status"] = response.status
             log["response_url"] = response.url
             log["headers"] = {k:v for k,v in response.headers.items()
                               if k.lower() in ("content-type","date","last-modified","etag")}
-        out = ROOT / filename
-        out.write_bytes(raw)
+        (ROOT/(filename+".archive_response")).write_bytes(raw)
+        log["raw_response_file"] = filename+".archive_response"
         log["sha256"] = sha(raw)
         log["bytes"] = len(raw)
+        parsed = gzip.decompress(raw) if raw[:2] == b"\\x1f\\x8b" else raw
+        out = ROOT / filename
+        out.write_bytes(parsed)
+        log["parsed_sha256"] = sha(parsed)
         log["retrieved_utc"] = datetime.now(timezone.utc).isoformat()
         log["file"] = filename
         print(name, len(raw), log["sha256"], flush=True)
