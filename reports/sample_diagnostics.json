@@ -1,0 +1,188 @@
+{
+  "catalog": "Gaia DR3",
+  "raw_sha256": "d193d7e144d5a7fc9f3d877a9323fc3c68ee2baf05b966d997392309a5248fb0",
+  "database_sha256": "b49e4c150b98f33435563791d65641cb4c45115047597541df1cda4430c52adb",
+  "sample_count": 10000,
+  "provisional_reference_count": 531,
+  "reference_definition": "parallax SNR>=10, G<18, astrometry31/95, RUWE<1.4, visibility>=9, nonduplicated, non_single_star=0, not VARIABLE, three-band SNR>=50, available uncertainties",
+  "negative_parallax_count": 2040,
+  "variable_flag_counts": {
+    "NOT_AVAILABLE": 9943,
+    "VARIABLE": 57
+  },
+  "distributions": {
+    "all_sources": {
+      "phot_g_mean_mag": {
+        "available": 9970,
+        "missing": 30,
+        "percentiles_5_50_95": [
+          16.01838970184326,
+          19.58145523071289,
+          20.94841537475586
+        ]
+      },
+      "bp_rp": {
+        "available": 9664,
+        "missing": 336,
+        "percentiles_5_50_95": [
+          0.8314373016357423,
+          1.5295467376708984,
+          2.680739498138428
+        ]
+      },
+      "parallax": {
+        "available": 8617,
+        "missing": 1383,
+        "percentiles_5_50_95": [
+          -0.8392409439077109,
+          0.3137917964324441,
+          1.783465083577464
+        ]
+      },
+      "parallax_over_error": {
+        "available": 8617,
+        "missing": 1383,
+        "percentiles_5_50_95": [
+          -1.3507136821746826,
+          1.1575947999954224,
+          14.747633361816401
+        ]
+      },
+      "ruwe": {
+        "available": 8617,
+        "missing": 1383,
+        "percentiles_5_50_95": [
+          0.9367280244827271,
+          1.0213913917541504,
+          1.362785816192627
+        ]
+      },
+      "ra_error": {
+        "available": 10000,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          0.033284200541675094,
+          0.3123348653316498,
+          4.1498656988143905
+        ]
+      },
+      "dec_error": {
+        "available": 10000,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          0.031745483726263055,
+          0.28665460646152496,
+          3.5652893900871176
+        ]
+      },
+      "phot_bp_mean_flux_over_error": {
+        "available": 9669,
+        "missing": 331,
+        "percentiles_5_50_95": [
+          3.301203298568726,
+          15.243511199951172,
+          289.4296630859376
+        ]
+      },
+      "phot_rp_mean_flux_over_error": {
+        "available": 9736,
+        "missing": 264,
+        "percentiles_5_50_95": [
+          5.7678738832473755,
+          36.024139404296875,
+          520.06640625
+        ]
+      }
+    },
+    "provisional_reference": {
+      "phot_g_mean_mag": {
+        "available": 531,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          12.698021411895752,
+          15.743461608886719,
+          17.355039596557617
+        ]
+      },
+      "bp_rp": {
+        "available": 531,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          0.8018317222595215,
+          1.247878074645996,
+          2.153853416442871
+        ]
+      },
+      "parallax": {
+        "available": 531,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          0.32740679106673476,
+          0.7415386836910706,
+          2.333781066543888
+        ]
+      },
+      "parallax_over_error": {
+        "available": 531,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          10.476122379302979,
+          19.352489471435547,
+          108.8929557800293
+        ]
+      },
+      "ruwe": {
+        "available": 531,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          0.9343536496162415,
+          1.0073540210723877,
+          1.1632534265518188
+        ]
+      },
+      "ra_error": {
+        "available": 531,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          0.009765645954757929,
+          0.026859482750296593,
+          0.06562262028455734
+        ]
+      },
+      "dec_error": {
+        "available": 531,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          0.009873825125396252,
+          0.02548854611814022,
+          0.06096170097589493
+        ]
+      },
+      "phot_bp_mean_flux_over_error": {
+        "available": 531,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          73.4104232788086,
+          373.3836975097656,
+          1724.8548583984375
+        ]
+      },
+      "phot_rp_mean_flux_over_error": {
+        "available": 531,
+        "missing": 0,
+        "percentiles_5_50_95": [
+          180.3622817993164,
+          604.1673583984375,
+          2635.9073486328125
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Classification-selected random-index pilot; not a volume-complete or magnitude-complete census.",
+    "Reference cuts select brighter, better measured sources; unmatched cohort comparisons are biased.",
+    "Gaia variability flags are pipeline classifications; NOT_AVAILABLE is not evidence of constant brightness.",
+    "Negative measured parallaxes are retained; no inverse-parallax distances are calculated.",
+    "Plots summarize observed catalog values and quality indicators, not technosignature evidence."
+  ]
+}

@@ -1,0 +1,32 @@
+name: Frozen registry artifact
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-dev.txt
+      - name: Rebuild frozen observations offline
+        run: python -m scripts.import_gaia
+      - name: Validate registry and independent archive spot-check
+        run: python -m pytest -q
+      - uses: actions/upload-artifact@v4
+        with:
+          name: echolens-frozen-gaia-dr3-10000
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            data/registry.sqlite3
+            data/registry.validation.json
+            data/gaia_dr3.raw.gz
+            data/gaia_dr3.fields.vot.xml.gz
+            data/gaia_dr3.manifest.json
+            data/gaia_dr3.spotcheck.vot.xml.gz
+            data/gaia_dr3.spotcheck.json
