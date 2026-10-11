@@ -1,0 +1,25 @@
+name: Research GALAH DR4 two-target access test
+on:
+  push:
+    branches: [research/f01-selection-bias-20261011]
+    paths: [.github/workflows/galah-two-target-access.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  access:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m scripts.galah_two_target_access
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: galah-dr4-two-target-access
+          path: galah_access/
+          retention-days: 30
+          if-no-files-found: warn
