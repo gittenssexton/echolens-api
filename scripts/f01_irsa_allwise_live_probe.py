@@ -13,7 +13,7 @@ from pathlib import Path
 from scripts.tap_reliability import catalog_provider_spec, encode_tap, request_bytes, TAPPermanentError, TAPExhausted
 
 OUT = Path('reports/f01_irsa_live_probe')
-Q = 'SELECT TOP 2 designation,ra,dec,w1mpro,w1sigmpro,w3mpro,w3sigmpro,cc_flags,ph_qual FROM allwise_p3as_psd ORDER BY designation ASC'
+Q = "SELECT TOP 2 designation,ra,dec,w1mpro,w1sigmpro,w3mpro,w3sigmpro,cc_flags,ph_qual FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',42.20887374878,3.19799995422,0.00277777778))=1"
 
 
 def valid_csv(raw: bytes) -> dict:
@@ -22,10 +22,11 @@ def valid_csv(raw: bytes) -> dict:
         raise ValueError('IRSA returned XML/HTML error, not CSV')
     lines=[line for line in text.splitlines() if line.strip() and not line.startswith('#')]
     rows=list(csv.DictReader(io.StringIO('\n'.join(lines))))
-    if not rows or len(rows)>2:
+    if len(rows)>2:
         raise ValueError('Unexpected AllWISE bounded rows')
     required={'designation','ra','dec','w1mpro','w3mpro','cc_flags','ph_qual'}
-    if not required.issubset(rows[0]):
+    header=set(lines[0].split(',')) if lines else set()
+    if not required.issubset(header):
         raise ValueError('Missing expected AllWISE columns')
     if any(None in row for row in rows):
         raise ValueError('Malformed CSV row')
