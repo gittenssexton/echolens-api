@@ -97,7 +97,7 @@ def fits_summary(raw: bytes,kind: str,expected_arm: str|None,visit: str)->dict:
                 spec=hd.get('SPECTID','').upper()
                 if spec and spec not in ('BL','B'):raise ValueError('Incorrect native CCD1 camera SPECTID')
             if kind.startswith('ssa_'):
-                band=hd.get('BAND','').upper()
+                band=hd.get('BAND','').strip().upper()
                 if band!=expected_arm:raise ValueError(f'SSA {expected_arm} is mislabeled BAND={band}')
             if expected_arm and 'CRVAL1' in hd and 'CDELT1' in hd and naxis==1:
                 n=int(hd['NAXIS1'])
