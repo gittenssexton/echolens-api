@@ -16,5 +16,14 @@ jobs:
       - name: Replay frozen WISE pilot offline
         run: |
           python -m scripts.wise_pilot replay --output /tmp/wise-replay
+          python -m scripts.wise_replay_diff reports/experiment_001b/results.json /tmp/wise-replay/results.json || true
           cmp reports/experiment_001b/results.json /tmp/wise-replay/results.json
           cmp reports/experiment_001b/observations.json /tmp/wise-replay/observations.json
+      - name: Preserve actual WISE replay for deterministic comparison
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echolens-wise-001b-replay-forensics
+          retention-days: 14
+          if-no-files-found: warn
+          path: /tmp/wise-replay/

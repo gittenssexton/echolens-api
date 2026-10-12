@@ -59,6 +59,14 @@ def separation(a, b):
     return math.degrees(2*math.asin(math.sqrt(min(1.,max(0.,h)))))*3600
 
 
+def display_separation_arcsec(unrounded_arcsec):
+    """Portable 10-microarcsec display quantization, after legacy 6-digit normalization.
+
+    Do not use for geometric eligibility or alter native observations.
+    """
+    return math.floor(round(unrounded_arcsec, 6) * 1e5 + 0.5 + 1e-10) / 1e5
+
+
 def freeze():
     rows = gaia_rows()
     references = [r for r in rows.values() if is_reference(r)]
@@ -262,9 +270,9 @@ def replay_snapshot(output, directory):
             position, epoch, method = candidate_epoch(infrared)
             sep = separation(propagate(r,epoch),position)
             if sep<=15:
-                # Normalize derived display values across numerical-library builds.
+                # Normalize derived display values at 10 microarcsec across numerical-library builds.
                 # Eligibility uses the unrounded separation; observations are untouched.
-                candidates.append({'allwise_source_id':infrared['source_id'],'separation_arcsec':round(sep,6),
+                candidates.append({'allwise_source_id':infrared['source_id'],'separation_arcsec':display_separation_arcsec(sep),
                     'comparison_epoch_mjd_tt':epoch,'epoch_method':method,'eligible':sep<=3,
                     'photometry':photometry(infrared),'motion_blend_swap':len(infrared.get('pmcode') or '')>=2 and infrared['pmcode'][1]=='Y'})
         candidates.sort(key=lambda c:(c['separation_arcsec'],c['allwise_source_id']))
