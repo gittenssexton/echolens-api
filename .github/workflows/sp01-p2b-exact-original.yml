@@ -1,0 +1,37 @@
+name: SP01-P2B exact original GALAH Datalink camera retrieval
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - scripts/sp01_p2b_exact_original_links.py
+      - tests/test_sp01_p2b_exact_original_links.py
+      - .github/workflows/sp01-p2b-exact-original.yml
+  push:
+    branches: [research/sp01-p2b-source-controls-20261012]
+    paths:
+      - scripts/sp01_p2b_exact_original_links.py
+      - tests/test_sp01_p2b_exact_original_links.py
+      - .github/workflows/sp01-p2b-exact-original.yml
+permissions:
+  contents: read
+jobs:
+  original_camera:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Independent offline URL validation
+        run: python -m unittest -v tests.test_sp01_p2b_exact_original_links tests.test_sp01_p2b_original_datalink_probe
+      - name: Retrieve exact Data Central original combined FITS and verify 8 HDUs
+        run: python -m scripts.sp01_p2b_exact_original_links
+      - name: Archive native verified FITS, LSF summaries and raw provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sp01-p2b-original-cameras-${{ github.run_number }}
+          path: reports/sp01_p2b_exact_original/
+          if-no-files-found: warn
+          retention-days: 30
