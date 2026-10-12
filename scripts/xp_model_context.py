@@ -25,6 +25,7 @@ def main():
                 if len(raw)>2000000 or not raw.startswith(b'SIMPLE'):raise ValueError('Expected small native atmosphere FITS')
                 path.write_bytes(gzip.compress(raw,mtime=0));m={'url':url,'retrieved_utc':datetime.now(timezone.utc).isoformat(),'raw_sha256':sha(raw),'file':str(path.relative_to(OUT)),'classification':'theoretical atmosphere, not catalog observation'};write(mp,m)
             with fits.open(BytesIO(raw)) as hdus:
+                if hdus[0].header.get('TEFF')!=temperature or hdus[0].header.get('LOG_Z')!=(-.5 if metal=='ckm05' else 0):raise ValueError('Atmosphere parameter/header mismatch')
                 table=hdus[1].data;w=np.asarray(table['WAVELENGTH'],float)
                 if not (np.isfinite(w).all() and (np.diff(w)>0).all()):raise ValueError('Invalid atmosphere wavelength grid')
                 for gravity in ['g25','g30','g35']:
