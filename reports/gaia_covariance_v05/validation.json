@@ -1,0 +1,16 @@
+{
+  "local_new_unit_tests_passed": 7,
+  "combined_local_tests_passed": 26,
+  "offline_network_guard_passed": true,
+  "repeated_calibration_arrays_byte_identical": true,
+  "repeated_summary_byte_identical": true,
+  "coarse_grid_cholesky_passed_without_jitter": true,
+  "GaiaXPy_2_1_4_combined_correlation_rejected": true,
+  "original_input_sha256": "973de62f3a4611c007978b6f95c276b8d7309ac577c78262f237bfa856784937",
+  "numerical_basis_policy_not_confirmatory_scientific_freeze": true,
+  "github_ci_commit": "82013aa22b7280d9e3c701d843db0d4018f715dc",
+  "github_ci_run": 38303349021,
+  "github_ci_conclusion": "success",
+  "native_atmosphere_files_validated": 6,
+  "dust_XML_success_and_hash_validated": true
+}
