@@ -4,6 +4,7 @@ from datetime import datetime,timezone
 import numpy as np
 from astropy.io import fits
 from astropy.table import Table
+from scripts.tap_reliability import request_bytes, allwise_irsa_cone, encode_tap, catalog_provider_spec, TAPExhausted, TAPPermanentError
 OUT=pathlib.Path("f01_irsa_output");OUT.mkdir(exist_ok=True)
 BASE="https://irsa.ipac.caltech.edu/TAP/sync"
 Q="""SELECT TOP 20000 * FROM gaia_dr3_source
@@ -88,17 +89,26 @@ try:
         subset.append({"source_id":int(ids[j]),"ra":float(nums("ra")[j]),"dec":float(nums("dec")[j])})
     wise_results=[]
     for row in subset:
-        cone=f"SELECT TOP 8 designation,ra,dec,w1mpro,w1sigmpro,w2mpro,w2sigmpro,w3mpro,w3sigmpro,w4mpro,w4sigmpro,w3snr,w4snr,cc_flags,ext_flg,ph_qual FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{row['ra']},{row['dec']},0.000556))=1"
-        wise_url="https://irsa.ipac.caltech.edu/TAP/sync?"+urllib.parse.urlencode({"REQUEST":"doQuery","LANG":"ADQL","FORMAT":"csv","QUERY":cone,"MAXREC":"9"})
-        item={"gaia_source_id":row["source_id"],"adql":cone,"url":wise_url}
+        cone=allwise_irsa_cone(row["ra"],row["dec"],2.0)
+        spec=catalog_provider_spec("IRSA_AllWISE")
+        wise_url=encode_tap(spec["endpoint"],cone,fmt="csv",maxrec="9")
+        item={"gaia_source_id":row["source_id"],"adql":cone,"url":wise_url,
+              "provider":"NASA/IPAC IRSA","catalog_table":spec["table"],
+              "crossmatch_status":"not_evaluated","candidate_selection":"all_top8_unranked"}
         try:
-            with urllib.request.urlopen(wise_url,timeout=85) as response:
-                data=response.read(30000)
-                item["raw_csv"]=data.decode("utf-8","replace")
-                item["response_sha256"]=sha(data)
-                item["retrieved_utc"]=datetime.now(timezone.utc).isoformat()
-                item["http_status"]=response.status
-        except Exception as e:item["error"]=repr(e)
+            data,receipt=request_bytes(wise_url,timeout=85,attempts=4,max_bytes=30000,
+                         headers={"User-Agent":"EchoLens-F01-TAP-reliability/1.0"})
+            if b"<VOTABLE" in data[:256] or b"QUERY_STATUS" in data[:256]:
+                raise TAPPermanentError("Unexpected TAP XML instead of AllWISE CSV")
+            item["raw_csv"]=data.decode("utf-8","replace")
+            item["response_sha256"]=sha(data)
+            item["retrieved_utc"]=datetime.now(timezone.utc).isoformat()
+            item["http_status"]=receipt["http_status"]
+            item["transport_provenance"]=receipt
+            item["status"]="source_candidates_returned" if len(data.splitlines())>1 else "no_source_cand_available"
+        except (TAPExhausted,TAPPermanentError) as e:
+            item["status"]="transport_failed"
+            item["error"]=repr(e)
         wise_results.append(item)
     (OUT/"allwise_photometry_exploratory_8.json").write_text(json.dumps({
         "method":"2-arcsecond positional cone on first 8 quality-frame Gaia sources; no proper-motion propagation; NOT verified official best neighbours",

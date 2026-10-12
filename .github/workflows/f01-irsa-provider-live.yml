@@ -1,0 +1,24 @@
+name: F01 one-time bounded AllWISE TAP provider probe
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Bounded TOP 2 AllWISE real provider probe
+        run: python -m scripts.f01_irsa_allwise_live_probe
+      - name: Preserve real raw response or exact failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: f01-allwise-live-provider-probe-${{ github.run_number }}
+          path: reports/f01_irsa_live_probe/
+          if-no-files-found: error
+          retention-days: 45
