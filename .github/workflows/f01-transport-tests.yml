@@ -1,0 +1,27 @@
+name: F01 network reliability unit tests
+on:
+  push:
+    branches: [engineering/tap-reliability-f01]
+    paths:
+      - scripts/tap_reliability.py
+      - scripts/f01_irsa_mirror.py
+      - tests/test_tap_reliability.py
+      - .github/workflows/f01-transport-tests.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test requirements
+        run: pip install -r requirements-dev.txt
+      - name: Run all offline tests
+        run: python -m pytest -q
+      - name: Check Python syntax without catalog network acquisition
+        run: python -m py_compile scripts/tap_reliability.py scripts/f01_irsa_mirror.py
