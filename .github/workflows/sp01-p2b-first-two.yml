@@ -1,0 +1,27 @@
+name: SP01-P2B first two frozen calibration spectra
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  two_calibrators:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Offline synthetic-only engineering tests
+        run: python -m unittest discover -s tests -p 'test_sp01_p2b_first_two.py' -v
+      - name: Read-only public GALAH requests for two frozen calibrators
+        run: python -m scripts.sp01_p2b_first_two
+      - name: Preserve native FITS files, SHA-256 checks, access problems and metadata
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sp01-p2b-two-calibration-${{ github.run_number }}
+          path: reports/sp01_p2b_first_two/
+          if-no-files-found: warn
+          retention-days: 30

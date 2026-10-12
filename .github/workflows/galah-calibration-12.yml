@@ -1,0 +1,26 @@
+name: SP01-P2B complete 20-star GALAH calibration spectra
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  remaining-twelve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Check next 12 source-level split (offline)
+        run: python -m unittest tests.test_sp01_p2b_remaining_twelve -v
+      - name: Verify original GALAH DR4 exact source IDs, then fetch 12 official per-observation analysis spectra
+        run: python -m scripts.sp01_p2b_remaining_twelve
+      - name: Archive returned FITS, complete original source records, checksums and failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sp01-p2b-final-twelve-${{ github.run_number }}
+          path: reports/sp01_p2b_remaining_twelve/
+          if-no-files-found: error
+          retention-days: 60

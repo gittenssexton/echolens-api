@@ -1,0 +1,29 @@
+name: GALAH DR4 registry checks (offline)
+
+on:
+  pull_request:
+    paths:
+      - data/galah_dr4_source_registry_v1.json
+      - scripts/galah_dr4_registry.py
+      - tests/test_galah_dr4_registry.py
+      - docs/GALAH_DR4_SOURCE_POLICY.md
+      - docs/SP01_P2B_STATUS_2026-10-12.md
+      - .github/workflows/galah-dr4-registry-checks.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Metadata registry unit tests (synthetic tampering fixtures only)
+        run: python -m unittest tests.test_galah_dr4_registry -v
+      - name: Check archived GALAH source roles without network access
+        run: python -m scripts.galah_dr4_registry --report /tmp/galah_metadata_check.json

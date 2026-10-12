@@ -1,0 +1,27 @@
+name: SP01-P2B native original Datalink route
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  read_only_probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Offline tests
+        run: python -m unittest -v tests.test_sp01_p2b_original_datalink_probe
+      - name: Query original Datalink URLs (omit IDX)
+        run: python -m scripts.sp01_p2b_original_datalink_probe
+      - name: Archive original FITS only when validated; preserve all errors
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p2b-original-datalink-${{ github.run_number }}
+          path: reports/sp01_p2b_original_datalink/
+          if-no-files-found: warn
+          retention-days: 30

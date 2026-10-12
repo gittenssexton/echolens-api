@@ -1,0 +1,26 @@
+name: SP01-P2B bounded 8-star GALAH calibration audit
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  independent-calibration-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Four offline source-selection guards
+        run: python -m unittest tests.test_sp01_p2b_calibration_expansion -v
+      - name: Bounded original-release source verification and eight-star engineering acquisition
+        run: python -m scripts.sp01_p2b_calibration_expansion
+      - name: Preserve evidence, failures, hashes and original acquired FITS
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sp01-p2b-calibration-eight-${{ github.run_number }}
+          path: reports/sp01_p2b_calibration_expansion/
+          if-no-files-found: error
+          retention-days: 60

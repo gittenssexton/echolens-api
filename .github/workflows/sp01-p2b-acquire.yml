@@ -1,0 +1,75 @@
+name: SP01-P2B bounded real GALAH control acquisition
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Previously documented Data Central interface probe
+        if: ${{ false }} # already archived: original TAP unknown table; modern REST HTTP 403
+        run: python -m scripts.sp01_p2b_dc_probe
+      - name: Download bounded native TAP catalogue rows, with SHA-256 provenance
+        if: ${{ false }} # paused pending documented API result; original failed run preserved
+        id: acquire
+        run: python -m scripts.sp01_p2b_acquire
+      - name: Freeze manifest using preregistered source-level rules
+        if: steps.acquire.outcome == 'success'
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          d=Path('reports/sp01_p2b_trial')
+          names=sorted(p.name for p in d.glob('*original_tap.csv'))
+          with (d/'raw_tap_response_bundle.bin').open('wb') as fout:
+              for name in names:
+                  data=(d/name).read_bytes()
+                  fout.write(len(name).to_bytes(4,'big') + name.encode('utf8') +
+                             len(data).to_bytes(8,'big') + data)
+          h=hashlib.sha256((d/'raw_tap_response_bundle.bin').read_bytes()).hexdigest()
+          meta=json.loads((d/'provenance.json').read_text())
+          meta['raw_provider_response_bundle_sha256']=h
+          meta['raw_provider_response_bundle_format']='big-endian name length (4 bytes), UTF-8 name, data length (8 bytes), original CSV bytes; filenames lexicographically sorted'
+          (d/'provenance.json').write_text(json.dumps(meta,indent=2)+'\n')
+          Path('/tmp/bundle_hash.txt').write_text(h)
+          PY
+          python -m scripts.sp01_p2b_select \
+            --catalog-csv reports/sp01_p2b_trial/candidate_metadata.csv \
+            --positive-csv reports/sp01_p2b_trial/independent_positive_labels.csv \
+            --raw-source-sha256 "$(cat /tmp/bundle_hash.txt)" \
+            --catalog-source 'GALAH DR4 Data Central TAP main_star with independently published Escorza et al 2026 VizieR J/A+A/712/A111 positive Gaia IDs; exact queries and response hashes in provenance.json' \
+            --manifest-json reports/sp01_p2b_trial/frozen_manifest.json \
+            --manifest-csv reports/sp01_p2b_trial/frozen_manifest.csv
+      - name: Attempt separately labeled VizieR detrended-catalog feasibility acquisition
+        id: mirror
+        run: python -m scripts.sp01_p2b_acquire_vizier
+      - name: Create PROVISIONAL manifest using unchanged source-level selector
+        if: steps.mirror.outcome == 'success'
+        run: |
+          BUNDLE_SHA="$(sha256sum reports/sp01_p2b_mirror_trial/native_response_bundle.bin | awk '{print $1}')"
+          python -m scripts.sp01_p2b_select \
+            --catalog-csv reports/sp01_p2b_mirror_trial/candidate_metadata.csv \
+            --positive-csv reports/sp01_p2b_mirror_trial/independent_positive_labels.csv \
+            --raw-source-sha256 "$BUNDLE_SHA" \
+            --catalog-source 'PROVISIONAL DETRENDED GALAH DR4 VizieR Kos+2025 J/A+A/703/A104/catalog; original provider response queries and SHA256 in provenance.json; NOT ORIGINAL DR4 allstar' \
+            --manifest-json reports/sp01_p2b_mirror_trial/provisional_detrended_manifest.json \
+            --manifest-csv reports/sp01_p2b_mirror_trial/provisional_detrended_manifest.csv
+      - name: Archive original responses, successful results, or genuine failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sp01-p2b-tap-attempt-${{ github.run_number }}
+          path: |
+            reports/sp01_p2b_trial/
+            reports/sp01_p2b_mirror_trial/
+          if-no-files-found: error
+          retention-days: 30
