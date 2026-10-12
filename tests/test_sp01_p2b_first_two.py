@@ -49,6 +49,8 @@ class Tests(unittest.TestCase):
     def test_ssa_bad_band_blocked(self):
         with self.assertRaisesRegex(ValueError,'mislabeled'):
             fits_summary(fixture('I',7585),'ssa_G','G',EXPECTED[0][1])
+    def test_ssa_padded_header_band(self):
+        info=fits_summary(fixture('B       ',4713),'ssa_B','B',EXPECTED[0][1]);self.assertEqual(info['hdu_count'],1)
     def test_ssa_correct_band(self):
         info=fits_summary(fixture('B',4713),'ssa_B','B',EXPECTED[0][1]);self.assertEqual(info['hdu_count'],1)
     def test_nonfits_rejected(self):
