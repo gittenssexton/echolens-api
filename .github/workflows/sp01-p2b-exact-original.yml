@@ -1,17 +1,7 @@
 name: SP01-P2B exact original GALAH Datalink camera retrieval
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - scripts/sp01_p2b_exact_original_links.py
-      - tests/test_sp01_p2b_exact_original_links.py
-      - .github/workflows/sp01-p2b-exact-original.yml
-  push:
-    branches: [research/sp01-p2b-source-controls-20261012]
-    paths:
-      - scripts/sp01_p2b_exact_original_links.py
-      - tests/test_sp01_p2b_exact_original_links.py
-      - .github/workflows/sp01-p2b-exact-original.yml
+  workflow_dispatch:
+
 permissions:
   contents: read
 jobs:
