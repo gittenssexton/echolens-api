@@ -1,0 +1,116 @@
+{
+  "schema": "echolens-galah-dr4-provenance-registry-v1",
+  "created_utc_date": "2026-10-12",
+  "science_ready": false,
+  "status": "engineering_provenance_reconciliation_only",
+  "selection_policy": "The only enrolled observations below are two previously exposed SP01-P2B calibration stars. Holdout and positive cohorts are NOT enrolled in this registry.",
+  "catalogue_roles": {
+    "allspec": {
+      "release": "GALAH DR4 galah_dr4_allspec_240705.fits",
+      "role": "authoritative_original_release_per_observation_metadata",
+      "release_uri": "https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/catalogs/galah_dr4_allspec_240705.fits",
+      "release_full_bytes_downloaded": false,
+      "two_visit_subset": {
+        "distribution": "CDS/VizieR mirror of Buder et al. original GALAH DR4",
+        "table": "J/other/PASA/42.51/allspec",
+        "source": "https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync",
+        "sha256_of_two_row_original_response": "8d11ccb0eae99fa64d69202fbb6551478cfc6321c5c1d9103567b06b3cec195f",
+        "drive_uri": "https://drive.google.com/file/d/1rEUlYMJGYH1exLvpL7_V61wzyCRNpFUu/view",
+        "verified_exact_gaia_galah_pairs": 2
+      }
+    },
+    "allstar": {
+      "release": "GALAH DR4 galah_dr4_allstar_240705.fits",
+      "role": "recommended_star_level_stellar_parameter_abundance_reference",
+      "release_uri": "https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/catalogs/galah_dr4_allstar_240705.fits",
+      "release_full_bytes_downloaded": false
+    },
+    "gaia_2mass_wise": {
+      "release": "GALAH DR4 galah_dr4_vac_wise_tmass_gaiadr3_240705.fits",
+      "role": "supplemental_crossmatch_only_not_universal_quality_truth",
+      "release_uri": "https://cloud.datacentral.org.au/teamdata/GALAH/public/GALAH_DR4/catalogs/galah_dr4_vac_wise_tmass_gaiadr3_240705.fits",
+      "release_full_bytes_downloaded": false
+    },
+    "detrended_2025": {
+      "release": "Kos et al. (2025) detrended GALAH DR4, J/A+A/703/A104/catalog",
+      "role": "SP01_P2B_provisional_source_selection_only_not_original_dr4_release",
+      "release_uri": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=J%2FA%2BA%2F703%2FA104",
+      "selection_manifest_uri": "https://drive.google.com/file/d/1iJ9ZAuulVKgyRRguE8zNh89SqyFUNM4l/view"
+    }
+  },
+  "spectrum_product_policy": {
+    "derived_analysis_fits": "single_fit_spectrum.fits contains observed fitted-grid values, uncertainties, in-sample model and fit-selection mask; this is not a native detector reduction",
+    "native_1d_camera": "GALAH original eight-HDU reduced HERMES spectrum, HDU 7 resolution_profile contains wavelength-dependent LSF FWHM",
+    "datalink_uri_template": "https://datacentral.org.au/vo/slink/links?ID={sobject_id}&DR=galah_dr4&FILT={B_or_G_or_R_or_I}&RESPONSEFORMAT=fits",
+    "request_rule": "Omit IDX when requesting original native FITS. IDX=0 is an extracted-spectrum request. Validate SPECTID, wavelength range, source/visit, HDU layout and SHA before accepting each camera; no automatic camera-name relabeling.",
+    "known_issue": "For these two stars, the GALAH DR4 original Datalink G and I filter requests returned conflicting camera identities; direct exact original URLs returned 403/500. B/R native FITS were independently validated. No detector 2-D raw exposures were obtained."
+  },
+  "observations": [
+    {
+      "gaia_dr3_source_id": "39909218369012608",
+      "sobject_id": "151111003101245",
+      "cohort": "SP01_P2B_provisional_calibration_only",
+      "identity_status": "matched_exact_identifiers_to_original_dr4_allspec_subset",
+      "original_dr4_teff_K": 5051.43,
+      "derived_analysis": {
+        "filename": "151111003101245_official_allspec.fits",
+        "sha256": "0a60a1c555a2fbf941cf4e920f72db0581dcd31fe80440f7a31daf3c8acb3ff4",
+        "product_type": "in_sample_model_and_observation",
+        "drive_uri": "https://drive.google.com/file/d/1gyv3cOGw1aBTGfE-nr9OawnS2al6Nbfh/view"
+      },
+      "cameras": {
+        "B": {
+          "status": "verified_native_eight_hdu",
+          "sha256": "daea235a3d7409ce4b8b02cac8277d171dc7db5e81787cbbd6461758cf18d566",
+          "filename": "151111003101245_B_original_camera.fits",
+          "drive_uri": "https://drive.google.com/file/d/1u9mPUW1YVMkS49lp-fq8mr1J4v-GFg8N/view",
+          "fwhm_median_A": 0.204011,
+          "lsf_source": "native_HDU7_resolution_profile"
+        },
+        "G": {"status": "quarantined_unverified", "reason": "Datalink G response camera SPECTID does not match green; no valid green native file"},
+        "R": {
+          "status": "verified_native_eight_hdu",
+          "sha256": "488db4045d9716527c0836abf6882166aeb248974bdcc896ab98f78db2fcd79f",
+          "filename": "151111003101245_R_original_camera.fits",
+          "drive_uri": "https://drive.google.com/file/d/1iNOkPuvkb9JEsu9_luGJFoUMngiJ7g1u/view",
+          "fwhm_median_A": 0.284671,
+          "lsf_source": "native_HDU7_resolution_profile"
+        },
+        "I": {"status": "quarantined_unverified", "reason": "Datalink I response camera SPECTID does not match infrared; no valid infrared native file"}
+      }
+    },
+    {
+      "gaia_dr3_source_id": "4616578742686592",
+      "sobject_id": "221003001101138",
+      "cohort": "SP01_P2B_provisional_calibration_only",
+      "identity_status": "matched_exact_identifiers_to_original_dr4_allspec_subset",
+      "original_dr4_teff_K": 5529.89,
+      "derived_analysis": {
+        "filename": "221003001101138_official_allspec.fits",
+        "sha256": "c2ae5820157b3c59a553375387aa1c14891ef112209bb9a35db8c6709ff5376e",
+        "product_type": "in_sample_model_and_observation",
+        "drive_uri": "https://drive.google.com/file/d/13ZZn4R1LK72x5CKK2cO-uP0hiVHIAu6y/view"
+      },
+      "cameras": {
+        "B": {
+          "status": "verified_native_eight_hdu",
+          "sha256": "dd08bdf7b6925342732a12cffee31808954aab16575db397498c65c3fc08c153",
+          "filename": "221003001101138_B_original_camera.fits",
+          "drive_uri": "https://drive.google.com/file/d/1dencGG-Ypvhx-58nq4O_1LDSVHVybQrk/view",
+          "fwhm_median_A": 0.195564,
+          "lsf_source": "native_HDU7_resolution_profile"
+        },
+        "G": {"status": "quarantined_unverified", "reason": "Datalink G response camera SPECTID does not match green; no valid green native file"},
+        "R": {
+          "status": "verified_native_eight_hdu",
+          "sha256": "f8e7710f8d23bc311f87e0c6488d6174e7617c5620d5cedace812ddacabcae5f",
+          "filename": "221003001101138_R_original_camera.fits",
+          "drive_uri": "https://drive.google.com/file/d/1ftJV752FY8WrjgmRpCVqcuWm-gGr7HxW/view",
+          "fwhm_median_A": 0.280168,
+          "lsf_source": "native_HDU7_resolution_profile"
+        },
+        "I": {"status": "quarantined_unverified", "reason": "Datalink I response camera SPECTID does not match infrared; no valid infrared native file"}
+      }
+    }
+  ]
+}
