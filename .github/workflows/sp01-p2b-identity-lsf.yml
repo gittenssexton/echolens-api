@@ -1,18 +1,7 @@
 name: SP01-P2B original GALAH identities and native LSF
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - scripts/sp01_p2b_identity_lsf.py
-      - tests/test_sp01_p2b_identity_lsf.py
-      - .github/workflows/sp01-p2b-identity-lsf.yml
-  push:
-    branches: [research/sp01-p2b-source-controls-20261012]
-    paths:
-      - scripts/sp01_p2b_identity_lsf.py
-      - tests/test_sp01_p2b_identity_lsf.py
-      - .github/workflows/sp01-p2b-identity-lsf.yml
   workflow_dispatch:
+
 permissions:
   contents: read
 jobs:
