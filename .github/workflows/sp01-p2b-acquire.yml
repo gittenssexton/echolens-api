@@ -1,6 +1,11 @@
 name: SP01-P2B bounded real GALAH control acquisition
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - scripts/sp01_p2b_acquire.py
+      - .github/workflows/sp01-p2b-acquire.yml
   push:
     branches:
       - research/sp01-p2b-source-controls-20261012
