@@ -41,3 +41,21 @@ Sources:
 6. Validate the 2026-10-12 example target `140116004301057` only as a separate candidate, never silently substitute it as reference 001.
 
 No modifications to `main`, Render, frozen Gaia sample, or existing FITS. No scoring and no extraterrestrial-life inference.
+
+## 2026-10-12 primary-source resolution — air wavelength calibration
+
+The GALAH DR4 paper source states that ThXe arc calibration emission-line wavelengths are **reported in air**, the reduced spectra are interpolated onto that wavelength grid, and FITS `CRVAL1` / `CDELT1` describe that grid. GALAH DR4 analysis model spectra are subsequently interpolated onto the observed wavelength grid. Therefore treat the DR4 reduction / derived analysis spectra as **air-wavelength calibrated** unless individual file provenance explicitly demonstrates a further conversion. Conversion from vacuum laboratory lists is required for line matching; preserve the original convention separately from a converted copy.
+
+Primary source: https://github.com/svenbuder/galah_dr4_paper/blob/main/galah_dr4_paper.tex (GALAH reduction paragraph beginning 'Wavelength calibrations are performed via Chebyshev...', near source line 2878 in GitHub rendering).
+
+This resolves the prior 'air vs vacuum unknown' item **for DR4 reduction and derived analysis wavelength grids**. Do not assume unrelated Gaia, WISE, or external laboratory resources share the same convention.
+
+## Actual archived QA and fail-closed engineering test
+
+Re-analysed the frozen GALAH Reference 001 archive offline. All five stored FITS file hashes matched the archived SHA-256 manifest. Archive G-labeled SSA FITS wavelength WCS identifies IR, and the 4096 flux pixels match the distinct I-labelled file exactly. The separate original GALAH `single_fit_spectrum.fits` includes legitimate 5647.70–5871.63 Å model-analysis data. See Drive `GALAH_REF001_QC_2026-10-12/GALAH_REF001_SSA_ARM_INTEGRITY_V1.json`.
+
+A new standalone offline gate, `scripts/galah_ssa_integrity.py`, inspects actual FITS headers and WCS, verifies the requested camera against the header, catches duplicate pixel payloads across cameras, records SHA-256 provenance and marks compromised products `quarantine=true` / `passed=false`. On the frozen archive B and R passed camera-integrity checks; G and I were blocked due to mislabeled/duplicate data. It emits exit code 2 on a failed audit, preventing downstream workflows from silently treating these as four independent camera spectra.
+
+Five new unit tests use clearly labeled **synthetic test-only FITS fixtures** to validate parser and failure gates; these are NOT astronomical observations. Combined with five prior locally run tests, 10 bounded engineering tests passed on 2026-10-12. A hosted GitHub Actions test run was **not** invoked or verified in this update. No code was merged or deployed.
+
+Further access issue: Data Central previously returned HTTP 403 for native eight-HDU reduced exposure files. Continue to request authorized access; do not treat the SSA single-HDU files as original reduction products. No chemical-line identification, scoring, or technosignature claim is authorized yet.
