@@ -1,3 +1,9 @@
+# SP01-P2B — 20 calibration spectra acquired (2026-10-12 latest)
+
+**Latest milestone:** 20 source-level calibration targets (5 in each preregistered stratum) independently matched by Gaia/GALAH IDs to the original GALAH DR4 `allspec` catalogue, with **20 real** single-visit analysis FITS acquired, hashed and independently replayed for descriptive red-arm fit-mask quality control. **Holdout 20/20 remain unopened**; 10 natural-positive spectra also remain unopened. Original reduced native B/R LSF verified only for the initial 2 stars; 20 further Data Central native requests returned 403. There is no calibrated star-level false alarm or discovery. [Final engineering report](../reports/sp01_p2b/CALIBRATION_20_SOURCE_ENGINEERING_RESULT_2026-10-12.md), [complete reproducibility archive](https://drive.google.com/drive/folders/1m5zxPoj4gEMJMWGJKYrxyUjiaY_f9WVd), [source catalogue policy](GALAH_DR4_SOURCE_POLICY.md).
+
+---
+
 # EchoLens SP01-P2B — Current research entrypoint
 
 **Status updated 2026-10-12.** The P2B selection protocol remains frozen in [SP01_P2B_PROTOCOL.md](SP01_P2B_PROTOCOL.md). That document was written before the real catalogue feasibility test, so its introductory "no cohort yet" text is historical, **not** the current experiment status.
