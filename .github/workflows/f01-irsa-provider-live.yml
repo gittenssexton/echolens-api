@@ -1,11 +1,7 @@
 name: F01 one-time bounded AllWISE TAP provider probe
 on:
-  pull_request:
-    branches: [research/f01-selection-bias-20261011]
-    paths:
-      - scripts/f01_irsa_allwise_live_probe.py
-      - .github/workflows/f01-irsa-provider-live.yml
   workflow_dispatch:
+
 permissions:
   contents: read
 jobs:
