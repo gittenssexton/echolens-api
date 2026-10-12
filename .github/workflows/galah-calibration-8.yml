@@ -1,12 +1,7 @@
 name: SP01-P2B bounded 8-star GALAH calibration audit
 on:
-  pull_request:
-    branches: [main]
-    paths: [.github/workflows/galah-calibration-8.yml]
-  push:
-    branches: [research/sp01-p2b-source-controls-20261012]
-    paths: [.github/workflows/galah-calibration-8.yml]
   workflow_dispatch:
+
 permissions:
   contents: read
 jobs:
