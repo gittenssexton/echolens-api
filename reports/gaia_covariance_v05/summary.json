@@ -1,0 +1,87 @@
+{
+  "run": "gaia-covariance-v05",
+  "source_id": "4461930649238469760",
+  "input_sha256": "973de62f3a4611c007978b6f95c276b8d7309ac577c78262f237bfa856784937",
+  "versions": {
+    "gaiaxpy": "2.1.4",
+    "astropy": "8.0.1",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "method": "separate-band public calibration; covariance multiplied by merge weights on both axes; cross-band covariance assumed zero",
+  "no_eigenvalue_clipping_or_jitter": true,
+  "cases": {
+    "full_343": {
+      "dimension": 343,
+      "min_to_max_eigenvalue_ratio": -2.330369006747448e-16,
+      "negative_modes_below_tolerance": 0,
+      "rank_relative_1e_10": 90,
+      "rank_sensitivity": {
+        "1e-06": 84,
+        "1e-08": 87,
+        "1e-10": 90,
+        "1e-12": 93
+      },
+      "positive_semidefinite_at_relative_tolerance": true,
+      "cholesky_suitable_without_regularization": false
+    },
+    "recommended_truncated_343": {
+      "dimension": 343,
+      "min_to_max_eigenvalue_ratio": -1.255646781621154e-16,
+      "negative_modes_below_tolerance": 0,
+      "rank_relative_1e_10": 32,
+      "rank_sensitivity": {
+        "1e-06": 32,
+        "1e-08": 32,
+        "1e-10": 32,
+        "1e-12": 32
+      },
+      "positive_semidefinite_at_relative_tolerance": true,
+      "cholesky_suitable_without_regularization": false
+    },
+    "coarse_32": {
+      "dimension": 32,
+      "min_to_max_eigenvalue_ratio": 0.0005793769615342222,
+      "negative_modes_below_tolerance": 0,
+      "rank_relative_1e_10": 32,
+      "rank_sensitivity": {
+        "1e-06": 32,
+        "1e-08": 32,
+        "1e-10": 32,
+        "1e-12": 32
+      },
+      "positive_semidefinite_at_relative_tolerance": true,
+      "cholesky_suitable_without_regularization": true
+    }
+  },
+  "rejected_combined_correlation": {
+    "dimension": 343,
+    "min_to_max_eigenvalue_ratio": -0.0008704706854337569,
+    "negative_modes_below_tolerance": 1,
+    "rank_relative_1e_10": 92,
+    "rank_sensitivity": {
+      "1e-06": 86,
+      "1e-08": 89,
+      "1e-10": 92,
+      "1e-12": 95
+    },
+    "positive_semidefinite_at_relative_tolerance": false,
+    "cholesky_suitable_without_regularization": false
+  },
+  "agreement_with_public_mean_and_errors": {
+    "max_absolute_flux_difference": 0.0,
+    "max_relative_error_difference": 0.0
+  },
+  "agreement_with_archive_sampled_spectrum": {
+    "max_flux_difference_in_reported_error_units": 0.00953367745878206,
+    "max_relative_error_difference": 0.0002197042382536818
+  },
+  "truncation_comparison": {
+    "max_flux_change_in_full_error_units": 3.0112040324732003,
+    "median_flux_change_in_full_error_units": 0.5652878424666772
+  },
+  "offline_socket_guard_passed": true,
+  "scientific_status": "calibration/covariance engineering validation; no atmosphere fit or infrared residual"
+}
