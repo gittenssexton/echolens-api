@@ -1,17 +1,7 @@
 name: SP01-P2B native original Datalink route
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - scripts/sp01_p2b_original_datalink_probe.py
-      - tests/test_sp01_p2b_original_datalink_probe.py
-      - .github/workflows/sp01-p2b-original-datalink.yml
-  push:
-    branches: [research/sp01-p2b-source-controls-20261012]
-    paths:
-      - scripts/sp01_p2b_original_datalink_probe.py
-      - tests/test_sp01_p2b_original_datalink_probe.py
-      - .github/workflows/sp01-p2b-original-datalink.yml
+  workflow_dispatch:
+
 permissions:
   contents: read
 jobs:
