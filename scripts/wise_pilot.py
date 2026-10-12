@@ -67,6 +67,12 @@ def display_separation_arcsec(unrounded_arcsec):
     return math.floor(round(unrounded_arcsec, 6) * 1e5 + 0.5 + 1e-10) / 1e5
 
 
+def has_nearby_neighbor(chosen_source_id, unrounded_separations):
+    """Apply the registered six-arcsecond cutoff before display quantization."""
+    return any(sid != chosen_source_id and sep <= 6
+               for sid,sep in unrounded_separations.items())
+
+
 def freeze():
     rows = gaia_rows()
     references = [r for r in rows.values() if is_reference(r)]
@@ -266,10 +272,12 @@ def replay_snapshot(output, directory):
         if not is_reference(r) or separation(propagate(r,55400.),target['search_center_deg'])>1e-6:
             raise ValueError('Frozen target/reference selection changed')
         candidates = []
+        unrounded_separations = {}
         for infrared in allwise.values():
             position, epoch, method = candidate_epoch(infrared)
             sep = separation(propagate(r,epoch),position)
             if sep<=15:
+                unrounded_separations[infrared['source_id']] = sep
                 # Normalize derived display values at 10 microarcsec across numerical-library builds.
                 # Eligibility uses the unrounded separation; observations are untouched.
                 candidates.append({'allwise_source_id':infrared['source_id'],'separation_arcsec':display_separation_arcsec(sep),
@@ -285,7 +293,7 @@ def replay_snapshot(output, directory):
             record['provisional_allwise_source_id'] = chosen['allwise_source_id']
             if chosen['epoch_method'] != 'motion_fit_epoch': record['review_flags'].append('approximate_stationary_epoch')
             if chosen['motion_blend_swap']: record['review_flags'].append('motion_fit_blend_swap')
-            if any(c['allwise_source_id']!=chosen['allwise_source_id'] and c['separation_arcsec']<=6 for c in candidates):
+            if has_nearby_neighbor(chosen['allwise_source_id'],unrounded_separations):
                 record['review_flags'].append('nearby_infrared_neighbor')
         targets.append(record)
     reuse = {}
