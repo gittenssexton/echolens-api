@@ -1,0 +1,91 @@
+{
+  "run_id": "WD-TEN-PILOTS-20261013",
+  "mode": "Ten linked sequential exploratory observational experiments; not independent replications or confirmatory tests",
+  "cohort_reference": "reports/wd_counterpart_design_20261013.json",
+  "cohort_design_sha256": "36b0f3732d238d568941885c4be3f4d6489d58914935accd97b425c8e50fe4f4",
+  "source_count": 10,
+  "development_exposure": "Gaia positions/quality and LAMOST rows already accessed by CP001; P01-P04 are retrospective descriptive tests, not preregistered discovery evidence",
+  "experiments": [
+    {
+      "id": "P01",
+      "name": "Proper-motion relevance",
+      "question": "Does epoch propagation change reported-ID separation from the LAMOST fiber?",
+      "decision_rule": "Compare ref_epoch and obsdate separations; report changes >=0.1 arcsec; no counterpart certification"
+    },
+    {
+      "id": "P02",
+      "name": "Crowding sensitivity",
+      "question": "Does candidate ambiguity change as the positional aperture expands?",
+      "decision_rule": "Count Gaia candidates at obsdate within 1,2,3,6 arcsec; missing motion stays explicit"
+    },
+    {
+      "id": "P03",
+      "name": "Astrometric reliability",
+      "question": "How many sources pass a conservative Gaia astrometry screen?",
+      "decision_rule": "Complete PM/errors; ruwe<=1.4; duplicated_source false; ipd_frac_multi_peak<=2; thresholds are pilot policy, not source-normality proof"
+    },
+    {
+      "id": "P04",
+      "name": "Repeated spectroscopic parameters",
+      "question": "Are repeated reported-ID WD temperature/gravity estimates compatible at measurement-only precision?",
+      "decision_rule": "Use all staged WD observations for frozen reported IDs; non-sentinel positive errors; pair differences/max summed errors>3 flags conservative tension; ID association remains provisional"
+    },
+    {
+      "id": "P05",
+      "name": "AllWISE coverage and epoch sensitivity",
+      "question": "Are unique positional AllWISE candidates present for this cohort?",
+      "decision_rule": "Retrieve all candidates within 15 arcsec of Gaia PM position at 2010.5; compare 2009.5/2010.5/2011.5 support at 3 arcsec; no forced association"
+    },
+    {
+      "id": "P06",
+      "name": "WISE detection versus upper limit",
+      "question": "Which infrared bands retain measured uncertainties and clean quality flags?",
+      "decision_rule": "Unique provisional match; per-band ph_qual A/B, cc_flags=0, snr>=5, finite positive magnitude error, rchi2<=2, sat<=0.01, ext_flg=0, nb=1, na=0; U remains upper limit"
+    },
+    {
+      "id": "P07",
+      "name": "W1-W2 color distinguishability",
+      "question": "Are measured clean W1-W2 colors distinguishable from the zero-color reference?",
+      "decision_rule": "Compute color and uncertainty under independent errors plus full correlation bounds; conservative |color|>3*(sigma1+sigma2); zero color is an instrumental reference, not a validated WD photosphere; no excess claim"
+    },
+    {
+      "id": "P08",
+      "name": "2MASS coverage with native epochs",
+      "question": "Do 2MASS candidates retain a unique positional association when native JD is used?",
+      "decision_rule": "Retrieve 15 arcsec cone at year 2000, propagate Gaia separately to each native jdate; unique within 3 arcsec only; missing epoch unresolved"
+    },
+    {
+      "id": "P09",
+      "name": "Near-infrared color measurements",
+      "question": "Which J-H and H-K colors have clean measured uncertainties?",
+      "decision_rule": "Unique provisional 2MASS candidate with ph_qual AAA, cc_flg 000 and positive finite combined magnitude errors; preserve color errors and maximum-correlation bounds, no atmosphere inference"
+    },
+    {
+      "id": "P10",
+      "name": "Joint model-readiness gate",
+      "question": "Is any source ready for a later multi-band WD atmosphere experiment?",
+      "decision_rule": "Require P03 astrometry screen, unique provisional survey candidates, clean JHK+W1W2; independently certified counterpart/image/model validation still required, so this run cannot authorize an excess search"
+    }
+  ],
+  "acquisition": {
+    "endpoint": "https://irsa.ipac.caltech.edu/TAP/sync",
+    "tables": [
+      "allwise_p3as_psd",
+      "fp_psc"
+    ],
+    "radius_arcsec": 15,
+    "maximum_rows": 1000,
+    "epoch_centers": {
+      "allwise_p3as_psd": 2010.5,
+      "fp_psc": 2000
+    },
+    "failure_policy": "Any TAP overflow/error/checksum/transport failure is blocked, never zero matches"
+  },
+  "scientific_limits": [
+    "All associations conditional; no physically certified counterpart in this cohort",
+    "No reference-star control group or validated WD atmosphere model",
+    "No global false-alarm calibration or independent samples",
+    "No technology/alien or physical excess inference",
+    "Ten protocols include prerequisite/feasibility experiments, not ten independent discovery tests"
+  ]
+}
