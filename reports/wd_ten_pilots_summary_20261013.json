@@ -1,0 +1,26 @@
+{
+  "run_id": "WD-TEN-PILOTS-20261013",
+  "ten_analyses_executed": 10,
+  "primary_sources": 10,
+  "repeat_supplement_sources": 10,
+  "repeat_observations": 26,
+  "repeat_comparisons": 46,
+  "repeat_tension_flags": 30,
+  "repeat_sources_with_flags": 10,
+  "astrometric_passes": 10,
+  "wise_provisional_matches": 8,
+  "wise_clean_bands": {
+    "W1": 7,
+    "W2": 3,
+    "W3": 0,
+    "W4": 0
+  },
+  "clean_w1_w2_colors": 3,
+  "w1_w2_zero_reference_flags": 0,
+  "tmass_provisional_matches": 5,
+  "clean_jhk": 4,
+  "five_band_technical_passes": 3,
+  "physically_certified_counterparts": 0,
+  "confirmed_excesses": 0,
+  "interpretation": "Exploratory linked feasibility/measurement tests only; formal-error tension is not calibrated physical variability; zero-color is not a photospheric model."
+}

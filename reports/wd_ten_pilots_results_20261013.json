@@ -1,0 +1,2333 @@
+{
+  "run_id": "WD-TEN-PILOTS-20261013",
+  "started_at": "2026-10-13T11:56:19.053175+00:00",
+  "design_sha256": "65c0fcc2732725ca6bf27c6ce33387a0c703ae435e95b82103533af51338c1be",
+  "method_sha256": "8057b295c6e608bf1a3e7654692c19af4355e7a1c82365871feae804b2f04ce4",
+  "experiments": [
+    {
+      "id": "P01",
+      "name": "Proper-motion relevance",
+      "question": "Does epoch propagation change reported-ID separation from the LAMOST fiber?",
+      "decision_rule": "Compare ref_epoch and obsdate separations; report changes >=0.1 arcsec; no counterpart certification",
+      "started_at": "2026-10-13T11:56:19.053459+00:00",
+      "results": [
+        {
+          "gaia_id": "3426256112515893120",
+          "reference_separation_arcsec": 0.4055592729427803,
+          "observation_separation_arcsec": 0.4086154585325882,
+          "change_arcsec": 0.0030561855898078583,
+          "material_change": false
+        },
+        {
+          "gaia_id": "3084298719148075392",
+          "reference_separation_arcsec": 0.0148052205160802,
+          "observation_separation_arcsec": 0.01936985523423845,
+          "change_arcsec": 0.00456463471815825,
+          "material_change": false
+        },
+        {
+          "gaia_id": "1394990877932120192",
+          "reference_separation_arcsec": 0.2289756984767047,
+          "observation_separation_arcsec": 0.3452919861891928,
+          "change_arcsec": 0.11631628771248811,
+          "material_change": true
+        },
+        {
+          "gaia_id": "1523940265903467648",
+          "reference_separation_arcsec": 0.791000659043152,
+          "observation_separation_arcsec": 1.1524432679940773,
+          "change_arcsec": 0.3614426089509253,
+          "material_change": true
+        },
+        {
+          "gaia_id": "1480446506486463232",
+          "reference_separation_arcsec": 0.13036412602145717,
+          "observation_separation_arcsec": 0.1569074028758381,
+          "change_arcsec": 0.02654327685438093,
+          "material_change": false
+        },
+        {
+          "gaia_id": "3373936577562308480",
+          "reference_separation_arcsec": 0.02100785150442574,
+          "observation_separation_arcsec": 0.022258831015335944,
+          "change_arcsec": 0.0012509795109102058,
+          "material_change": false
+        },
+        {
+          "gaia_id": "3329504552469878912",
+          "reference_separation_arcsec": 0.06646319320532897,
+          "observation_separation_arcsec": 0.07499888426862604,
+          "change_arcsec": 0.008535691063297074,
+          "material_change": false
+        },
+        {
+          "gaia_id": "733495927855419392",
+          "reference_separation_arcsec": 0.5565008446870897,
+          "observation_separation_arcsec": 0.5551187676199483,
+          "change_arcsec": -0.0013820770671414406,
+          "material_change": false
+        },
+        {
+          "gaia_id": "3996592619412536448",
+          "reference_separation_arcsec": 0.35159899122510774,
+          "observation_separation_arcsec": 0.35021887728400397,
+          "change_arcsec": -0.0013801139411037666,
+          "material_change": false
+        },
+        {
+          "gaia_id": "2558321974514561408",
+          "reference_separation_arcsec": 0.7487189959850019,
+          "observation_separation_arcsec": 1.09864210435587,
+          "change_arcsec": 0.34992310837086815,
+          "material_change": true
+        }
+      ],
+      "status": "EXECUTED",
+      "finished_at": "2026-10-13T11:56:19.053638+00:00"
+    },
+    {
+      "id": "P02",
+      "name": "Crowding sensitivity",
+      "question": "Does candidate ambiguity change as the positional aperture expands?",
+      "decision_rule": "Count Gaia candidates at obsdate within 1,2,3,6 arcsec; missing motion stays explicit",
+      "started_at": "2026-10-13T11:56:19.054120+00:00",
+      "results": [
+        {
+          "gaia_id": "3426256112515893120",
+          "candidate_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "6": 1
+          },
+          "nearby_missing_motion": []
+        },
+        {
+          "gaia_id": "3084298719148075392",
+          "candidate_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "6": 1
+          },
+          "nearby_missing_motion": []
+        },
+        {
+          "gaia_id": "1394990877932120192",
+          "candidate_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "6": 1
+          },
+          "nearby_missing_motion": []
+        },
+        {
+          "gaia_id": "1523940265903467648",
+          "candidate_counts": {
+            "1": 0,
+            "2": 1,
+            "3": 1,
+            "6": 1
+          },
+          "nearby_missing_motion": []
+        },
+        {
+          "gaia_id": "1480446506486463232",
+          "candidate_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "6": 1
+          },
+          "nearby_missing_motion": []
+        },
+        {
+          "gaia_id": "3373936577562308480",
+          "candidate_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "6": 1
+          },
+          "nearby_missing_motion": []
+        },
+        {
+          "gaia_id": "3329504552469878912",
+          "candidate_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "6": 2
+          },
+          "nearby_missing_motion": []
+        },
+        {
+          "gaia_id": "733495927855419392",
+          "candidate_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "6": 1
+          },
+          "nearby_missing_motion": []
+        },
+        {
+          "gaia_id": "3996592619412536448",
+          "candidate_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "6": 1
+          },
+          "nearby_missing_motion": []
+        },
+        {
+          "gaia_id": "2558321974514561408",
+          "candidate_counts": {
+            "1": 0,
+            "2": 1,
+            "3": 1,
+            "6": 1
+          },
+          "nearby_missing_motion": []
+        }
+      ],
+      "status": "EXECUTED",
+      "finished_at": "2026-10-13T11:56:19.062759+00:00"
+    },
+    {
+      "id": "P03",
+      "name": "Astrometric reliability",
+      "question": "How many sources pass a conservative Gaia astrometry screen?",
+      "decision_rule": "Complete PM/errors; ruwe<=1.4; duplicated_source false; ipd_frac_multi_peak<=2; thresholds are pilot policy, not source-normality proof",
+      "started_at": "2026-10-13T11:56:19.063372+00:00",
+      "results": [
+        {
+          "gaia_id": "3426256112515893120",
+          "pass": true,
+          "checks": {
+            "motion_errors_available": true,
+            "ruwe": true,
+            "not_duplicated": true,
+            "few_multiple_peaks": true
+          },
+          "native_ruwe": 0.951286792755127,
+          "native_ipd_frac_multi_peak": 0
+        },
+        {
+          "gaia_id": "3084298719148075392",
+          "pass": true,
+          "checks": {
+            "motion_errors_available": true,
+            "ruwe": true,
+            "not_duplicated": true,
+            "few_multiple_peaks": true
+          },
+          "native_ruwe": 1.046141505241394,
+          "native_ipd_frac_multi_peak": 0
+        },
+        {
+          "gaia_id": "1394990877932120192",
+          "pass": true,
+          "checks": {
+            "motion_errors_available": true,
+            "ruwe": true,
+            "not_duplicated": true,
+            "few_multiple_peaks": true
+          },
+          "native_ruwe": 1.00662100315094,
+          "native_ipd_frac_multi_peak": 0
+        },
+        {
+          "gaia_id": "1523940265903467648",
+          "pass": true,
+          "checks": {
+            "motion_errors_available": true,
+            "ruwe": true,
+            "not_duplicated": true,
+            "few_multiple_peaks": true
+          },
+          "native_ruwe": 1.0207350254058838,
+          "native_ipd_frac_multi_peak": 0
+        },
+        {
+          "gaia_id": "1480446506486463232",
+          "pass": true,
+          "checks": {
+            "motion_errors_available": true,
+            "ruwe": true,
+            "not_duplicated": true,
+            "few_multiple_peaks": true
+          },
+          "native_ruwe": 0.9394018054008484,
+          "native_ipd_frac_multi_peak": 0
+        },
+        {
+          "gaia_id": "3373936577562308480",
+          "pass": true,
+          "checks": {
+            "motion_errors_available": true,
+            "ruwe": true,
+            "not_duplicated": true,
+            "few_multiple_peaks": true
+          },
+          "native_ruwe": 1.0683804750442505,
+          "native_ipd_frac_multi_peak": 1
+        },
+        {
+          "gaia_id": "3329504552469878912",
+          "pass": true,
+          "checks": {
+            "motion_errors_available": true,
+            "ruwe": true,
+            "not_duplicated": true,
+            "few_multiple_peaks": true
+          },
+          "native_ruwe": 0.9473627805709839,
+          "native_ipd_frac_multi_peak": 0
+        },
+        {
+          "gaia_id": "733495927855419392",
+          "pass": true,
+          "checks": {
+            "motion_errors_available": true,
+            "ruwe": true,
+            "not_duplicated": true,
+            "few_multiple_peaks": true
+          },
+          "native_ruwe": 0.9826881289482117,
+          "native_ipd_frac_multi_peak": 0
+        },
+        {
+          "gaia_id": "3996592619412536448",
+          "pass": true,
+          "checks": {
+            "motion_errors_available": true,
+            "ruwe": true,
+            "not_duplicated": true,
+            "few_multiple_peaks": true
+          },
+          "native_ruwe": 0.9483907222747803,
+          "native_ipd_frac_multi_peak": 0
+        },
+        {
+          "gaia_id": "2558321974514561408",
+          "pass": true,
+          "checks": {
+            "motion_errors_available": true,
+            "ruwe": true,
+            "not_duplicated": true,
+            "few_multiple_peaks": true
+          },
+          "native_ruwe": 0.9601496458053589,
+          "native_ipd_frac_multi_peak": 0
+        }
+      ],
+      "status": "EXECUTED",
+      "finished_at": "2026-10-13T11:56:19.063440+00:00"
+    },
+    {
+      "id": "P04",
+      "name": "Repeated spectroscopic parameters",
+      "question": "Are repeated reported-ID WD temperature/gravity estimates compatible at measurement-only precision?",
+      "decision_rule": "Use all staged WD observations for frozen reported IDs; non-sentinel positive errors; pair differences/max summed errors>3 flags conservative tension; ID association remains provisional",
+      "started_at": "2026-10-13T11:56:19.063987+00:00",
+      "results": [
+        {
+          "gaia_id": "1021452731770726016",
+          "cohort": "repeat_supplement",
+          "observations": 3,
+          "comparisons": [
+            {
+              "obsids": [
+                124705128,
+                421305128
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                18368.98046875,
+                95.44000244140625,
+                18860.19921875,
+                34.04999923706055
+              ],
+              "difference": -491.21875,
+              "maximum_error_sigma": 129.4900016784668,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                124705128,
+                421305128
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                8.161999702453613,
+                0.014999999664723873,
+                8.222000122070312,
+                0.004999999888241291
+              ],
+              "difference": -0.06000041961669922,
+              "maximum_error_sigma": 0.019999999552965164,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                124705128,
+                451615044
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                18368.98046875,
+                95.44000244140625,
+                19071.83984375,
+                42.369998931884766
+              ],
+              "difference": -702.859375,
+              "maximum_error_sigma": 137.81000137329102,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                124705128,
+                451615044
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                8.161999702453613,
+                0.014999999664723873,
+                8.232999801635742,
+                0.006000000052154064
+              ],
+              "difference": -0.0710000991821289,
+              "maximum_error_sigma": 0.020999999716877937,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                421305128,
+                451615044
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                18860.19921875,
+                34.04999923706055,
+                19071.83984375,
+                42.369998931884766
+              ],
+              "difference": -211.640625,
+              "maximum_error_sigma": 76.41999816894531,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                421305128,
+                451615044
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                8.222000122070312,
+                0.004999999888241291,
+                8.232999801635742,
+                0.006000000052154064
+              ],
+              "difference": -0.010999679565429688,
+              "maximum_error_sigma": 0.010999999940395355,
+              "conservative_three_sigma_tension": false
+            }
+          ]
+        },
+        {
+          "gaia_id": "371070026026145792",
+          "cohort": "repeat_supplement",
+          "observations": 3,
+          "comparisons": [
+            {
+              "obsids": [
+                62909169,
+                378409169
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                22863.4609375,
+                224.86000061035156,
+                21200.80078125,
+                90.75
+              ],
+              "difference": 1662.66015625,
+              "maximum_error_sigma": 315.61000061035156,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                62909169,
+                378409169
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                8.175999641418457,
+                0.028999999165534973,
+                7.664999961853027,
+                0.013000000268220901
+              ],
+              "difference": 0.5109996795654297,
+              "maximum_error_sigma": 0.041999999433755875,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                62909169,
+                612709169
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                22863.4609375,
+                224.86000061035156,
+                20838.560546875,
+                60.4900016784668
+              ],
+              "difference": 2024.900390625,
+              "maximum_error_sigma": 285.35000228881836,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                62909169,
+                612709169
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                8.175999641418457,
+                0.028999999165534973,
+                7.843999862670898,
+                0.00800000037997961
+              ],
+              "difference": 0.3319997787475586,
+              "maximum_error_sigma": 0.036999999545514584,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                378409169,
+                612709169
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                21200.80078125,
+                90.75,
+                20838.560546875,
+                60.4900016784668
+              ],
+              "difference": 362.240234375,
+              "maximum_error_sigma": 151.2400016784668,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                378409169,
+                612709169
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.664999961853027,
+                0.013000000268220901,
+                7.843999862670898,
+                0.00800000037997961
+              ],
+              "difference": -0.1789999008178711,
+              "maximum_error_sigma": 0.021000000648200512,
+              "conservative_three_sigma_tension": true
+            }
+          ]
+        },
+        {
+          "gaia_id": "647899806626643200",
+          "cohort": "repeat_supplement",
+          "observations": 2,
+          "comparisons": [
+            {
+              "obsids": [
+                31302221,
+                228108069
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                19360.849609375,
+                211.24000549316406,
+                16532.01953125,
+                99.63999938964844
+              ],
+              "difference": 2828.830078125,
+              "maximum_error_sigma": 310.8800048828125,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                31302221,
+                228108069
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                8.225000381469727,
+                0.03099999949336052,
+                8.371000289916992,
+                0.014000000432133675
+              ],
+              "difference": -0.14599990844726562,
+              "maximum_error_sigma": 0.044999999925494194,
+              "conservative_three_sigma_tension": true
+            }
+          ]
+        },
+        {
+          "gaia_id": "1876436272064883456",
+          "cohort": "repeat_supplement",
+          "observations": 2,
+          "comparisons": [
+            {
+              "obsids": [
+                605206240,
+                759012250
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                18048.220703125,
+                291.0,
+                21478.19921875,
+                693.2100219726562
+              ],
+              "difference": -3429.978515625,
+              "maximum_error_sigma": 984.2100219726562,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                605206240,
+                759012250
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.7870001792907715,
+                0.04500000178813934,
+                7.203999996185303,
+                0.10000000149011612
+              ],
+              "difference": 0.5830001831054688,
+              "maximum_error_sigma": 0.14500000327825546,
+              "conservative_three_sigma_tension": true
+            }
+          ]
+        },
+        {
+          "gaia_id": "692531418844824960",
+          "cohort": "repeat_supplement",
+          "observations": 3,
+          "comparisons": [
+            {
+              "obsids": [
+                107207093,
+                483807089
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                19199.919921875,
+                467.010009765625,
+                18274.0,
+                172.22999572753906
+              ],
+              "difference": 925.919921875,
+              "maximum_error_sigma": 639.2400054931641,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                107207093,
+                483807089
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                8.347999572753906,
+                0.06700000166893005,
+                7.63100004196167,
+                0.027000000700354576
+              ],
+              "difference": 0.7169995307922363,
+              "maximum_error_sigma": 0.09400000236928463,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                107207093,
+                485003128
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                19199.919921875,
+                467.010009765625,
+                17801.76953125,
+                126.12999725341797
+              ],
+              "difference": 1398.150390625,
+              "maximum_error_sigma": 593.140007019043,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                107207093,
+                485003128
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                8.347999572753906,
+                0.06700000166893005,
+                8.102999687194824,
+                0.019999999552965164
+              ],
+              "difference": 0.24499988555908203,
+              "maximum_error_sigma": 0.08700000122189522,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                483807089,
+                485003128
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                18274.0,
+                172.22999572753906,
+                17801.76953125,
+                126.12999725341797
+              ],
+              "difference": 472.23046875,
+              "maximum_error_sigma": 298.35999298095703,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                483807089,
+                485003128
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.63100004196167,
+                0.027000000700354576,
+                8.102999687194824,
+                0.019999999552965164
+              ],
+              "difference": -0.4719996452331543,
+              "maximum_error_sigma": 0.04700000025331974,
+              "conservative_three_sigma_tension": true
+            }
+          ]
+        },
+        {
+          "gaia_id": "45980377978968064",
+          "cohort": "repeat_supplement",
+          "observations": 2,
+          "comparisons": [
+            {
+              "obsids": [
+                211104033,
+                249301019
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                16183.23046875,
+                49.63999938964844,
+                17028.6796875,
+                58.790000915527344
+              ],
+              "difference": -845.44921875,
+              "maximum_error_sigma": 108.43000030517578,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                211104033,
+                249301019
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                8.4350004196167,
+                0.006000000052154064,
+                8.465999603271484,
+                0.00800000037997961
+              ],
+              "difference": -0.030999183654785156,
+              "maximum_error_sigma": 0.014000000432133675,
+              "conservative_three_sigma_tension": false
+            }
+          ]
+        },
+        {
+          "gaia_id": "639034783674224384",
+          "cohort": "repeat_supplement",
+          "observations": 2,
+          "comparisons": [
+            {
+              "obsids": [
+                135215041,
+                583915050
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                19527.880859375,
+                552.510009765625,
+                22875.900390625,
+                158.64999389648438
+              ],
+              "difference": -3348.01953125,
+              "maximum_error_sigma": 711.1600036621094,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                135215041,
+                583915050
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.723999977111816,
+                0.08500000089406967,
+                7.434999942779541,
+                0.020999999716877937
+              ],
+              "difference": 0.2890000343322754,
+              "maximum_error_sigma": 0.10600000061094761,
+              "conservative_three_sigma_tension": false
+            }
+          ]
+        },
+        {
+          "gaia_id": "1551929124663349632",
+          "cohort": "repeat_supplement",
+          "observations": 4,
+          "comparisons": [
+            {
+              "obsids": [
+                143508169,
+                143608169
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                22898.75,
+                49.02000045776367,
+                23394.470703125,
+                49.41999816894531
+              ],
+              "difference": -495.720703125,
+              "maximum_error_sigma": 98.43999862670898,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                143508169,
+                143608169
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.928999900817871,
+                0.006000000052154064,
+                7.973999977111816,
+                0.006000000052154064
+              ],
+              "difference": -0.04500007629394531,
+              "maximum_error_sigma": 0.012000000104308128,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                143508169,
+                574416210
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                22898.75,
+                49.02000045776367,
+                23687.640625,
+                88.62000274658203
+              ],
+              "difference": -788.890625,
+              "maximum_error_sigma": 137.6400032043457,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                143508169,
+                574416210
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.928999900817871,
+                0.006000000052154064,
+                8.095999717712402,
+                0.010999999940395355
+              ],
+              "difference": -0.16699981689453125,
+              "maximum_error_sigma": 0.01699999999254942,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                143508169,
+                882008169
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                22898.75,
+                49.02000045776367,
+                24000.0,
+                709.5700073242188
+              ],
+              "difference": -1101.25,
+              "maximum_error_sigma": 758.5900077819824,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                143508169,
+                882008169
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.928999900817871,
+                0.006000000052154064,
+                8.446000099182129,
+                0.08699999749660492
+              ],
+              "difference": -0.5170001983642578,
+              "maximum_error_sigma": 0.09299999754875898,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                143608169,
+                574416210
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                23394.470703125,
+                49.41999816894531,
+                23687.640625,
+                88.62000274658203
+              ],
+              "difference": -293.169921875,
+              "maximum_error_sigma": 138.04000091552734,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                143608169,
+                574416210
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.973999977111816,
+                0.006000000052154064,
+                8.095999717712402,
+                0.010999999940395355
+              ],
+              "difference": -0.12199974060058594,
+              "maximum_error_sigma": 0.01699999999254942,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                143608169,
+                882008169
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                23394.470703125,
+                49.41999816894531,
+                24000.0,
+                709.5700073242188
+              ],
+              "difference": -605.529296875,
+              "maximum_error_sigma": 758.9900054931641,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                143608169,
+                882008169
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.973999977111816,
+                0.006000000052154064,
+                8.446000099182129,
+                0.08699999749660492
+              ],
+              "difference": -0.4720001220703125,
+              "maximum_error_sigma": 0.09299999754875898,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                574416210,
+                882008169
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                23687.640625,
+                88.62000274658203,
+                24000.0,
+                709.5700073242188
+              ],
+              "difference": -312.359375,
+              "maximum_error_sigma": 798.1900100708008,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                574416210,
+                882008169
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                8.095999717712402,
+                0.010999999940395355,
+                8.446000099182129,
+                0.08699999749660492
+              ],
+              "difference": -0.35000038146972656,
+              "maximum_error_sigma": 0.09799999743700027,
+              "conservative_three_sigma_tension": true
+            }
+          ]
+        },
+        {
+          "gaia_id": "3940955205038857728",
+          "cohort": "repeat_supplement",
+          "observations": 3,
+          "comparisons": [
+            {
+              "obsids": [
+                337714154,
+                813305126
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                21174.390625,
+                55.279998779296875,
+                21244.490234375,
+                43.83000183105469
+              ],
+              "difference": -70.099609375,
+              "maximum_error_sigma": 99.11000061035156,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                337714154,
+                813305126
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.922999858856201,
+                0.00800000037997961,
+                7.927000045776367,
+                0.006000000052154064
+              ],
+              "difference": -0.004000186920166016,
+              "maximum_error_sigma": 0.014000000432133675,
+              "conservative_three_sigma_tension": false
+            },
+            {
+              "obsids": [
+                337714154,
+                894314169
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                21174.390625,
+                55.279998779296875,
+                26625.919921875,
+                170.69000244140625
+              ],
+              "difference": -5451.529296875,
+              "maximum_error_sigma": 225.97000122070312,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                337714154,
+                894314169
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.922999858856201,
+                0.00800000037997961,
+                7.578999996185303,
+                0.023000000044703484
+              ],
+              "difference": 0.34399986267089844,
+              "maximum_error_sigma": 0.031000000424683094,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                813305126,
+                894314169
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                21244.490234375,
+                43.83000183105469,
+                26625.919921875,
+                170.69000244140625
+              ],
+              "difference": -5381.4296875,
+              "maximum_error_sigma": 214.52000427246094,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                813305126,
+                894314169
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.927000045776367,
+                0.006000000052154064,
+                7.578999996185303,
+                0.023000000044703484
+              ],
+              "difference": 0.34800004959106445,
+              "maximum_error_sigma": 0.029000000096857548,
+              "conservative_three_sigma_tension": true
+            }
+          ]
+        },
+        {
+          "gaia_id": "820337722743910400",
+          "cohort": "repeat_supplement",
+          "observations": 2,
+          "comparisons": [
+            {
+              "obsids": [
+                121608068,
+                438602050
+              ],
+              "parameter": "teff",
+              "unit": "K",
+              "native_values": [
+                48107.578125,
+                637.27001953125,
+                43959.37109375,
+                586.5399780273438
+              ],
+              "difference": 4148.20703125,
+              "maximum_error_sigma": 1223.8099975585938,
+              "conservative_three_sigma_tension": true
+            },
+            {
+              "obsids": [
+                121608068,
+                438602050
+              ],
+              "parameter": "logg",
+              "unit": "dex",
+              "native_values": [
+                7.366000175476074,
+                0.10400000214576721,
+                7.557000160217285,
+                0.0820000022649765
+              ],
+              "difference": -0.19099998474121094,
+              "maximum_error_sigma": 0.1860000044107437,
+              "conservative_three_sigma_tension": false
+            }
+          ]
+        }
+      ],
+      "status": "EXECUTED",
+      "finished_at": "2026-10-13T11:56:19.146883+00:00"
+    },
+    {
+      "id": "P05",
+      "name": "AllWISE coverage and epoch sensitivity",
+      "question": "Are unique positional AllWISE candidates present for this cohort?",
+      "decision_rule": "Retrieve all candidates within 15 arcsec of Gaia PM position at 2010.5; compare 2009.5/2010.5/2011.5 support at 3 arcsec; no forced association",
+      "started_at": "2026-10-13T11:56:19.148833+00:00",
+      "results": [
+        {
+          "gaia_id": "3426256112515893120",
+          "counts_by_assumed_epoch": {
+            "2009.5": 1,
+            "2010.5": 1,
+            "2011.5": 1
+          },
+          "unique_central_candidate": "J060823.68+240552.2",
+          "association_status": "provisional"
+        },
+        {
+          "gaia_id": "3084298719148075392",
+          "counts_by_assumed_epoch": {
+            "2009.5": 1,
+            "2010.5": 1,
+            "2011.5": 1
+          },
+          "unique_central_candidate": "J075916.36+002302.2",
+          "association_status": "provisional"
+        },
+        {
+          "gaia_id": "1394990877932120192",
+          "counts_by_assumed_epoch": {
+            "2009.5": 0,
+            "2010.5": 0,
+            "2011.5": 0
+          },
+          "unique_central_candidate": null,
+          "association_status": "unmatched_or_ambiguous"
+        },
+        {
+          "gaia_id": "1523940265903467648",
+          "counts_by_assumed_epoch": {
+            "2009.5": 1,
+            "2010.5": 1,
+            "2011.5": 1
+          },
+          "unique_central_candidate": "J130730.91+392313.5",
+          "association_status": "provisional"
+        },
+        {
+          "gaia_id": "1480446506486463232",
+          "counts_by_assumed_epoch": {
+            "2009.5": 1,
+            "2010.5": 1,
+            "2011.5": 1
+          },
+          "unique_central_candidate": "J143207.74+361045.9",
+          "association_status": "provisional"
+        },
+        {
+          "gaia_id": "3373936577562308480",
+          "counts_by_assumed_epoch": {
+            "2009.5": 1,
+            "2010.5": 1,
+            "2011.5": 1
+          },
+          "unique_central_candidate": "J062053.77+191507.0",
+          "association_status": "provisional"
+        },
+        {
+          "gaia_id": "3329504552469878912",
+          "counts_by_assumed_epoch": {
+            "2009.5": 1,
+            "2010.5": 1,
+            "2011.5": 1
+          },
+          "unique_central_candidate": "J060707.05+093028.4",
+          "association_status": "provisional"
+        },
+        {
+          "gaia_id": "733495927855419392",
+          "counts_by_assumed_epoch": {
+            "2009.5": 1,
+            "2010.5": 1,
+            "2011.5": 1
+          },
+          "unique_central_candidate": "J105825.27+305721.3",
+          "association_status": "provisional"
+        },
+        {
+          "gaia_id": "3996592619412536448",
+          "counts_by_assumed_epoch": {
+            "2009.5": 0,
+            "2010.5": 0,
+            "2011.5": 0
+          },
+          "unique_central_candidate": null,
+          "association_status": "unmatched_or_ambiguous"
+        },
+        {
+          "gaia_id": "2558321974514561408",
+          "counts_by_assumed_epoch": {
+            "2009.5": 1,
+            "2010.5": 1,
+            "2011.5": 1
+          },
+          "unique_central_candidate": "J013224.17+013557.2",
+          "association_status": "provisional"
+        }
+      ],
+      "status": "EXECUTED",
+      "finished_at": "2026-10-13T11:56:22.398803+00:00"
+    },
+    {
+      "id": "P06",
+      "name": "WISE detection versus upper limit",
+      "question": "Which infrared bands retain measured uncertainties and clean quality flags?",
+      "decision_rule": "Unique provisional match; per-band ph_qual A/B, cc_flags=0, snr>=5, finite positive magnitude error, rchi2<=2, sat<=0.01, ext_flg=0, nb=1, na=0; U remains upper limit",
+      "started_at": "2026-10-13T11:56:22.399991+00:00",
+      "results": [
+        {
+          "gaia_id": "3426256112515893120",
+          "designation": "J060823.68+240552.2",
+          "bands": {
+            "1": {
+              "pass": true,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "A",
+              "native_cc_flag": "0"
+            },
+            "2": {
+              "pass": true,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "A",
+              "native_cc_flag": "0"
+            },
+            "3": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "B",
+              "native_cc_flag": "0"
+            },
+            "4": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            }
+          }
+        },
+        {
+          "gaia_id": "3084298719148075392",
+          "designation": "J075916.36+002302.2",
+          "bands": {
+            "1": {
+              "pass": true,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "A",
+              "native_cc_flag": "0"
+            },
+            "2": {
+              "pass": true,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "A",
+              "native_cc_flag": "0"
+            },
+            "3": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "C",
+              "native_cc_flag": "0"
+            },
+            "4": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            }
+          }
+        },
+        {
+          "gaia_id": "1523940265903467648",
+          "designation": "J130730.91+392313.5",
+          "bands": {
+            "1": {
+              "pass": true,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "B",
+              "native_cc_flag": "0"
+            },
+            "2": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "C",
+              "native_cc_flag": "0"
+            },
+            "3": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "C",
+              "native_cc_flag": "0"
+            },
+            "4": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            }
+          }
+        },
+        {
+          "gaia_id": "1480446506486463232",
+          "designation": "J143207.74+361045.9",
+          "bands": {
+            "1": {
+              "pass": true,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "A",
+              "native_cc_flag": "0"
+            },
+            "2": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "B",
+              "native_cc_flag": "0"
+            },
+            "3": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            },
+            "4": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            }
+          }
+        },
+        {
+          "gaia_id": "3373936577562308480",
+          "designation": "J062053.77+191507.0",
+          "bands": {
+            "1": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": false,
+                "low_saturation": true,
+                "not_extended": false,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "A",
+              "native_cc_flag": "0"
+            },
+            "2": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": false,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "A",
+              "native_cc_flag": "0"
+            },
+            "3": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": false,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            },
+            "4": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": false,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            }
+          }
+        },
+        {
+          "gaia_id": "3329504552469878912",
+          "designation": "J060707.05+093028.4",
+          "bands": {
+            "1": {
+              "pass": true,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "A",
+              "native_cc_flag": "0"
+            },
+            "2": {
+              "pass": true,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "A",
+              "native_cc_flag": "0"
+            },
+            "3": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            },
+            "4": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            }
+          }
+        },
+        {
+          "gaia_id": "733495927855419392",
+          "designation": "J105825.27+305721.3",
+          "bands": {
+            "1": {
+              "pass": true,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "B",
+              "native_cc_flag": "0"
+            },
+            "2": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "B",
+              "native_cc_flag": "0"
+            },
+            "3": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            },
+            "4": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            }
+          }
+        },
+        {
+          "gaia_id": "2558321974514561408",
+          "designation": "J013224.17+013557.2",
+          "bands": {
+            "1": {
+              "pass": true,
+              "checks": {
+                "photometric_detection": true,
+                "not_catalog_upper_limit": true,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": true,
+                "snr_at_least_5": true,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "B",
+              "native_cc_flag": "0"
+            },
+            "2": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            },
+            "3": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            },
+            "4": {
+              "pass": false,
+              "checks": {
+                "photometric_detection": false,
+                "not_catalog_upper_limit": false,
+                "clean_artifact_flag": true,
+                "finite_magnitude": true,
+                "measured_positive_uncertainty": false,
+                "snr_at_least_5": false,
+                "profile_fit": true,
+                "low_saturation": true,
+                "not_extended": true,
+                "single_component": true,
+                "not_actively_deblended": true
+              },
+              "native_ph_qual": "U",
+              "native_cc_flag": "0"
+            }
+          }
+        }
+      ],
+      "status": "EXECUTED",
+      "finished_at": "2026-10-13T11:56:22.400116+00:00"
+    },
+    {
+      "id": "P07",
+      "name": "W1-W2 color distinguishability",
+      "question": "Are measured clean W1-W2 colors distinguishable from the zero-color reference?",
+      "decision_rule": "Compute color and uncertainty under independent errors plus full correlation bounds; conservative |color|>3*(sigma1+sigma2); zero color is an instrumental reference, not a validated WD photosphere; no excess claim",
+      "started_at": "2026-10-13T11:56:22.401854+00:00",
+      "results": [
+        {
+          "gaia_id": "3426256112515893120",
+          "measurement": {
+            "color_mag": -0.007999420166015625,
+            "sigma_independent_mag": 0.031112698203620698,
+            "sigma_correlation_bounds_mag": [
+              0.0,
+              0.04399999976158142
+            ],
+            "conservative_three_sigma_zero_reference_flag": false,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          }
+        },
+        {
+          "gaia_id": "3084298719148075392",
+          "measurement": {
+            "color_mag": 0.0030002593994140625,
+            "sigma_independent_mag": 0.037643059939577304,
+            "sigma_correlation_bounds_mag": [
+              0.004999998956918716,
+              0.05299999937415123
+            ],
+            "conservative_three_sigma_zero_reference_flag": false,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          }
+        },
+        {
+          "gaia_id": "3329504552469878912",
+          "measurement": {
+            "color_mag": 0.006999969482421875,
+            "sigma_independent_mag": 0.03324154045873838,
+            "sigma_correlation_bounds_mag": [
+              0.0010000001639127731,
+              0.04700000025331974
+            ],
+            "conservative_three_sigma_zero_reference_flag": false,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          }
+        }
+      ],
+      "status": "EXECUTED",
+      "finished_at": "2026-10-13T11:56:22.401893+00:00"
+    },
+    {
+      "id": "P08",
+      "name": "2MASS coverage with native epochs",
+      "question": "Do 2MASS candidates retain a unique positional association when native JD is used?",
+      "decision_rule": "Retrieve 15 arcsec cone at year 2000, propagate Gaia separately to each native jdate; unique within 3 arcsec only; missing epoch unresolved",
+      "started_at": "2026-10-13T11:56:22.403311+00:00",
+      "results": [
+        {
+          "gaia_id": "3426256112515893120",
+          "candidates": [
+            {
+              "designation": "06082368+2405522",
+              "separation_arcsec": 0.02778674157956311,
+              "epoch_tcb_jyear": 1998.0197014382884
+            }
+          ],
+          "missing_epoch_records": [],
+          "native_jdate_timescale_assumption": "UTC; conditional positional check"
+        },
+        {
+          "gaia_id": "3084298719148075392",
+          "candidates": [
+            {
+              "designation": "07591635+0023020",
+              "separation_arcsec": 0.1913532189901631,
+              "epoch_tcb_jyear": 1999.9612283994445
+            }
+          ],
+          "missing_epoch_records": [],
+          "native_jdate_timescale_assumption": "UTC; conditional positional check"
+        },
+        {
+          "gaia_id": "1394990877932120192",
+          "candidates": [],
+          "missing_epoch_records": [],
+          "native_jdate_timescale_assumption": "UTC; conditional positional check"
+        },
+        {
+          "gaia_id": "1523940265903467648",
+          "candidates": [],
+          "missing_epoch_records": [],
+          "native_jdate_timescale_assumption": "UTC; conditional positional check"
+        },
+        {
+          "gaia_id": "1480446506486463232",
+          "candidates": [
+            {
+              "designation": "14320773+3610461",
+              "separation_arcsec": 0.12299055933847705,
+              "epoch_tcb_jyear": 1998.3019073290902
+            }
+          ],
+          "missing_epoch_records": [],
+          "native_jdate_timescale_assumption": "UTC; conditional positional check"
+        },
+        {
+          "gaia_id": "3373936577562308480",
+          "candidates": [
+            {
+              "designation": "06205376+1915075",
+              "separation_arcsec": 0.10920680873297603,
+              "epoch_tcb_jyear": 2000.2099147825586
+            }
+          ],
+          "missing_epoch_records": [],
+          "native_jdate_timescale_assumption": "UTC; conditional positional check"
+        },
+        {
+          "gaia_id": "3329504552469878912",
+          "candidates": [
+            {
+              "designation": "06070704+0930285",
+              "separation_arcsec": 0.11345697758715911,
+              "epoch_tcb_jyear": 2000.0237179281546
+            }
+          ],
+          "missing_epoch_records": [],
+          "native_jdate_timescale_assumption": "UTC; conditional positional check"
+        },
+        {
+          "gaia_id": "733495927855419392",
+          "candidates": [],
+          "missing_epoch_records": [],
+          "native_jdate_timescale_assumption": "UTC; conditional positional check"
+        },
+        {
+          "gaia_id": "3996592619412536448",
+          "candidates": [],
+          "missing_epoch_records": [],
+          "native_jdate_timescale_assumption": "UTC; conditional positional check"
+        },
+        {
+          "gaia_id": "2558321974514561408",
+          "candidates": [],
+          "missing_epoch_records": [],
+          "native_jdate_timescale_assumption": "UTC; conditional positional check"
+        }
+      ],
+      "status": "EXECUTED",
+      "finished_at": "2026-10-13T11:56:22.578034+00:00"
+    },
+    {
+      "id": "P09",
+      "name": "Near-infrared color measurements",
+      "question": "Which J-H and H-K colors have clean measured uncertainties?",
+      "decision_rule": "Unique provisional 2MASS candidate with ph_qual AAA, cc_flg 000 and positive finite combined magnitude errors; preserve color errors and maximum-correlation bounds, no atmosphere inference",
+      "started_at": "2026-10-13T11:56:22.580258+00:00",
+      "results": [
+        {
+          "gaia_id": "3426256112515893120",
+          "clean_jhk": true,
+          "native_ph_qual": "AAA",
+          "native_cc_flg": "000",
+          "j_h": {
+            "color_mag": 0.22600078582763672,
+            "sigma_independent_mag": 0.031827660875583544,
+            "sigma_correlation_bounds_mag": [
+              0.0010000001639127731,
+              0.044999999925494194
+            ],
+            "conservative_three_sigma_zero_reference_flag": true,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          },
+          "h_k": {
+            "color_mag": 0.10299968719482422,
+            "sigma_independent_mag": 0.027802878019486398,
+            "sigma_correlation_bounds_mag": [
+              0.004999998956918716,
+              0.039000000804662704
+            ],
+            "conservative_three_sigma_zero_reference_flag": false,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          }
+        },
+        {
+          "gaia_id": "3084298719148075392",
+          "clean_jhk": true,
+          "native_ph_qual": "AAA",
+          "native_cc_flg": "000",
+          "j_h": {
+            "color_mag": 0.17400074005126953,
+            "sigma_independent_mag": 0.03482815000217409,
+            "sigma_correlation_bounds_mag": [
+              0.005000000819563866,
+              0.04900000058114529
+            ],
+            "conservative_three_sigma_zero_reference_flag": true,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          },
+          "h_k": {
+            "color_mag": 0.06599998474121094,
+            "sigma_independent_mag": 0.03720214986424382,
+            "sigma_correlation_bounds_mag": [
+              0.007999999448657036,
+              0.05199999921023846
+            ],
+            "conservative_three_sigma_zero_reference_flag": false,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          }
+        },
+        {
+          "gaia_id": "1480446506486463232",
+          "clean_jhk": false,
+          "native_ph_qual": "AUU",
+          "native_cc_flg": "000",
+          "j_h": null,
+          "h_k": null
+        },
+        {
+          "gaia_id": "3373936577562308480",
+          "clean_jhk": true,
+          "native_ph_qual": "AAA",
+          "native_cc_flg": "000",
+          "j_h": {
+            "color_mag": 0.31099987030029297,
+            "sigma_independent_mag": 0.09404786061906344,
+            "sigma_correlation_bounds_mag": [
+              0.022999998182058334,
+              0.13100000098347664
+            ],
+            "conservative_three_sigma_zero_reference_flag": false,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          },
+          "h_k": {
+            "color_mag": 0.17200088500976562,
+            "sigma_independent_mag": 0.11175866845292137,
+            "sigma_correlation_bounds_mag": [
+              0.0040000006556510925,
+              0.15799999982118607
+            ],
+            "conservative_three_sigma_zero_reference_flag": false,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          }
+        },
+        {
+          "gaia_id": "3329504552469878912",
+          "clean_jhk": true,
+          "native_ph_qual": "AAA",
+          "native_cc_flg": "000",
+          "j_h": {
+            "color_mag": 0.1080007553100586,
+            "sigma_independent_mag": 0.03679673975294006,
+            "sigma_correlation_bounds_mag": [
+              0.0020000003278255463,
+              0.052000001072883606
+            ],
+            "conservative_three_sigma_zero_reference_flag": false,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          },
+          "h_k": {
+            "color_mag": 0.08799934387207031,
+            "sigma_independent_mag": 0.03465544731553803,
+            "sigma_correlation_bounds_mag": [
+              0.0010000001639127731,
+              0.04900000058114529
+            ],
+            "conservative_three_sigma_zero_reference_flag": false,
+            "scope": "Measurement-only color; zero reference is not a fitted photosphere"
+          }
+        }
+      ],
+      "status": "EXECUTED",
+      "finished_at": "2026-10-13T11:56:22.580318+00:00"
+    },
+    {
+      "id": "P10",
+      "name": "Joint model-readiness gate",
+      "question": "Is any source ready for a later multi-band WD atmosphere experiment?",
+      "decision_rule": "Require P03 astrometry screen, unique provisional survey candidates, clean JHK+W1W2; independently certified counterpart/image/model validation still required, so this run cannot authorize an excess search",
+      "started_at": "2026-10-13T11:56:22.582451+00:00",
+      "results": [
+        {
+          "gaia_id": "3426256112515893120",
+          "five_band_technical_pass": true,
+          "scientific_excess_search_authorized": false,
+          "remaining_gates": [
+            "physical association and imaging review",
+            "WD atmosphere and predictive calibration",
+            "matched controls and false-alarm calibration"
+          ]
+        },
+        {
+          "gaia_id": "3084298719148075392",
+          "five_band_technical_pass": true,
+          "scientific_excess_search_authorized": false,
+          "remaining_gates": [
+            "physical association and imaging review",
+            "WD atmosphere and predictive calibration",
+            "matched controls and false-alarm calibration"
+          ]
+        },
+        {
+          "gaia_id": "1394990877932120192",
+          "five_band_technical_pass": false,
+          "scientific_excess_search_authorized": false,
+          "remaining_gates": [
+            "physical association and imaging review",
+            "WD atmosphere and predictive calibration",
+            "matched controls and false-alarm calibration"
+          ]
+        },
+        {
+          "gaia_id": "1523940265903467648",
+          "five_band_technical_pass": false,
+          "scientific_excess_search_authorized": false,
+          "remaining_gates": [
+            "physical association and imaging review",
+            "WD atmosphere and predictive calibration",
+            "matched controls and false-alarm calibration"
+          ]
+        },
+        {
+          "gaia_id": "1480446506486463232",
+          "five_band_technical_pass": false,
+          "scientific_excess_search_authorized": false,
+          "remaining_gates": [
+            "physical association and imaging review",
+            "WD atmosphere and predictive calibration",
+            "matched controls and false-alarm calibration"
+          ]
+        },
+        {
+          "gaia_id": "3373936577562308480",
+          "five_band_technical_pass": false,
+          "scientific_excess_search_authorized": false,
+          "remaining_gates": [
+            "physical association and imaging review",
+            "WD atmosphere and predictive calibration",
+            "matched controls and false-alarm calibration"
+          ]
+        },
+        {
+          "gaia_id": "3329504552469878912",
+          "five_band_technical_pass": true,
+          "scientific_excess_search_authorized": false,
+          "remaining_gates": [
+            "physical association and imaging review",
+            "WD atmosphere and predictive calibration",
+            "matched controls and false-alarm calibration"
+          ]
+        },
+        {
+          "gaia_id": "733495927855419392",
+          "five_band_technical_pass": false,
+          "scientific_excess_search_authorized": false,
+          "remaining_gates": [
+            "physical association and imaging review",
+            "WD atmosphere and predictive calibration",
+            "matched controls and false-alarm calibration"
+          ]
+        },
+        {
+          "gaia_id": "3996592619412536448",
+          "five_band_technical_pass": false,
+          "scientific_excess_search_authorized": false,
+          "remaining_gates": [
+            "physical association and imaging review",
+            "WD atmosphere and predictive calibration",
+            "matched controls and false-alarm calibration"
+          ]
+        },
+        {
+          "gaia_id": "2558321974514561408",
+          "five_band_technical_pass": false,
+          "scientific_excess_search_authorized": false,
+          "remaining_gates": [
+            "physical association and imaging review",
+            "WD atmosphere and predictive calibration",
+            "matched controls and false-alarm calibration"
+          ]
+        }
+      ],
+      "status": "EXECUTED",
+      "finished_at": "2026-10-13T11:56:22.582486+00:00"
+    }
+  ],
+  "scientific_limits": [
+    "All associations conditional; no physically certified counterpart in this cohort",
+    "No reference-star control group or validated WD atmosphere model",
+    "No global false-alarm calibration or independent samples",
+    "No technology/alien or physical excess inference",
+    "Ten protocols include prerequisite/feasibility experiments, not ten independent discovery tests"
+  ],
+  "finished_at": "2026-10-13T11:56:22.584473+00:00"
+}
