@@ -153,9 +153,11 @@ def connect(path):
     return db
 
 
-def search(db, product=None, gaia_source_id=None, obsid=None, limit=50):
+def search(db, product=None, gaia_source_id=None, obsid=None, limit=50, offset=0):
     if not 1 <= limit <= 200:
         raise ValueError('Limit must be between 1 and 200')
+    if not 0 <= offset <= 100000:
+        raise ValueError('Offset must be between 0 and 100000')
     clauses, params = [], []
     for column, value in [('product', product), ('reported_gaia_source_id', gaia_source_id), ('obsid', obsid)]:
         if value is not None:
@@ -164,8 +166,8 @@ def search(db, product=None, gaia_source_id=None, obsid=None, limit=50):
     where = ' WHERE ' + ' AND '.join(clauses) if clauses else ''
     total = db.execute('SELECT COUNT(*) FROM observations' + where, params).fetchone()[0]
     rows = db.execute('SELECT product,obsid,reported_gaia_source_id,row_index,row_sha256 '
-                      'FROM observations' + where + ' ORDER BY product,obsid LIMIT ?', [*params, limit]).fetchall()
-    return {'total': total, 'observations': [dict(r) for r in rows],
+                      'FROM observations' + where + ' ORDER BY product,obsid LIMIT ? OFFSET ?', [*params, limit, offset]).fetchall()
+    return {'total': total, 'limit': limit, 'offset': offset, 'observations': [dict(r) for r in rows],
             'counterpart_identity_certified': False}
 
 
@@ -201,6 +203,7 @@ if __name__ == '__main__':
         if name == 'search':
             cmd.add_argument('--gaia-source-id')
             cmd.add_argument('--limit', type=int, default=50)
+            cmd.add_argument('--offset', type=int, default=0)
     args = parser.parse_args()
     if args.command == 'build':
         result = build({'wd': args.wd, 'qso': args.qso}, args.output)
@@ -208,7 +211,7 @@ if __name__ == '__main__':
         db = connect(args.db)
         try:
             result = inspect(db, args.product, args.obsid) if args.command == 'inspect' else search(
-                db, args.product, args.gaia_source_id, args.obsid, args.limit)
+                db, args.product, args.gaia_source_id, args.obsid, args.limit, args.offset)
         finally:
             db.close()
     print(json.dumps(result, indent=2, allow_nan=False))

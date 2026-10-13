@@ -5,8 +5,10 @@ from typing import Annotated
 
 from fastapi import FastAPI, HTTPException, Query
 from app.registry import connect, star_detail
+from app.observations import router as observations_router
 
 app = FastAPI(title='EchoLens API', version='0.2.0')
+app.include_router(observations_router)
 
 @app.get('/')
 def root():

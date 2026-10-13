@@ -25,3 +25,21 @@ Gaia detection incompleteness and source confusion are not fully modeled.
 No case is marked physically certified or selected as an ordinary control.
 This pilot is not an infrared/spectral anomaly experiment or population estimate.
 Main, Render and the serving database are untouched.
+
+## Completed engineering result
+
+All ten exact reported Gaia DR3 IDs returned; the combined bounded neighbor
+request returned 167 rows with successful TAP status. All ten cases have a
+single positional-support candidate inside 3 arcsec under the PM-only model.
+Propagated fiber separations range 0.0194–1.1524 arcsec. This is conditional
+support, not physical counterpart certification: zero cases are certified.
+Raw requests/responses, native error/correlation fields and derived outputs
+are retained. Offline replay with socket connections blocked reproduced the
+results exactly. Frozen design commit: f855187a4273508b9f77f600ece8e1b1ddf6e73f.
+
+Replay: `python -m scripts.wd_counterpart_pilot design.json raw-directory`.
+Acquisition requires explicit `--acquire` and a new destination directory.
+Evidence: https://drive.google.com/drive/folders/1_uhcsuKI-r3SSOBLhB5QKGLJ7ft3tNO5
+The next scientific gate remains positional-epoch/centroid uncertainty review,
+including original spectral metadata and image-based ambiguity assessment.
+No WISE excess scoring or ordinary-control certification was performed.

@@ -66,7 +66,8 @@ release equivalence of other mirrors, or any anomaly claim.
 
 Keep raw binaries out of Git and archive the validated acquisition, checksums,
 schema and original HTTP provenance in Drive. The failed original stays intact.
-No API, main branch or Render configuration is changed.
+Main and Render configuration are unchanged. The later staging work adds
+optional read-only observation routes on this unmerged research branch.
 
 ## Cloud attempt 002 outcome
 

@@ -1,0 +1,677 @@
+{
+  "run_id": "DR9-WD-CP001-20261013",
+  "design_sha256": "36b0f3732d238d568941885c4be3f4d6489d58914935accd97b425c8e50fe4f4",
+  "method_sha256": "ecd6cf86f520ffa14dbd30025de987c5ed1b6f94d451842b90db1e5e3a008c9d",
+  "source_count": 10,
+  "neighbor_rows": 167,
+  "physically_certified_counterparts": 0,
+  "limitations": [
+    "LAMOST input RA/Dec coordinate epoch not established by equinox J2000 label",
+    "Fiber position is pointing, not a source centroid with uncertainty",
+    "No perspective acceleration or apparent/parallax correction in PM-only propagation",
+    "Neighbor completeness limited to 60 arcsec at Gaia reference epoch and catalog detection limits",
+    "No physical counterpart is certified by this engineering pilot"
+  ],
+  "results": [
+    {
+      "obsid": 606215071,
+      "reported_gaia_source_id": "3426256112515893120",
+      "epoch_tcb_jyear": 2017.8795373914734,
+      "physical_counterpart_certified": false,
+      "input_to_fiber_arcsec": 0.0,
+      "gaia_reported_id_measurements": {
+        "source_id": "3426256112515893120",
+        "ref_epoch": 2016.0,
+        "ra": 92.09867849762247,
+        "dec": 24.09783542967744,
+        "ra_error": 0.014666052535176277,
+        "dec_error": 0.012449038214981556,
+        "parallax": 0.5011145178819792,
+        "parallax_error": 0.01870722882449627,
+        "pmra": 0.1460032832890201,
+        "pmdec": -3.246670945965205,
+        "pmra_error": 0.017653856426477432,
+        "pmdec_error": 0.013372132554650307,
+        "ra_dec_corr": 0.30562058091163635,
+        "ra_parallax_corr": -0.3212605118751526,
+        "ra_pmra_corr": -0.08638093620538712,
+        "ra_pmdec_corr": -0.3176756501197815,
+        "dec_parallax_corr": -0.5453583598136902,
+        "dec_pmra_corr": -0.18647922575473785,
+        "dec_pmdec_corr": -0.5545536875724792,
+        "parallax_pmra_corr": 0.14269180595874786,
+        "parallax_pmdec_corr": 0.5139922499656677,
+        "pmra_pmdec_corr": 0.02213417924940586,
+        "phot_g_mean_mag": 12.753403663635254,
+        "ruwe": 0.951286792755127,
+        "duplicated_source": false,
+        "astrometric_params_solved": 31,
+        "ipd_frac_multi_peak": 0,
+        "radial_velocity": null,
+        "radial_velocity_error": null
+      },
+      "fiber_separation_at_gaia_ref_epoch_arcsec": 0.4055592729427803,
+      "propagated_reported_position_deg": {
+        "ra": 92.09867858112734,
+        "dec": 24.09783373461093
+      },
+      "reported_fiber_separation_at_obsdate_arcsec": 0.4086154585325882,
+      "gaia_only_covariance": {
+        "matrix_mas2": [
+          [
+            0.0012320053211621622,
+            -0.00011986871057703323
+          ],
+          [
+            -0.00011986871057703323,
+            0.0004396422927749275
+          ]
+        ],
+        "gaia_only_semimajor_arcsec": 3.535169070305779e-05,
+        "scope": "Linear Gaia tangent covariance; no LAMOST/parallax/perspective error model"
+      },
+      "position_compatible_candidates": [
+        {
+          "source_id": "3426256112515893120",
+          "separation_arcsec": 0.4086154585325882
+        }
+      ],
+      "nearby_candidates_missing_motion": [],
+      "status": "SINGLE_POSITION_SUPPORT_CONDITIONAL"
+    },
+    {
+      "obsid": 115209123,
+      "reported_gaia_source_id": "3084298719148075392",
+      "epoch_tcb_jyear": 2013.0746091222388,
+      "physical_counterpart_certified": false,
+      "input_to_fiber_arcsec": 0.0,
+      "gaia_reported_id_measurements": {
+        "source_id": "3084298719148075392",
+        "ref_epoch": 2016.0,
+        "ra": 119.81817143091487,
+        "dec": 0.3839619443892035,
+        "ra_error": 0.016441576182842255,
+        "dec_error": 0.01133930403739214,
+        "parallax": 0.47891536775206905,
+        "parallax_error": 0.020274266600608826,
+        "pmra": -2.8416765932922226,
+        "pmdec": 0.015329093911649124,
+        "pmra_error": 0.02037627063691616,
+        "pmdec_error": 0.013151265680789948,
+        "ra_dec_corr": 0.03444984182715416,
+        "ra_parallax_corr": 0.07084774225950241,
+        "ra_pmra_corr": 0.10327348113059998,
+        "ra_pmdec_corr": 0.28513413667678833,
+        "dec_parallax_corr": -0.03641265630722046,
+        "dec_pmra_corr": 0.2921954393386841,
+        "dec_pmdec_corr": 0.3549674451351166,
+        "parallax_pmra_corr": 0.38381972908973694,
+        "parallax_pmdec_corr": -0.2952931523323059,
+        "pmra_pmdec_corr": -0.0750017911195755,
+        "phot_g_mean_mag": 13.853385925292969,
+        "ruwe": 1.046141505241394,
+        "duplicated_source": false,
+        "astrometric_params_solved": 31,
+        "ipd_frac_multi_peak": 0,
+        "radial_velocity": -22.29467010498047,
+        "radial_velocity_error": 10.687176704406738
+      },
+      "fiber_separation_at_gaia_ref_epoch_arcsec": 0.0148052205160802,
+      "propagated_reported_position_deg": {
+        "ra": 119.8181737401375,
+        "dec": 0.3839619319326501
+      },
+      "reported_fiber_separation_at_obsdate_arcsec": 0.01936985523423845,
+      "gaia_only_covariance": {
+        "matrix_mas2": [
+          [
+            0.0036210772743565313,
+            -0.0005434408173197074
+          ],
+          [
+            -0.0005434408173197074,
+            0.0012990093839233333
+          ]
+        ],
+        "gaia_only_semimajor_arcsec": 6.11716174700656e-05,
+        "scope": "Linear Gaia tangent covariance; no LAMOST/parallax/perspective error model"
+      },
+      "position_compatible_candidates": [
+        {
+          "source_id": "3084298719148075392",
+          "separation_arcsec": 0.01936985523423845
+        }
+      ],
+      "nearby_candidates_missing_motion": [],
+      "status": "SINGLE_POSITION_SUPPORT_CONDITIONAL"
+    },
+    {
+      "obsid": 823215126,
+      "reported_gaia_source_id": "1394990877932120192",
+      "epoch_tcb_jyear": 2020.3764573481299,
+      "physical_counterpart_certified": false,
+      "input_to_fiber_arcsec": 0.0,
+      "gaia_reported_id_measurements": {
+        "source_id": "1394990877932120192",
+        "ref_epoch": 2016.0,
+        "ra": 229.37267343979397,
+        "dec": 43.50801260780602,
+        "ra_error": 0.0999545082449913,
+        "dec_error": 0.11461543291807175,
+        "parallax": 2.7217351033499266,
+        "parallax_error": 0.13173092901706696,
+        "pmra": -19.888173240100713,
+        "pmdec": 17.881658744969783,
+        "pmra_error": 0.12667129933834076,
+        "pmdec_error": 0.16377931833267212,
+        "ra_dec_corr": 0.06958577036857605,
+        "ra_parallax_corr": -0.1900910586118698,
+        "ra_pmra_corr": 0.04505513608455658,
+        "ra_pmdec_corr": 0.18889035284519196,
+        "dec_parallax_corr": -0.21291936933994293,
+        "dec_pmra_corr": 0.1613633632659912,
+        "dec_pmdec_corr": -0.06501055508852005,
+        "parallax_pmra_corr": -0.1788320541381836,
+        "parallax_pmdec_corr": -0.1647672802209854,
+        "pmra_pmdec_corr": 0.19116607308387756,
+        "phot_g_mean_mag": 18.514249801635742,
+        "ruwe": 1.00662100315094,
+        "duplicated_source": false,
+        "astrometric_params_solved": 31,
+        "ipd_frac_multi_peak": 0,
+        "radial_velocity": null,
+        "radial_velocity_error": null
+      },
+      "fiber_separation_at_gaia_ref_epoch_arcsec": 0.2289756984767047,
+      "propagated_reported_position_deg": {
+        "ra": 229.37264010400895,
+        "dec": 43.50803434622252
+      },
+      "reported_fiber_separation_at_obsdate_arcsec": 0.3452919861891928,
+      "gaia_only_covariance": {
+        "matrix_mas2": [
+          [
+            0.3223118912381564,
+            0.1005446405944194
+          ],
+          [
+            0.1005446405944194,
+            0.5162188599366545
+          ]
+        ],
+        "gaia_only_semimajor_arcsec": 0.0007476233836186895,
+        "scope": "Linear Gaia tangent covariance; no LAMOST/parallax/perspective error model"
+      },
+      "position_compatible_candidates": [
+        {
+          "source_id": "1394990877932120192",
+          "separation_arcsec": 0.3452919861891928
+        }
+      ],
+      "nearby_candidates_missing_motion": [],
+      "status": "SINGLE_POSITION_SUPPORT_CONDITIONAL"
+    },
+    {
+      "obsid": 795412170,
+      "reported_gaia_source_id": "1523940265903467648",
+      "epoch_tcb_jyear": 2020.0643423535375,
+      "physical_counterpart_certified": false,
+      "input_to_fiber_arcsec": 0.0,
+      "gaia_reported_id_measurements": {
+        "source_id": "1523940265903467648",
+        "ref_epoch": 2016.0,
+        "ra": 196.87869528931583,
+        "dec": 39.38694379572043,
+        "ra_error": 0.05026755854487419,
+        "dec_error": 0.052567023783922195,
+        "parallax": 7.793033102759636,
+        "parallax_error": 0.07955718040466309,
+        "pmra": -66.16660354050147,
+        "pmdec": -59.43710434540242,
+        "pmra_error": 0.057043202221393585,
+        "pmdec_error": 0.0720890685915947,
+        "ra_dec_corr": 0.1701054573059082,
+        "ra_parallax_corr": -0.16082073748111725,
+        "ra_pmra_corr": -0.1280740648508072,
+        "ra_pmdec_corr": -0.0036116652190685272,
+        "dec_parallax_corr": -0.01239189226180315,
+        "dec_pmra_corr": -0.028176281601190567,
+        "dec_pmdec_corr": -0.003735955571755767,
+        "parallax_pmra_corr": -0.012110481038689613,
+        "parallax_pmdec_corr": -0.06620074063539505,
+        "pmra_pmdec_corr": 0.05447356775403023,
+        "phot_g_mean_mag": 17.50725555419922,
+        "ruwe": 1.0207350254058838,
+        "duplicated_source": false,
+        "astrometric_params_solved": 31,
+        "ipd_frac_multi_peak": 0,
+        "radial_velocity": null,
+        "radial_velocity_error": null
+      },
+      "fiber_separation_at_gaia_ref_epoch_arcsec": 0.791000659043152,
+      "propagated_reported_position_deg": {
+        "ra": 196.878598636357,
+        "dec": 39.386876692141406
+      },
+      "reported_fiber_separation_at_obsdate_arcsec": 1.1524432679940773,
+      "gaia_only_covariance": {
+        "matrix_mas2": [
+          [
+            0.05329285360691651,
+            0.0037532269982101366
+          ],
+          [
+            0.0037532269982101366,
+            0.08849407836773443
+          ]
+        ],
+        "gaia_only_semimajor_arcsec": 0.00029814393574696256,
+        "scope": "Linear Gaia tangent covariance; no LAMOST/parallax/perspective error model"
+      },
+      "position_compatible_candidates": [
+        {
+          "source_id": "1523940265903467648",
+          "separation_arcsec": 1.1524432679940773
+        }
+      ],
+      "nearby_candidates_missing_motion": [],
+      "status": "SINGLE_POSITION_SUPPORT_CONDITIONAL"
+    },
+    {
+      "obsid": 901608028,
+      "reported_gaia_source_id": "1480446506486463232",
+      "epoch_tcb_jyear": 2021.2607831660996,
+      "physical_counterpart_certified": false,
+      "input_to_fiber_arcsec": 0.0,
+      "gaia_reported_id_measurements": {
+        "source_id": "1480446506486463232",
+        "ref_epoch": 2016.0,
+        "ra": 218.03219146698547,
+        "dec": 36.179493454209855,
+        "ra_error": 0.0231245756149292,
+        "dec_error": 0.027181990444660187,
+        "parallax": 0.017961359223490504,
+        "parallax_error": 0.03849099576473236,
+        "pmra": -3.7180644205767748,
+        "pmdec": -3.5719361253541404,
+        "pmra_error": 0.028175074607133865,
+        "pmdec_error": 0.03573092445731163,
+        "ra_dec_corr": 0.21246029436588287,
+        "ra_parallax_corr": -0.08041036128997803,
+        "ra_pmra_corr": 0.117522232234478,
+        "ra_pmdec_corr": 0.05663013830780983,
+        "dec_parallax_corr": -0.06104622781276703,
+        "dec_pmra_corr": 0.043953604996204376,
+        "dec_pmdec_corr": 0.02864837646484375,
+        "parallax_pmra_corr": -0.13467825949192047,
+        "parallax_pmdec_corr": -0.16057246923446655,
+        "pmra_pmdec_corr": 0.3028714954853058,
+        "phot_g_mean_mag": 16.323701858520508,
+        "ruwe": 0.9394018054008484,
+        "duplicated_source": false,
+        "astrometric_params_solved": 31,
+        "ipd_frac_multi_peak": 0,
+        "radial_velocity": null,
+        "radial_velocity_error": null
+      },
+      "fiber_separation_at_gaia_ref_epoch_arcsec": 0.13036412602145717,
+      "propagated_reported_position_deg": {
+        "ra": 218.03218473568637,
+        "dec": 36.17948823443704
+      },
+      "reported_fiber_separation_at_obsdate_arcsec": 0.1569074028758381,
+      "gaia_only_covariance": {
+        "matrix_mas2": [
+          [
+            0.02331042809618895,
+            0.008995358333808868
+          ],
+          [
+            0.008995358333808868,
+            0.03636533228726888
+          ]
+        ],
+        "gaia_only_semimajor_arcsec": 0.00020236605432509772,
+        "scope": "Linear Gaia tangent covariance; no LAMOST/parallax/perspective error model"
+      },
+      "position_compatible_candidates": [
+        {
+          "source_id": "1480446506486463232",
+          "separation_arcsec": 0.1569074028758381
+        }
+      ],
+      "nearby_candidates_missing_motion": [],
+      "status": "SINGLE_POSITION_SUPPORT_CONDITIONAL"
+    },
+    {
+      "obsid": 318516241,
+      "reported_gaia_source_id": "3373936577562308480",
+      "epoch_tcb_jyear": 2015.11704584112,
+      "physical_counterpart_certified": false,
+      "input_to_fiber_arcsec": 0.0,
+      "gaia_reported_id_measurements": {
+        "source_id": "3373936577562308480",
+        "ref_epoch": 2016.0,
+        "ra": 95.22402861361093,
+        "dec": 19.252121111522232,
+        "ra_error": 0.052358172833919525,
+        "dec_error": 0.052679866552352905,
+        "parallax": 0.1948625099082515,
+        "parallax_error": 0.06118860840797424,
+        "pmra": 0.48273114475082846,
+        "pmdec": -1.509635827449599,
+        "pmra_error": 0.06622951477766037,
+        "pmdec_error": 0.055473122745752335,
+        "ra_dec_corr": -0.31714820861816406,
+        "ra_parallax_corr": 0.14568422734737396,
+        "ra_pmra_corr": -0.33887675404548645,
+        "ra_pmdec_corr": 0.36111199855804443,
+        "dec_parallax_corr": -0.5363792777061462,
+        "dec_pmra_corr": 0.31623485684394836,
+        "dec_pmdec_corr": -0.6332960724830627,
+        "parallax_pmra_corr": -0.012108617462217808,
+        "parallax_pmdec_corr": 0.3724728524684906,
+        "pmra_pmdec_corr": -0.3366991877555847,
+        "phot_g_mean_mag": 16.217254638671875,
+        "ruwe": 1.0683804750442505,
+        "duplicated_source": false,
+        "astrometric_params_solved": 31,
+        "ipd_frac_multi_peak": 1,
+        "radial_velocity": null,
+        "radial_velocity_error": null
+      },
+      "fiber_separation_at_gaia_ref_epoch_arcsec": 0.02100785150442574,
+      "propagated_reported_position_deg": {
+        "ra": 95.2240284882005,
+        "dec": 19.25212148178313
+      },
+      "reported_fiber_separation_at_obsdate_arcsec": 0.022258831015335944,
+      "gaia_only_covariance": {
+        "matrix_mas2": [
+          [
+            0.008236144184581448,
+            -0.0037394229436773976
+          ],
+          [
+            -0.0037394229436773976,
+            0.008442382576138538
+          ]
+        ],
+        "gaia_only_semimajor_arcsec": 0.00010990954405002269,
+        "scope": "Linear Gaia tangent covariance; no LAMOST/parallax/perspective error model"
+      },
+      "position_compatible_candidates": [
+        {
+          "source_id": "3373936577562308480",
+          "separation_arcsec": 0.022258831015335944
+        }
+      ],
+      "nearby_candidates_missing_motion": [],
+      "status": "SINGLE_POSITION_SUPPORT_CONDITIONAL"
+    },
+    {
+      "obsid": 647610089,
+      "reported_gaia_source_id": "3329504552469878912",
+      "epoch_tcb_jyear": 2018.1314196678711,
+      "physical_counterpart_certified": false,
+      "input_to_fiber_arcsec": 0.0,
+      "gaia_reported_id_measurements": {
+        "source_id": "3329504552469878912",
+        "ref_epoch": 2016.0,
+        "ra": 91.77939306234127,
+        "dec": 9.50790154546791,
+        "ra_error": 0.014094803482294083,
+        "dec_error": 0.011702489107847214,
+        "parallax": 0.76071285369146,
+        "parallax_error": 0.015653692185878754,
+        "pmra": 0.9882584911950778,
+        "pmdec": -3.8809577531494783,
+        "pmra_error": 0.01732301525771618,
+        "pmdec_error": 0.013590465299785137,
+        "ra_dec_corr": 0.06419926881790161,
+        "ra_parallax_corr": -0.17420244216918945,
+        "ra_pmra_corr": -0.024444065988063812,
+        "ra_pmdec_corr": -0.14968341588974,
+        "dec_parallax_corr": -0.2916586101055145,
+        "dec_pmra_corr": -0.011642218567430973,
+        "dec_pmdec_corr": -0.404320627450943,
+        "parallax_pmra_corr": -0.08113494515419006,
+        "parallax_pmdec_corr": 0.2016388177871704,
+        "pmra_pmdec_corr": -0.25997260212898254,
+        "phot_g_mean_mag": 13.248480796813965,
+        "ruwe": 0.9473627805709839,
+        "duplicated_source": false,
+        "astrometric_params_solved": 31,
+        "ipd_frac_multi_peak": 0,
+        "radial_velocity": null,
+        "radial_velocity_error": null
+      },
+      "fiber_separation_at_gaia_ref_epoch_arcsec": 0.06646319320532897,
+      "propagated_reported_position_deg": {
+        "ra": 91.7793936556003,
+        "dec": 9.507899247704108
+      },
+      "reported_fiber_separation_at_obsdate_arcsec": 0.07499888426862604,
+      "gaia_only_covariance": {
+        "matrix_mas2": [
+          [
+            0.0015365007997899987,
+            -0.0003336047586942689
+          ],
+          [
+            -0.0003336047586942689,
+            0.0007019165489351306
+          ]
+        ],
+        "gaia_only_semimajor_arcsec": 4.0662763679352426e-05,
+        "scope": "Linear Gaia tangent covariance; no LAMOST/parallax/perspective error model"
+      },
+      "position_compatible_candidates": [
+        {
+          "source_id": "3329504552469878912",
+          "separation_arcsec": 0.07499888426862604
+        }
+      ],
+      "nearby_candidates_missing_motion": [],
+      "status": "SINGLE_POSITION_SUPPORT_CONDITIONAL"
+    },
+    {
+      "obsid": 392416230,
+      "reported_gaia_source_id": "733495927855419392",
+      "epoch_tcb_jyear": 2015.965779629932,
+      "physical_counterpart_certified": false,
+      "input_to_fiber_arcsec": 0.0,
+      "gaia_reported_id_measurements": {
+        "source_id": "733495927855419392",
+        "ref_epoch": 2016.0,
+        "ra": 164.60504705998449,
+        "dec": 30.95523459799474,
+        "ra_error": 0.20414486527442932,
+        "dec_error": 0.20507745444774628,
+        "parallax": 2.7711407109219497,
+        "parallax_error": 0.2518756091594696,
+        "pmra": -38.930706111642095,
+        "pmdec": 10.769188018683034,
+        "pmra_error": 0.2203376591205597,
+        "pmdec_error": 0.26054978370666504,
+        "ra_dec_corr": -0.08459429442882538,
+        "ra_parallax_corr": -0.1919907033443451,
+        "ra_pmra_corr": -0.18999344110488892,
+        "ra_pmdec_corr": -0.04635724425315857,
+        "dec_parallax_corr": -0.09329506009817123,
+        "dec_pmra_corr": -0.0817340612411499,
+        "dec_pmdec_corr": -0.0934668555855751,
+        "parallax_pmra_corr": 0.22386856377124786,
+        "parallax_pmdec_corr": -0.14237649738788605,
+        "pmra_pmdec_corr": -0.28005945682525635,
+        "phot_g_mean_mag": 19.111446380615234,
+        "ruwe": 0.9826881289482117,
+        "duplicated_source": false,
+        "astrometric_params_solved": 31,
+        "ipd_frac_multi_peak": 0,
+        "radial_velocity": null,
+        "radial_velocity_error": null
+      },
+      "fiber_separation_at_gaia_ref_epoch_arcsec": 0.5565008446870897,
+      "propagated_reported_position_deg": {
+        "ra": 164.6050474915087,
+        "dec": 30.95523449562652
+      },
+      "reported_fiber_separation_at_obsdate_arcsec": 0.5551187676199483,
+      "gaia_only_covariance": {
+        "matrix_mas2": [
+          [
+            0.042316876651571494,
+            -0.003349647881158537
+          ],
+          [
+            -0.003349647881158537,
+            0.042478066350353796
+          ]
+        ],
+        "gaia_only_semimajor_arcsec": 0.000213888028710818,
+        "scope": "Linear Gaia tangent covariance; no LAMOST/parallax/perspective error model"
+      },
+      "position_compatible_candidates": [
+        {
+          "source_id": "733495927855419392",
+          "separation_arcsec": 0.5551187676199483
+        }
+      ],
+      "nearby_candidates_missing_motion": [],
+      "status": "SINGLE_POSITION_SUPPORT_CONDITIONAL"
+    },
+    {
+      "obsid": 389609225,
+      "reported_gaia_source_id": "3996592619412536448",
+      "epoch_tcb_jyear": 2015.95482822661,
+      "physical_counterpart_certified": false,
+      "input_to_fiber_arcsec": 0.0,
+      "gaia_reported_id_measurements": {
+        "source_id": "3996592619412536448",
+        "ref_epoch": 2016.0,
+        "ra": 166.96138892013408,
+        "dec": 26.23109429843937,
+        "ra_error": 0.11281342804431915,
+        "dec_error": 0.11348918825387955,
+        "parallax": 6.0186122262215465,
+        "parallax_error": 0.14040981233119965,
+        "pmra": -26.613680740735354,
+        "pmdec": 15.731335045306043,
+        "pmra_error": 0.13367749750614166,
+        "pmdec_error": 0.15575061738491058,
+        "ra_dec_corr": -0.11305753141641617,
+        "ra_parallax_corr": -0.15355943143367767,
+        "ra_pmra_corr": -0.4418027102947235,
+        "ra_pmdec_corr": -0.09056403487920761,
+        "dec_parallax_corr": -0.3077608048915863,
+        "dec_pmra_corr": -0.08529595285654068,
+        "dec_pmdec_corr": -0.36495301127433777,
+        "parallax_pmra_corr": 0.2311086505651474,
+        "parallax_pmdec_corr": 0.07491586357355118,
+        "pmra_pmdec_corr": -0.55968177318573,
+        "phot_g_mean_mag": 18.1350040435791,
+        "ruwe": 0.9483907222747803,
+        "duplicated_source": false,
+        "astrometric_params_solved": 31,
+        "ipd_frac_multi_peak": 0,
+        "radial_velocity": null,
+        "radial_velocity_error": null
+      },
+      "fiber_separation_at_gaia_ref_epoch_arcsec": 0.35159899122510774,
+      "propagated_reported_position_deg": {
+        "ra": 166.96138929241272,
+        "dec": 26.231094101047066
+      },
+      "reported_fiber_separation_at_obsdate_arcsec": 0.35021887728400397,
+      "gaia_only_covariance": {
+        "matrix_mas2": [
+          [
+            0.013365260517078092,
+            -0.0013409306243969753
+          ],
+          [
+            -0.0013409306243969753,
+            0.013512092960150797
+          ]
+        ],
+        "gaia_only_semimajor_arcsec": 0.00012157966785444678,
+        "scope": "Linear Gaia tangent covariance; no LAMOST/parallax/perspective error model"
+      },
+      "position_compatible_candidates": [
+        {
+          "source_id": "3996592619412536448",
+          "separation_arcsec": 0.35021887728400397
+        }
+      ],
+      "nearby_candidates_missing_motion": [],
+      "status": "SINGLE_POSITION_SUPPORT_CONDITIONAL"
+    },
+    {
+      "obsid": 780214138,
+      "reported_gaia_source_id": "2558321974514561408",
+      "epoch_tcb_jyear": 2019.9822068286226,
+      "physical_counterpart_certified": false,
+      "input_to_fiber_arcsec": 0.0,
+      "gaia_reported_id_measurements": {
+        "source_id": "2558321974514561408",
+        "ref_epoch": 2016.0,
+        "ra": 23.1007349679306,
+        "dec": 1.599238126179283,
+        "ra_error": 0.06601069122552872,
+        "dec_error": 0.042589329183101654,
+        "parallax": 10.132816912286087,
+        "parallax_error": 0.07770691066980362,
+        "pmra": 73.33958833992787,
+        "pmdec": -48.46209312128047,
+        "pmra_error": 0.0948980301618576,
+        "pmdec_error": 0.05029536411166191,
+        "ra_dec_corr": 0.28590795397758484,
+        "ra_parallax_corr": 0.026354242116212845,
+        "ra_pmra_corr": -0.4943816065788269,
+        "ra_pmdec_corr": 0.03623714670538902,
+        "dec_parallax_corr": -0.07919986546039581,
+        "dec_pmra_corr": 0.12281711399555206,
+        "dec_pmdec_corr": -0.4635045528411865,
+        "parallax_pmra_corr": 0.039446476846933365,
+        "parallax_pmdec_corr": 0.32650402188301086,
+        "pmra_pmdec_corr": 0.14671066403388977,
+        "phot_g_mean_mag": 16.981281280517578,
+        "ruwe": 0.9601496458053589,
+        "duplicated_source": false,
+        "astrometric_params_solved": 31,
+        "ipd_frac_multi_peak": 0,
+        "radial_velocity": null,
+        "radial_velocity_error": null
+      },
+      "fiber_separation_at_gaia_ref_epoch_arcsec": 0.7487189959850019,
+      "propagated_reported_position_deg": {
+        "ra": 23.10081612548755,
+        "dec": 1.5991845189337472
+      },
+      "reported_fiber_separation_at_obsdate_arcsec": 1.09864210435587,
+      "gaia_only_covariance": {
+        "matrix_mas2": [
+          [
+            0.1225031624283606,
+            0.014363964343313367
+          ],
+          [
+            0.014363964343313367,
+            0.034021097946793755
+          ]
+        ],
+        "gaia_only_semimajor_arcsec": 0.0003532372607956654,
+        "scope": "Linear Gaia tangent covariance; no LAMOST/parallax/perspective error model"
+      },
+      "position_compatible_candidates": [
+        {
+          "source_id": "2558321974514561408",
+          "separation_arcsec": 1.09864210435587
+        }
+      ],
+      "nearby_candidates_missing_motion": [],
+      "status": "SINGLE_POSITION_SUPPORT_CONDITIONAL"
+    }
+  ]
+}

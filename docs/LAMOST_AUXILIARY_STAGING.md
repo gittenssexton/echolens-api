@@ -70,7 +70,25 @@ https://drive.google.com/drive/folders/12eTyBoUFKBXrWXjl8S9XXKjRGVtYXnEv
 Use the artifact manifest to verify the archive hash, decompress the SQLite
 file, and verify the database hash before querying. Rebuilding preserves the
 logical data/native rows; UTC staging provenance makes a new database's binary
-hash different. Binaries remain outside Git. No Gaia serving database, API
-route, main branch or Render configuration is changed. Future survey adapters
+hash different. Binaries remain outside Git. No Gaia serving database, main branch or Render configuration is changed.
+An optional read-only observation API is now implemented on the research branch: Future survey adapters
 can use this native observation/schema/provenance pattern under explicit
 crossmatch and population protocols.
+
+## Optional API on the research branch
+
+Set `ECHOLENS_OBSERVATIONS_DB_PATH` to the separately verified SQLite snapshot
+to enable `GET /observations`, `GET /observations/catalogs` and
+`GET /observations/{product}/{obsid}`. Search accepts product (`wd`/`qso`),
+obsid, exact `reported_gaia_source_id`, limit (1–200) and offset (0–100000).
+It does not join unverified identifiers to the serving Gaia stellar registry.
+
+Without a configured/available staging database the new routes return 503;
+health and existing Gaia routes retain their behavior. All queries open the
+snapshot read-only; unavailable files are never created, invalid queries return
+422, missing observations return 404, and detected native-row tampering is not
+served. Details include survey values, uncertainty fields, schema units, source
+provenance and exact native-row references.
+
+The API is tested on the branch and has not been deployed to Render. Configure
+verified data and review PR33 before any separate deployment decision.
