@@ -1,0 +1,1424 @@
+{
+  "run_id": "DR9-LRS-AUXILIARY-INTEGRITY-20261013",
+  "scientific_status": "ENGINEERING_VALIDATED_ONLY",
+  "main_catalog_status": "BLOCKED_INCOMPLETE",
+  "count_reference": "https://www.lamost.org/dr9/v2.0/",
+  "records": [
+    {
+      "source_url": "https://www.lamost.org/dr9/v2.0/catdl?name=dr9_v2.0_LRS_wd.fits.gz",
+      "source_page": "https://www.lamost.org/dr9/v2.0/catalogue",
+      "count_reference_url": "https://www.lamost.org/dr9/v2.0/",
+      "expected_rows": 14691,
+      "started_at": "2026-10-13T05:33:02.904238+00:00",
+      "state": "validated",
+      "archived_drive_file_id": "1QTeu_VB9x4DiXEAirwkTDgWUY7Blq58N",
+      "code_commit": "8961196d3eb911388cb5ab9a2332d43f9dab8f4f",
+      "http_status": 200,
+      "response_url": "https://www.lamost.org/dr9/v2.0/catdl?name=dr9_v2.0_LRS_wd.fits.gz",
+      "http_headers": {
+        "Content-Length": null,
+        "Content-Type": null,
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "validation": {
+        "compressed_bytes": 1951285,
+        "sha256": "8ecfa5859c0cd7b7b6fc26677944da00db44872d12b76bd947cf66e54da75068",
+        "md5": "01cb68e98d2a54418cc1895886cd4446",
+        "uncompressed_bytes": 4775040,
+        "gzip_integrity": "complete",
+        "hdus": [
+          {
+            "type": "PRIMARY",
+            "header_start": 0,
+            "data_start": 2880,
+            "data_bytes": 0,
+            "row_bytes": 0,
+            "rows": 0,
+            "columns": []
+          },
+          {
+            "type": "BINTABLE",
+            "header_start": 2880,
+            "data_start": 14400,
+            "data_bytes": 4759884,
+            "row_bytes": 324,
+            "rows": 14691,
+            "columns": [
+              {
+                "name": "obsid",
+                "format": "J",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "uid",
+                "format": "32A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "gp_id",
+                "format": "K",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "designation",
+                "format": "19A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "obsdate",
+                "format": "10A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lmjd",
+                "format": "J",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mjd",
+                "format": "J",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "planid",
+                "format": "40A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "spid",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fiberid",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ra_obs",
+                "format": "D",
+                "unit": "deg",
+                "null": null
+              },
+              {
+                "name": "dec_obs",
+                "format": "D",
+                "unit": "deg",
+                "null": null
+              },
+              {
+                "name": "snru",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "snrg",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "snrr",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "snri",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "snrz",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "class",
+                "format": "20A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "subclass",
+                "format": "20A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "z",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "z_err",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ps_id",
+                "format": "K",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mag_ps_g",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mag_ps_r",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mag_ps_i",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mag_ps_z",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mag_ps_y",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "gaia_source_id",
+                "format": "25A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "gaia_g_mean_mag",
+                "format": "E",
+                "unit": "mag",
+                "null": null
+              },
+              {
+                "name": "fibertype",
+                "format": "10A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "offsets",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "offsets_v",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ra",
+                "format": "D",
+                "unit": "deg",
+                "null": null
+              },
+              {
+                "name": "dec",
+                "format": "D",
+                "unit": "deg",
+                "null": null
+              },
+              {
+                "name": "wd_subclass",
+                "format": "10A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "teff",
+                "format": "E",
+                "unit": "K",
+                "null": null
+              },
+              {
+                "name": "teff_err",
+                "format": "E",
+                "unit": "K",
+                "null": null
+              },
+              {
+                "name": "logg",
+                "format": "E",
+                "unit": "dex",
+                "null": null
+              },
+              {
+                "name": "logg_err",
+                "format": "E",
+                "unit": "dex",
+                "null": null
+              }
+            ]
+          }
+        ],
+        "rows": 14691,
+        "unique_obsids": 14691,
+        "whole_file_valid": true
+      },
+      "archive_byte_identical": true,
+      "finished_at": "2026-10-13T05:33:10.003291+00:00"
+    },
+    {
+      "source_url": "https://www.lamost.org/dr9/v2.0/catdl?name=dr9_v2.0_LRS_qso.fits.gz",
+      "source_page": "https://www.lamost.org/dr9/v2.0/catalogue",
+      "count_reference_url": "https://www.lamost.org/dr9/v2.0/",
+      "expected_rows": 18142,
+      "started_at": "2026-10-13T05:33:02.905112+00:00",
+      "state": "validated",
+      "archived_drive_file_id": "1awc0hYB6Lbmc84_W8Go9-1lsv6BjLhFB",
+      "code_commit": "8961196d3eb911388cb5ab9a2332d43f9dab8f4f",
+      "http_status": 200,
+      "response_url": "https://www.lamost.org/dr9/v2.0/catdl?name=dr9_v2.0_LRS_qso.fits.gz",
+      "http_headers": {
+        "Content-Length": null,
+        "Content-Type": null,
+        "ETag": null,
+        "Last-Modified": null
+      },
+      "validation": {
+        "compressed_bytes": 8712340,
+        "sha256": "53fe3148e123ee468bd50a901aabb762baa23c427531ae5ac994d250cc46d41c",
+        "md5": "2050ace096c930fa940a76519ac178d3",
+        "uncompressed_bytes": 23670720,
+        "gzip_integrity": "complete",
+        "hdus": [
+          {
+            "type": "PRIMARY",
+            "header_start": 0,
+            "data_start": 2880,
+            "data_bytes": 0,
+            "row_bytes": 0,
+            "rows": 0,
+            "columns": []
+          },
+          {
+            "type": "BINTABLE",
+            "header_start": 2880,
+            "data_start": 48960,
+            "data_bytes": 23620884,
+            "row_bytes": 1302,
+            "rows": 18142,
+            "columns": [
+              {
+                "name": "obsid",
+                "format": "J",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "uid",
+                "format": "32A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "gp_id",
+                "format": "K",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "designation",
+                "format": "19A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "obsdate",
+                "format": "10A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lmjd",
+                "format": "J",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mjd",
+                "format": "J",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "planid",
+                "format": "40A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "spid",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fiberid",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ra_obs",
+                "format": "D",
+                "unit": "deg",
+                "null": null
+              },
+              {
+                "name": "dec_obs",
+                "format": "D",
+                "unit": "deg",
+                "null": null
+              },
+              {
+                "name": "snru",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "snrg",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "snrr",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "snri",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "snrz",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "class",
+                "format": "20A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "subclass",
+                "format": "20A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "z",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "z_err",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ps_id",
+                "format": "K",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mag_ps_g",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mag_ps_r",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mag_ps_i",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mag_ps_z",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mag_ps_y",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "gaia_source_id",
+                "format": "25A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "gaia_g_mean_mag",
+                "format": "E",
+                "unit": "mag",
+                "null": null
+              },
+              {
+                "name": "fibertype",
+                "format": "10A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "offsets",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "offsets_v",
+                "format": "E",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ra",
+                "format": "D",
+                "unit": "deg",
+                "null": null
+              },
+              {
+                "name": "dec",
+                "format": "D",
+                "unit": "deg",
+                "null": null
+              },
+              {
+                "name": "sn_ratio_conti",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fe_uv_norm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fe_uv_fwhm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fe_uv_shift",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fe_op_norm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fe_op_fwhm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fe_op_shift",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "pl_norm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "pl_slope",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "balmer_norm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "balmer_teff",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "balmer_tau_e",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "poly_a",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "poly_b",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "poly_c",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "l1350",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "l3000",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "l5100",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "line_name_1",
+                "format": "5A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fitting_status_1",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "min_chi2_1",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "red_chi2_1",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ndof_1",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "line_name_2",
+                "format": "5A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fitting_status_2",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "min_chi2_2",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "red_chi2_2",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ndof_2",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "line_name_3",
+                "format": "5A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fitting_status_3",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "min_chi2_3",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "red_chi2_3",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ndof_3",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "line_name_4",
+                "format": "5A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fitting_status_4",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "min_chi2_4",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "red_chi2_4",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ndof_4",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "line_name_5",
+                "format": "1A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fitting_status_5",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "min_chi2_5",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "red_chi2_5",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ndof_5",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "line_name_6",
+                "format": "1A",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "fitting_status_6",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "min_chi2_6",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "red_chi2_6",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ndof_6",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_br_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_br_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_br_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_na_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_na_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_na_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_br_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_br_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_br_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_na_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_na_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_na_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_br_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_br_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_br_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_br_2_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_br_2_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_na_1_peak_flux",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_na_1_peak_wavelength",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_na_1_sigma",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_na_2_peak_flux",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_na_2_peak_wavelength",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_na_2_sigma",
+                "format": "I",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_br_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_br_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_br_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_na_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_na_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_na_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_na_2_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_na_2_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_na_2_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_br_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_br_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_br_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_na_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_na_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_na_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "oiii4959_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "oiii4959_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "oiii4959_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "oiii5007_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "oiii5007_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "oiii5007_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_br_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_br_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_br_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_br_2_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_br_2_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_br_2_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_br_3_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_br_3_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_br_3_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_na_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_na_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_na_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "nii6549_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "nii6549_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "nii6549_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "nii6585_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "nii6585_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "nii6585_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "sii6718_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "sii6718_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "sii6718_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "sii6732_1_peak_flux",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "sii6732_1_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "sii6732_1_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_fwhm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_ew",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "lya_area",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_fwhm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_ew",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "civ_area",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_fwhm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_ew",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ciii_area",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_fwhm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_ew",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "mgii_area",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_fwhm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_ew",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "hb_area",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_fwhm",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_sigma",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_ew",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_peak_wavelength",
+                "format": "D",
+                "unit": null,
+                "null": null
+              },
+              {
+                "name": "ha_area",
+                "format": "D",
+                "unit": null,
+                "null": null
+              }
+            ]
+          }
+        ],
+        "rows": 18142,
+        "unique_obsids": 18142,
+        "whole_file_valid": true
+      },
+      "archive_byte_identical": true,
+      "finished_at": "2026-10-13T05:33:33.038199+00:00"
+    }
+  ]
+}

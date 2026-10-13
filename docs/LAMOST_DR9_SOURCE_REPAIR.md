@@ -97,3 +97,47 @@ package directory lists spectra archives, not this general catalog. A complete
 provider file or an authenticated resumable source is needed before catalog
 import. No repeated unattended retry has been scheduled, no observation rows
 from the incomplete transfer were imported, and main/Render remain unchanged.
+
+## Auxiliary source integrity run 2026-10-13
+
+Run `DR9-LRS-AUXILIARY-INTEGRITY-20261013` validates two smaller, existing
+archive files, not recovery of the general catalog. Both native gzip files pass
+CRC/trailer through EOF, FITS HDU/block/payload checks, independently published
+release row counts, and positive unique `obsid` checks. Fresh bounded downloads
+from the official `catdl` links are byte-identical to the archived files.
+
+| Product | Observation rows | Native gzip bytes | FITS columns |
+| --- | ---: | ---: | ---: |
+| White dwarf catalog | 14,691 | 1,951,285 | 39 |
+| QSO emission-line feature catalog | 18,142 | 8,712,340 | 180 |
+
+Expected counts come from https://www.lamost.org/dr9/v2.0/ (WD Star Catalog
+and Qso Emission line Feature Catalog), independently of the FITS headers.
+The general QSO spectrum count of 74,997 is a different product and is not the
+expected row count of this line-feature subset.
+
+Full schema, native checksums, UTC retrieval times, HTTP provenance and archive
+Drive IDs are in `reports/lamost_dr9_auxiliary_validation_20261013.json`.
+Auxiliary archival evidence folder:
+https://drive.google.com/drive/folders/1A6TEfOmuJzXouXEsLxzKsst5xpuPC_DS
+
+Offline reproduction from the original files:
+
+```
+python -m scripts.audit_lamost_auxiliary wd /path/to/dr9_v2.0_LRS_wd.fits.gz
+python -m scripts.audit_lamost_auxiliary qso /path/to/dr9_v2.0_LRS_qso.fits.gz
+```
+
+Replay requires the exact frozen compressed SHA-256 before structural checks;
+changed input bytes require a new audit. Both real files passed offline replay,
+and one-byte-truncated copies were rejected by the identity gate. Original
+uncertainty columns and units are recorded from FITS headers without changing
+or imputing values. White-dwarf `teff`/`logg` and their uncertainties are survey
+pipeline estimates, not EchoLens AI interpretations.
+
+Observation rows are not necessarily unique physical sources. Neither product
+certifies Gaia counterpart identity or astrophysical normality. White dwarfs
+are a specialized population, and QSOs are not ordinary stellar controls.
+These audits establish complete source files for later explicit protocols;
+no selected experiment, crossmatch or anomaly test has been run on them,
+and the incomplete main catalog remains blocked. No serving data was imported.
