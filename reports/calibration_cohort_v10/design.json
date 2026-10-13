@@ -1,0 +1,36 @@
+{
+  "run": "independent-selection-readiness-v10",
+  "requested_cohort_size": 20,
+  "pool_limit": 100,
+  "query": "SELECT TOP 100 g.source_id AS gaia_source_id,g.random_index,g.ra,g.dec,g.ref_epoch,g.pmra,g.pmdec,g.parallax,g.parallax_over_error,g.phot_g_mean_mag,g.ruwe,g.duplicated_source,g.phot_variable_flag,g.non_single_star,g.astrometric_params_solved,g.b,g.classprob_dsc_combmod_star,ap.*\nFROM gaiadr3.gaia_source AS g JOIN gaiadr3.astrophysical_parameters AS ap ON g.source_id=ap.source_id\nWHERE g.random_index BETWEEN 1000000 AND 100000000 AND ABS(g.b)>20 AND g.phot_g_mean_mag BETWEEN 8 AND 13 AND g.ruwe<1.2 AND g.duplicated_source='false' AND g.non_single_star=0 AND g.phot_variable_flag<>'VARIABLE' AND g.astrometric_params_solved=31 AND g.parallax_over_error>10 AND g.classprob_dsc_combmod_star>0.99\nAND ap.teff_gspspec_lower>=4900 AND ap.teff_gspspec_upper<=5200 AND ap.logg_gspspec_lower>=2.5 AND ap.logg_gspspec_upper<=3.5 AND ap.mh_gspspec_lower>=-0.5 AND ap.mh_gspspec_upper<=0\nAND ap.flags_gspspec LIKE '0000000000000%'\nORDER BY g.random_index ASC",
+  "exclusion": "random_index>=1000000, outside primary 10000 registry acquisition domain; explicitly remove 100 exposed v02 IDs",
+  "selection_order": "SHA256 echolens-calibration-v10: plus exact source ID then numeric ID",
+  "selection_inputs": "Gaia main/AP only; no WISE/2MASS values or residuals",
+  "irsa_radius_arcsec": 15,
+  "geometric_eligibility_arcsec": 3,
+  "status": "comparison candidates; ordinary-star status not certified; GSPspec values raw/un-calibrated; no excess scoring",
+  "created_utc": "2026-10-13T10:26:26.930550+00:00",
+  "syntax_amendment": {
+    "original_query": "SELECT TOP 100 g.source_id,g.random_index,g.ra,g.dec,g.ref_epoch,g.pmra,g.pmdec,g.parallax,g.parallax_over_error,g.phot_g_mean_mag,g.ruwe,g.duplicated_source,g.phot_variable_flag,g.non_single_star,g.astrometric_params_solved,g.b,g.classprob_dsc_combmod_star,ap.*\nFROM gaiadr3.gaia_source AS g JOIN gaiadr3.astrophysical_parameters AS ap ON g.source_id=ap.source_id\nWHERE g.random_index>=1000000 AND ABS(g.b)>20 AND g.phot_g_mean_mag BETWEEN 8 AND 13 AND g.ruwe<1.2 AND g.duplicated_source='false' AND g.non_single_star=0 AND g.phot_variable_flag!='VARIABLE' AND g.astrometric_params_solved=31 AND g.parallax_over_error>10 AND g.classprob_dsc_combmod_star>0.99\nAND ap.teff_gspspec_lower>=4900 AND ap.teff_gspspec_upper<=5200 AND ap.logg_gspspec_lower>=2.5 AND ap.logg_gspspec_upper<=3.5 AND ap.mh_gspspec_lower>=-0.5 AND ap.mh_gspspec_upper<=0\nAND ap.flags_gspspec LIKE '0000000000000%'\nORDER BY g.random_index ASC",
+    "changes": [
+      "ADQL inequality <> rather than !=",
+      "alias main-table source_id to avoid duplicate join field name"
+    ],
+    "before_any_valid_response_or_selection": true
+  },
+  "performance_amendment": {
+    "original_query": "SELECT TOP 100 g.source_id AS gaia_source_id,g.random_index,g.ra,g.dec,g.ref_epoch,g.pmra,g.pmdec,g.parallax,g.parallax_over_error,g.phot_g_mean_mag,g.ruwe,g.duplicated_source,g.phot_variable_flag,g.non_single_star,g.astrometric_params_solved,g.b,g.classprob_dsc_combmod_star,ap.*\nFROM gaiadr3.gaia_source AS g JOIN gaiadr3.astrophysical_parameters AS ap ON g.source_id=ap.source_id\nWHERE g.random_index>=1000000 AND ABS(g.b)>20 AND g.phot_g_mean_mag BETWEEN 8 AND 13 AND g.ruwe<1.2 AND g.duplicated_source='false' AND g.non_single_star=0 AND g.phot_variable_flag<>'VARIABLE' AND g.astrometric_params_solved=31 AND g.parallax_over_error>10 AND g.classprob_dsc_combmod_star>0.99\nAND ap.teff_gspspec_lower>=4900 AND ap.teff_gspspec_upper<=5200 AND ap.logg_gspspec_lower>=2.5 AND ap.logg_gspspec_upper<=3.5 AND ap.mh_gspspec_lower>=-0.5 AND ap.mh_gspspec_upper<=0\nAND ap.flags_gspspec LIKE '0000000000000%'\nORDER BY g.random_index ASC",
+    "new_random_index_domain": [
+      1000000,
+      100000000
+    ],
+    "reason": "bound all-sky database join/order; no valid Gaia pool or infrared retrieval before amendment",
+    "physical_quality_filters_unchanged": true
+  },
+  "analysis_roles": {
+    "first_12_hash_ranked_candidates": "calibration_development",
+    "remaining_up_to_8": "validation_reserved",
+    "scope": "reserved from fitting/tuning; raw observations remain archived and are not technically blinded",
+    "set_before_valid_pool_response_or_IR_retrieval": true
+  }
+}
