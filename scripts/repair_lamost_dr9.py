@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import gzip
 import hashlib
 import json
+import os
 from pathlib import Path
 import sqlite3
 import struct
@@ -104,14 +105,18 @@ def validate(path, expected_rows=ROWS):
     return report
 
 
-def acquire(directory):
+def acquire(directory,max_seconds=1800):
+    if not 1<=max_seconds<=5400: raise ValueError('Invalid acquisition time budget')
     directory=Path(directory); directory.mkdir(parents=True,exist_ok=True)
     partial=directory/'dr9_v2.0_LRS_catalogue.fits.gz.part'
     final=directory/'dr9_v2.0_LRS_catalogue.complete.fits.gz'
     if partial.exists() or final.exists(): raise ValueError('Refusing to overwrite an acquisition')
     record={'source_url':URL,'source_page':'https://www.lamost.org/dr9/v2.0/catalogue',
             'release':'LAMOST DR9 v2.0 LRS','started_at':datetime.now(timezone.utc).isoformat(),
-            'expected_rows':ROWS,'state':'acquiring','range_resume_supported':False}
+            'expected_rows':ROWS,'state':'acquiring','range_resume_supported':False,
+            'max_seconds':max_seconds,'code_commit':os.environ.get('GITHUB_SHA'),
+            'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),
+            'implementation_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
     metadata=directory/'acquisition.json'
     metadata.write_text(json.dumps(record,indent=2)+'\n')
     start=time.monotonic(); total=0; last=start
@@ -122,7 +127,7 @@ def acquire(directory):
             for chunk in iter(lambda:response.read(1024*1024),b''):
                 if total==0 and not chunk.startswith(b'\x1f\x8b'): raise ValueError('Response is not gzip data')
                 total+=len(chunk)
-                if total>4*1024**3 or time.monotonic()-start>1800:
+                if total>4*1024**3 or time.monotonic()-start>max_seconds:
                     raise ValueError('Acquisition cap exceeded')
                 dst.write(chunk)
                 if time.monotonic()-last>20:
@@ -148,10 +153,11 @@ def acquire(directory):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__); p.add_argument('directory',nargs='?')
     p.add_argument('--validate-file')
+    p.add_argument('--max-seconds',type=int,default=1800)
     args=p.parse_args()
     if args.validate_file:
         print(json.dumps(validate(args.validate_file),indent=2))
     elif args.directory:
-        result=acquire(args.directory)
+        result=acquire(args.directory,args.max_seconds)
         print(json.dumps({'state':result['state'],'validation':result['validation']},indent=2))
     else: p.error('Provide a new acquisition directory or --validate-file')

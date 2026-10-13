@@ -1,0 +1,561 @@
+name: Explicit LAMOST LRS source recovery
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/lamost-dr9-source-repair-20261012]
+permissions:
+  contents: read
+jobs:
+  acquire:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[acquire-lrs-catalog]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline integrity tests
+        run: python -m unittest tests.test_lamost_repair -v
+      - name: Explicitly acquire one official LRS catalog
+        run: python -m scripts.repair_lamost_dr9 lamost-recovery --max-seconds 5400
+      - name: Split validated original bytes into retrievable parts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          root=Path('lamost-recovery')
+          record=json.loads((root/'acquisition.json').read_text())
+          assert record['state']=='validated' and record['validation']['whole_file_valid']
+          parts=root/'parts'; parts.mkdir()
+          items=[]
+          with (root/record['file']).open('rb') as f:
+              index=0
+              while chunk:=f.read(64*1024**2):
+                  p=parts/f'catalog.fits.gz.part-{index:04d}'
+                  p.write_bytes(chunk)
+                  items.append({'name':p.name,'bytes':len(chunk),'sha256':hashlib.sha256(chunk).hexdigest()})
+                  index+=1
+          (root/'parts_manifest.json').write_text(json.dumps({'parts':items,'original':record['validation']},indent=2)+'\n')
+          PY
+      - name: Preserve acquisition metadata even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-recovery-provenance
+          retention-days: 30
+          path: |
+            lamost-recovery/acquisition.json
+            lamost-recovery/parts_manifest.json
+      - name: Preserve validated catalog part 0000
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0000') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0000
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0000
+      - name: Preserve validated catalog part 0001
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0001') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0001
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0001
+      - name: Preserve validated catalog part 0002
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0002') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0002
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0002
+      - name: Preserve validated catalog part 0003
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0003') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0003
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0003
+      - name: Preserve validated catalog part 0004
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0004') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0004
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0004
+      - name: Preserve validated catalog part 0005
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0005') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0005
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0005
+      - name: Preserve validated catalog part 0006
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0006') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0006
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0006
+      - name: Preserve validated catalog part 0007
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0007') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0007
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0007
+      - name: Preserve validated catalog part 0008
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0008') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0008
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0008
+      - name: Preserve validated catalog part 0009
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0009') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0009
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0009
+      - name: Preserve validated catalog part 0010
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0010') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0010
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0010
+      - name: Preserve validated catalog part 0011
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0011') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0011
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0011
+      - name: Preserve validated catalog part 0012
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0012') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0012
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0012
+      - name: Preserve validated catalog part 0013
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0013') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0013
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0013
+      - name: Preserve validated catalog part 0014
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0014') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0014
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0014
+      - name: Preserve validated catalog part 0015
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0015') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0015
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0015
+      - name: Preserve validated catalog part 0016
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0016') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0016
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0016
+      - name: Preserve validated catalog part 0017
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0017') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0017
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0017
+      - name: Preserve validated catalog part 0018
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0018') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0018
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0018
+      - name: Preserve validated catalog part 0019
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0019') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0019
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0019
+      - name: Preserve validated catalog part 0020
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0020') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0020
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0020
+      - name: Preserve validated catalog part 0021
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0021') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0021
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0021
+      - name: Preserve validated catalog part 0022
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0022') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0022
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0022
+      - name: Preserve validated catalog part 0023
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0023') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0023
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0023
+      - name: Preserve validated catalog part 0024
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0024') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0024
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0024
+      - name: Preserve validated catalog part 0025
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0025') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0025
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0025
+      - name: Preserve validated catalog part 0026
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0026') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0026
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0026
+      - name: Preserve validated catalog part 0027
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0027') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0027
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0027
+      - name: Preserve validated catalog part 0028
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0028') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0028
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0028
+      - name: Preserve validated catalog part 0029
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0029') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0029
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0029
+      - name: Preserve validated catalog part 0030
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0030') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0030
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0030
+      - name: Preserve validated catalog part 0031
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0031') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0031
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0031
+      - name: Preserve validated catalog part 0032
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0032') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0032
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0032
+      - name: Preserve validated catalog part 0033
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0033') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0033
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0033
+      - name: Preserve validated catalog part 0034
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0034') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0034
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0034
+      - name: Preserve validated catalog part 0035
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0035') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0035
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0035
+      - name: Preserve validated catalog part 0036
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0036') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0036
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0036
+      - name: Preserve validated catalog part 0037
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0037') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0037
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0037
+      - name: Preserve validated catalog part 0038
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0038') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0038
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0038
+      - name: Preserve validated catalog part 0039
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0039') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0039
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0039
+      - name: Preserve validated catalog part 0040
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0040') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0040
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0040
+      - name: Preserve validated catalog part 0041
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0041') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0041
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0041
+      - name: Preserve validated catalog part 0042
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0042') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0042
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0042
+      - name: Preserve validated catalog part 0043
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0043') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0043
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0043
+      - name: Preserve validated catalog part 0044
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0044') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0044
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0044
+      - name: Preserve validated catalog part 0045
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0045') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0045
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0045
+      - name: Preserve validated catalog part 0046
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0046') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0046
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0046
+      - name: Preserve validated catalog part 0047
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0047') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0047
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0047
+      - name: Preserve validated catalog part 0048
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0048') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0048
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0048
+      - name: Preserve validated catalog part 0049
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0049') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0049
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0049
+      - name: Preserve validated catalog part 0050
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0050') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0050
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0050
+      - name: Preserve validated catalog part 0051
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0051') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0051
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0051
+      - name: Preserve validated catalog part 0052
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0052') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0052
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0052
+      - name: Preserve validated catalog part 0053
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0053') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0053
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0053
+      - name: Preserve validated catalog part 0054
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0054') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0054
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0054
+      - name: Preserve validated catalog part 0055
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0055') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0055
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0055
+      - name: Preserve validated catalog part 0056
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0056') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0056
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0056
+      - name: Preserve validated catalog part 0057
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0057') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0057
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0057
+      - name: Preserve validated catalog part 0058
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0058') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0058
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0058
+      - name: Preserve validated catalog part 0059
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0059') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0059
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0059
+      - name: Preserve validated catalog part 0060
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0060') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0060
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0060
+      - name: Preserve validated catalog part 0061
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0061') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0061
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0061
+      - name: Preserve validated catalog part 0062
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0062') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0062
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0062
+      - name: Preserve validated catalog part 0063
+        if: ${{ success() && hashFiles('lamost-recovery/parts/catalog.fits.gz.part-0063') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lamost-catalog-part-0063
+          compression-level: 0
+          retention-days: 30
+          path: lamost-recovery/parts/catalog.fits.gz.part-0063

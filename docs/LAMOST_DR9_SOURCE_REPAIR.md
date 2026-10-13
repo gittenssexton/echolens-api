@@ -37,6 +37,15 @@ The transfer is capped at 4 GiB compressed, 4 GiB uncompressed, and 30 minutes;
 socket reads time out after 90 seconds without data. An extension of these caps
 must be recorded explicitly, not silently applied to the same run.
 
+The initial local transfer was deliberately interrupted after preserving partial
+checkpoints. A new cloud attempt records `--max-seconds 5400` (90 minutes);
+the 4 GiB size caps and every scientific integrity gate remain unchanged.
+The separate acquisition workflow runs only by explicit dispatch or the
+`[acquire-lrs-catalog]` push marker on this research branch. Ordinary code pushes
+skip its network job. It saves only validated native bytes in 64 MiB parts plus
+an assembly manifest; failed metadata is retained without promoting partial data.
+GitHub artifacts expire after 30 days and require durable Drive archival.
+
 Validation streams gzip through EOF, requiring CRC/trailer success; hashes native
 compressed bytes (SHA-256 and MD5); checks FITS primary signature, block alignment
 and every HDU payload; requires one table with exactly 10,809,336 rows and scalar
@@ -47,7 +56,7 @@ Repeated observations of a star remain separate; only observation IDs must be un
 
 Tests exercise complete input, absent gzip footer, CRC corruption, truncated FITS,
 wrong release row count, invalid IDs and duplicate IDs using small synthetic files.
-CI never runs live acquisition. The original source file is required for full
+The ordinary registry test workflow never runs live acquisition. The original source file is required for full
 offline revalidation; test fixtures do not establish real-catalog completeness.
 
 Checksums computed here identify the retrieved bytes and can verify storage
