@@ -1,0 +1,26 @@
+{
+  "run": "independent-selection-readiness-v10",
+  "candidates": 20,
+  "pool_rows": 100,
+  "selection_sha256": "31b57af2409abd08d93bc9d43b7f0daf393fafc50bbd68c5b3473c12a4a6b0cc",
+  "status": "readiness only; no model fits, residual-based rejection, ordinary-star certification, calibrated predictive distribution or excess scoring",
+  "counts": {
+    "JHK_ready": 19,
+    "W3_ready": 17,
+    "joint_ready": 16,
+    "calibration_corrected_central_in_existing_model_box": 20,
+    "calibration_corrected_parameter_envelope_in_box": 19
+  },
+  "surveys": {
+    "wise": {
+      "provisional": 20,
+      "ambiguous": 0,
+      "unmatched": 0
+    },
+    "tmass": {
+      "provisional": 20,
+      "ambiguous": 0,
+      "unmatched": 0
+    }
+  }
+}
