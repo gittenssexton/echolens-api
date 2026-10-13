@@ -42,8 +42,8 @@ checkpoints. A new cloud attempt records `--max-seconds 5400` (90 minutes);
 the 4 GiB size caps and every scientific integrity gate remain unchanged.
 The separate acquisition workflow runs only by explicit dispatch or the
 `[acquire-lrs-catalog]` push marker on this research branch. Ordinary code pushes
-skip its network job. It saves only validated native bytes in 64 MiB parts plus
-an assembly manifest; failed metadata is retained without promoting partial data.
+skip its network job. It saves acquisition bytes in 64 MiB parts plus an assembly manifest with explicit
+validation status. Failed bytes remain unvalidated and must never be ingested.
 GitHub artifacts expire after 30 days and require durable Drive archival.
 
 Validation streams gzip through EOF, requiring CRC/trailer success; hashes native
@@ -67,3 +67,33 @@ release equivalence of other mirrors, or any anomaly claim.
 Keep raw binaries out of Git and archive the validated acquisition, checksums,
 schema and original HTTP provenance in Drive. The failed original stays intact.
 No API, main branch or Render configuration is changed.
+
+## Cloud attempt 002 outcome
+
+Run https://github.com/gittenssexton/echolens-api/actions/runs/38328672226
+at commit `237b435d3771bdab51cd779562083f00dea9cd80` received 95,638,481 bytes
+and ended after approximately five minutes, before its 90-minute budget. HTTP
+reported 200 without length or identity headers, but gzip raised `EOFError`
+before the end-of-stream marker. This is an incomplete transfer, not a successful
+catalog acquisition. The validator did not rename or promote the partial file.
+All five offline integrity tests passed on the runner.
+
+Partial SHA-256 recorded by the runner:
+`4492840d52ede2dfc0f24e1de405949a9d2695949eee68e23882efb5915bdde4`.
+The original failed cloud workflow uploaded only metadata, so the cloud partial
+bytes are not recoverable from its artifacts. The workflow now preserves both
+failed and validated acquisition bytes with explicit status; this change is
+not evidence that the failed cloud bytes were retrospectively recovered.
+
+Durable failure metadata:
+https://drive.google.com/file/d/1D9DquiIzQq1pnsXFUIVnNbMS6nUwfUQW/view
+
+The independent local partial contains 330,301,440 bytes and remains preserved
+in five fragments under `LOCAL_ATTEMPT_001_PARTIAL_DO_NOT_INGEST`. It is not the
+cloud partial and must not be combined with it.
+
+The linked official FTP route redirects to LAMOST/NADC authentication. The public
+package directory lists spectra archives, not this general catalog. A complete
+provider file or an authenticated resumable source is needed before catalog
+import. No repeated unattended retry has been scheduled, no observation rows
+from the incomplete transfer were imported, and main/Render remain unchanged.
