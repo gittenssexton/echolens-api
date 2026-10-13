@@ -1,0 +1,21 @@
+{
+  "focused_unit_tests_passed": 9,
+  "new_sampling_image_tests": 4,
+  "corrected_ck27_offline_socket_guard": true,
+  "raw_acquisition_hashes": {
+    "W1.xml": "68ca3cae986e6aaf00b9563e54bd4cee1460cc36d79bfdf03cd7f6faa7f3efb3",
+    "W2.xml": "000513229c6c251be4f3f27b469a4e3775cd2751f9170756d74f6f059276f6a5",
+    "phoenix_README.txt": "9163d1d3b260de9675052f02aea771304251116d89eae92c92bb450f91f352ab",
+    "phoenixm00_4900.fits": "c7480e419ec9bc04f5334a146de09cc95249f44648333a0add7d7756f4031c48",
+    "phoenixm00_5000.fits": "271d278b0d7eb10fb5733298ede4f27ddc0a2c52f311167d67319b11d3f1185d",
+    "phoenixm00_5100.fits": "55230a36679a3621b776c3c8c04660b0b7155b3274f017baead84f17da0f8e71",
+    "phoenixm00_5200.fits": "5bbfb5018ca3068146ec7a45c8952f9819a70eb666351c73936ec9410f615733",
+    "phoenixm05_4900.fits": "2c86f2a65c7653206f9a477e2496fd37e02ac003089709b8c3e47d836e7332f4",
+    "phoenixm05_5000.fits": "cb7139e2eb99ce862dc1b0f3eee3f95c7cd1b8cb7f1bb46a770a93f74944ea7c",
+    "phoenixm05_5100.fits": "09a65e732df30fcb1c5daef96871fd6c27653bf8e6ab85bd4d431881277286ca",
+    "phoenixm05_5200.fits": "1e52bf0febc72542aef5ea8ef897a51f19d1da0960fe465502768d8644e8a588",
+    "W3_180arcsec.fits": "b4e3538a7239a0c94724e07aa8d1a8e8d76f6d5c4383c36d7f1c0f6a89106475"
+  },
+  "plot_visually_reviewed": true,
+  "legacy_v06_interpretation": "superseded as sparse-wavelength interpolation artifact"
+}
