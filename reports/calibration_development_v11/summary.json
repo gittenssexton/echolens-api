@@ -1,0 +1,45 @@
+{
+  "run": "calibration-development-v11",
+  "status": "exploratory conditional fits of provisional comparison candidates; no calibrated significance, ordinary-control certification, zero-point adjustment or reserved validation scoring",
+  "development_stars": 9,
+  "conditional_fit_cases": 54,
+  "reserved_validation_stars_scored": 0,
+  "bands": [
+    "J",
+    "H",
+    "Ks",
+    "W1",
+    "W2",
+    "W3",
+    "W4"
+  ],
+  "selection_sha256": "31b57af2409abd08d93bc9d43b7f0daf393fafc50bbd68c5b3473c12a4a6b0cc",
+  "descriptive_W3": {
+    "raw": {
+      "count": 9,
+      "median": 0.0014922314037946194,
+      "MAD_about_median": 0.023592544016534434,
+      "min": -0.027735664979547714,
+      "max": 0.041079984678308756,
+      "scope": "descriptive only, not calibrated error distribution or confidence interval",
+      "Av_boundary_cases": 1
+    },
+    "generic_calibration_sensitivity": {
+      "count": 9,
+      "median": 0.003733412628956545,
+      "MAD_about_median": 0.021616492942203025,
+      "min": -0.02352255761064792,
+      "max": 0.04482418351483086,
+      "scope": "descriptive only, not calibrated error distribution or confidence interval",
+      "Av_boundary_cases": 1
+    }
+  },
+  "offline_socket_guard_passed": true,
+  "fit_limitations": "six central-parameter cases per star, not a parameter posterior; JHK errors treated independently; model/zero-point/variability/contamination errors uncalibrated",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "7.2.0",
+    "dust_extinction": "1.7"
+  }
+}
