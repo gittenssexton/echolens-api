@@ -1,0 +1,27 @@
+{
+  "experiment": "W3-aperture-background-audit-v09",
+  "source_id": "4461930649238469760",
+  "aperture_radius_arcsec": 8.25,
+  "sky_annulus_arcsec": [
+    50,
+    70
+  ],
+  "background_sensitivity_annuli": [
+    [
+      25,
+      40
+    ],
+    [
+      40,
+      55
+    ],
+    [
+      50,
+      70
+    ]
+  ],
+  "pixel_weights": "8x8 supersampling",
+  "aperture_correction": "catalog w3mcor 0.825 mag reused, not independently estimated",
+  "uncertainty": "no significance without covariance, source mask and uncertainty map",
+  "scope": "same Atlas images/catalog; not independent observing epoch"
+}
