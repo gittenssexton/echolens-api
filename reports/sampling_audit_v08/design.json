@@ -1,0 +1,22 @@
+{
+  "experiment": "wavelength-sampling-audit-v08",
+  "question": "Does sparse CK04 wavelength sampling plus linear FLAM interpolation reproduce the W3 discrepancy?",
+  "controlled_input": "same interpolated PHOENIX spectrum before/after degradation onto CK04 wavelength nodes",
+  "central_parameters": [
+    5046,
+    3.16,
+    -0.11
+  ],
+  "Av_range": [
+    0,
+    1
+  ],
+  "Av_step": 0.005,
+  "Rv": 3.1,
+  "methods": [
+    "linear_flux",
+    "log_flux_log_wave",
+    "lambda4_scaled"
+  ],
+  "scope": "central-case numerical falsification experiment, not global calibration or confirmation"
+}
