@@ -1,0 +1,24 @@
+{
+  "unit_tests_passed": 5,
+  "offline_socket_guard_passed": true,
+  "repeated_outputs_identical": true,
+  "synthetic_injection_not_observation": {
+    "injected_Av": 0.12,
+    "recovered_Av": 0.12,
+    "injected_normalization": 50,
+    "recovered_normalization": 49.99999999999999
+  },
+  "alternative_SVO_flat_Fnu_reference_central_case": {
+    "Av": 0.135,
+    "predicted_W3_mag": 9.644995818668484,
+    "note": "flat-Fnu survey-zero normalization sensitivity; not independent empirical calibration"
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "7.2.0",
+    "dust_extinction": "1.7",
+    "matplotlib": "3.10.8",
+    "pytest": "9.1.1"
+  }
+}
