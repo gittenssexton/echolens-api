@@ -1,0 +1,44 @@
+{
+  "run_id": "DR9-AUXILIARY-STAGING-20261013",
+  "checked_at": "2026-10-13T10:34:37.966140+00:00",
+  "scope": "Engineering staging; no physical crossmatch or scientific classification",
+  "products": {
+    "wd": {
+      "rows": 14691,
+      "rows_with_syntactically_valid_reported_gaia_id": 14224,
+      "distinct_reported_gaia_ids": 11475,
+      "all_native_rows_byte_identical": true,
+      "first_obsid": 101076,
+      "search_and_inspect_passed": true,
+      "schema_columns": 39,
+      "source_sha256": "8ecfa5859c0cd7b7b6fc26677944da00db44872d12b76bd947cf66e54da75068",
+      "implementation_sha256": {
+        "stage_lamost_auxiliary.py": "79af5cba262efe687bbb6c753601b69327f42ed6ad32edc1da13e350afd366dc",
+        "audit_lamost_auxiliary.py": "2be63c39cce62df35a728a74ac77484052fd8e48f63554f2a5d6aced618fddb3",
+        "repair_lamost_dr9.py": "8bf9efe76f8f9011844717724120ef2428685f85b8f97c46d76f6c82f69b90bf"
+      }
+    },
+    "qso": {
+      "rows": 18142,
+      "rows_with_syntactically_valid_reported_gaia_id": 18117,
+      "distinct_reported_gaia_ids": 17320,
+      "all_native_rows_byte_identical": true,
+      "first_obsid": 102166,
+      "search_and_inspect_passed": true,
+      "schema_columns": 180,
+      "source_sha256": "53fe3148e123ee468bd50a901aabb762baa23c427531ae5ac994d250cc46d41c",
+      "implementation_sha256": {
+        "stage_lamost_auxiliary.py": "79af5cba262efe687bbb6c753601b69327f42ed6ad32edc1da13e350afd366dc",
+        "audit_lamost_auxiliary.py": "2be63c39cce62df35a728a74ac77484052fd8e48f63554f2a5d6aced618fddb3",
+        "repair_lamost_dr9.py": "8bf9efe76f8f9011844717724120ef2428685f85b8f97c46d76f6c82f69b90bf"
+      }
+    }
+  },
+  "sqlite_integrity": "ok",
+  "foreign_key_violations": 0,
+  "database_bytes": 180797440,
+  "database_sha256": "e27400b570392b21a6a10ebecf5eff4631bb900784c1ba1bda4cd23d7d1b2033",
+  "gzip_archive_bytes": 33971564,
+  "gzip_archive_sha256": "9d619763f1f9f4beb0963a35b764601a97d21b6dbda9a84ceeac34ec3a7b0f87",
+  "archive_round_trip_verified": true
+}
