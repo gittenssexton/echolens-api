@@ -1,3 +1,5 @@
+> **SUPERSEDED INTERPRETATION — 2026-10-13:** The 32–34% W3 shortfall below was reproduced as a sparse-wavelength linear-flux interpolation artifact. It is not evidence for a physical deficit. PHOENIX and shape-preserving CK04 interpolation predict W3 close to the observation. See [v0.7–v0.9 correction report](https://drive.google.com/file/d/11tZwHNyB8XND1Y7jYE-AxnPUqvqhqLa1/view?usp=drivesdk). Original observations and rejected numerical outputs are retained for audit.
+
 # EchoLens NIR-only held-out W3 pilot v0.6
 
 Run `nir-heldout-w3-v06`, 2026-10-13 UTC. Gaia DR3 source **4461930649238469760**. Exploratory development experiment, not an independent replication or calibrated anomaly test.
