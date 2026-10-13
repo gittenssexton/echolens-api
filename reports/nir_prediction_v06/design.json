@@ -1,0 +1,50 @@
+{
+  "experiment": "nir-heldout-w3-v06",
+  "source_id": "4461930649238469760",
+  "fit_bands": [
+    "J",
+    "H",
+    "Ks"
+  ],
+  "comparison_bands": [
+    "W3"
+  ],
+  "upper_limit_only": [
+    "W4"
+  ],
+  "temperature_cases": [
+    4999,
+    5046,
+    5135
+  ],
+  "gravity_cases": [
+    2.85,
+    3.16,
+    3.39
+  ],
+  "metallicity_cases": [
+    -0.23,
+    -0.11,
+    -0.04
+  ],
+  "Rv_cases": [
+    2.5,
+    3.1,
+    4.0
+  ],
+  "Av_ranges": [
+    [
+      0,
+      0.3
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "Av_step": 0.005,
+  "status": "exploratory; source and W3 already development-exposed; not a blind confirmatory test",
+  "model": "linear flux interpolation of CK04 models",
+  "calibration": "CALSPEC Vega ratios; survey reference differences unresolved",
+  "created_utc": "2026-10-13T00:27:01.292124+00:00"
+}

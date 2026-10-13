@@ -1,0 +1,280 @@
+{
+  "run": "gaia-model-readiness-v04",
+  "source_id": "4461930649238469760",
+  "input_selection_sha256": "98549a954bb3e5907bb4c8fbef738802e273beaa073a95609167191d77e55ec3",
+  "catalog_consistency": {
+    "ra": {
+      "frozen": 251.54266368707752,
+      "ESA": 251.54266368707752,
+      "difference": 0.0
+    },
+    "dec": {
+      "frozen": 15.44299576239465,
+      "ESA": 15.44299576239465,
+      "difference": 0.0
+    },
+    "parallax": {
+      "frozen": 1.121721796936813,
+      "ESA": 1.121721796936813,
+      "difference": 0.0
+    },
+    "pmra": {
+      "frozen": -6.717468019613697,
+      "ESA": -6.717468019613697,
+      "difference": 0.0
+    },
+    "pmdec": {
+      "frozen": -6.59720080206134,
+      "ESA": -6.59720080206134,
+      "difference": 0.0
+    },
+    "phot_g_mean_mag": {
+      "frozen": 12.184337615966797,
+      "ESA": 12.184337615966797,
+      "difference": 0.0
+    }
+  },
+  "spectral_availability": {
+    "has_xp_continuous": true,
+    "has_xp_sampled": true,
+    "has_rvs": false,
+    "has_epoch_photometry": false,
+    "has_epoch_rv": false,
+    "has_mcmc_gspphot": false,
+    "has_mcmc_msc": true
+  },
+  "spectra_downloaded": {
+    "xp_sampled": {
+      "tables": 1,
+      "row_counts": [
+        343
+      ],
+      "field_counts": [
+        3
+      ]
+    },
+    "xp_continuous": {
+      "tables": 1,
+      "row_counts": [
+        1
+      ],
+      "field_counts": [
+        26
+      ]
+    }
+  },
+  "GSP_Spec": {
+    "teff_gspspec": 5046.0,
+    "teff_gspspec_lower": 4999.0,
+    "teff_gspspec_upper": 5135.0,
+    "logg_gspspec": 3.1600000858306885,
+    "logg_gspspec_lower": 2.8499999046325684,
+    "logg_gspspec_upper": 3.390000104904175,
+    "mh_gspspec": -0.10999999940395355,
+    "mh_gspspec_lower": -0.23000000417232513,
+    "mh_gspspec_upper": -0.03999999910593033,
+    "alphafe_gspspec": 0.03999999910593033,
+    "alphafe_gspspec_lower": -0.009999999776482582,
+    "alphafe_gspspec_upper": 0.14000000059604645,
+    "fem_gspspec": null,
+    "fem_gspspec_lower": null,
+    "fem_gspspec_upper": null,
+    "fem_gspspec_nlines": null,
+    "fem_gspspec_linescatter": null,
+    "sife_gspspec": null,
+    "sife_gspspec_lower": null,
+    "sife_gspspec_upper": null,
+    "sife_gspspec_nlines": null,
+    "sife_gspspec_linescatter": null,
+    "cafe_gspspec": null,
+    "cafe_gspspec_lower": null,
+    "cafe_gspspec_upper": null,
+    "cafe_gspspec_nlines": null,
+    "cafe_gspspec_linescatter": null,
+    "tife_gspspec": null,
+    "tife_gspspec_lower": null,
+    "tife_gspspec_upper": null,
+    "tife_gspspec_nlines": null,
+    "tife_gspspec_linescatter": null,
+    "mgfe_gspspec": null,
+    "mgfe_gspspec_lower": null,
+    "mgfe_gspspec_upper": null,
+    "mgfe_gspspec_nlines": null,
+    "mgfe_gspspec_linescatter": null,
+    "ndfe_gspspec": null,
+    "ndfe_gspspec_lower": null,
+    "ndfe_gspspec_upper": null,
+    "ndfe_gspspec_nlines": null,
+    "ndfe_gspspec_linescatter": null,
+    "feiim_gspspec": null,
+    "feiim_gspspec_lower": null,
+    "feiim_gspspec_upper": null,
+    "feiim_gspspec_nlines": null,
+    "feiim_gspspec_linescatter": null,
+    "sfe_gspspec": null,
+    "sfe_gspspec_lower": null,
+    "sfe_gspspec_upper": null,
+    "sfe_gspspec_nlines": null,
+    "sfe_gspspec_linescatter": null,
+    "zrfe_gspspec": null,
+    "zrfe_gspspec_lower": null,
+    "zrfe_gspspec_upper": null,
+    "zrfe_gspspec_nlines": null,
+    "zrfe_gspspec_linescatter": null,
+    "nfe_gspspec": null,
+    "nfe_gspspec_lower": null,
+    "nfe_gspspec_upper": null,
+    "nfe_gspspec_nlines": null,
+    "nfe_gspspec_linescatter": null,
+    "crfe_gspspec": null,
+    "crfe_gspspec_lower": null,
+    "crfe_gspspec_upper": null,
+    "crfe_gspspec_nlines": null,
+    "crfe_gspspec_linescatter": null,
+    "cefe_gspspec": null,
+    "cefe_gspspec_lower": null,
+    "cefe_gspspec_upper": null,
+    "cefe_gspspec_nlines": null,
+    "cefe_gspspec_linescatter": null,
+    "nife_gspspec": null,
+    "nife_gspspec_lower": null,
+    "nife_gspspec_upper": null,
+    "nife_gspspec_nlines": null,
+    "nife_gspspec_linescatter": null,
+    "cn0ew_gspspec": null,
+    "cn0ew_gspspec_uncertainty": null,
+    "cn0_gspspec_centralline": null,
+    "cn0_gspspec_width": null,
+    "dib_gspspec_lambda": null,
+    "dib_gspspec_lambda_uncertainty": null,
+    "dibew_gspspec": null,
+    "dibew_gspspec_uncertainty": null,
+    "dibewnoise_gspspec_uncertainty": null,
+    "dibp0_gspspec": null,
+    "dibp2_gspspec": null,
+    "dibp2_gspspec_uncertainty": null,
+    "dibqf_gspspec": null,
+    "flags_gspspec": "00000010000009999999999999999999999999999",
+    "logchisq_gspspec": -3.1674678325653076
+  },
+  "GSP_Spec_parameter_flags": {
+    "vbroadT": "0",
+    "vbroadG": "0",
+    "vbroadM": "0",
+    "vradT": "0",
+    "vradG": "0",
+    "vradM": "0",
+    "fluxNoise": "1",
+    "extrapol": "0",
+    "neg_flux": "0",
+    "nanFlux": "0",
+    "emission": "0",
+    "nullFluxErr": "0",
+    "KMgiantPar": "0"
+  },
+  "MSC_model": {
+    "mh_msc": 0.4387989044189453,
+    "mh_msc_upper": 0.5,
+    "mh_msc_lower": 0.31629496812820435,
+    "azero_msc": 0.4075307250022888,
+    "azero_msc_upper": 0.8024114966392517,
+    "azero_msc_lower": 0.0,
+    "distance_msc": 330.76715087890625,
+    "distance_msc_upper": 426.5316162109375,
+    "distance_msc_lower": 106.968017578125,
+    "teff_msc1": 5147.8955078125,
+    "teff_msc1_upper": 5607.8369140625,
+    "teff_msc1_lower": 4914.98046875,
+    "teff_msc2": 4578.2607421875,
+    "teff_msc2_upper": 4702.6943359375,
+    "teff_msc2_lower": 4281.5712890625,
+    "logg_msc1": 4.390508651733398,
+    "logg_msc1_upper": 5.199999809265137,
+    "logg_msc1_lower": 4.144627571105957,
+    "logg_msc2": 4.477721214294434,
+    "logg_msc2_upper": 4.8243913650512695,
+    "logg_msc2_lower": 4.354058265686035,
+    "ag_msc": 0.31742507219314575,
+    "ag_msc_upper": 0.6229656338691711,
+    "ag_msc_lower": 0.0,
+    "logposterior_msc": -16500.9765625,
+    "mcmcaccept_msc": 0.22095465660095215,
+    "mcmcdrift_msc": 0.2033812701702118,
+    "flags_msc": "1"
+  },
+  "neighbor_cone_radius_arcsec": 60,
+  "neighbor_count_excluding_target": 10,
+  "neighbors_at_wise_epoch": [
+    {
+      "source_id": "4461930748018370560",
+      "separation_at_wise_epoch_arcsec": 21.240803394733586,
+      "proper_motion_applied": true,
+      "G_magnitude_difference": 5.921415328979492,
+      "G_flux_ratio": 0.004279902430014587
+    },
+    {
+      "source_id": "4461930752317685504",
+      "separation_at_wise_epoch_arcsec": 23.386960478412867,
+      "proper_motion_applied": true,
+      "G_magnitude_difference": 8.097848892211914,
+      "G_flux_ratio": 0.0005765811541080299
+    },
+    {
+      "source_id": "4461930752314170240",
+      "separation_at_wise_epoch_arcsec": 23.838137283656284,
+      "proper_motion_applied": true,
+      "G_magnitude_difference": 7.5402984619140625,
+      "G_flux_ratio": 0.0009635641096248064
+    },
+    {
+      "source_id": "4461930644939156224",
+      "separation_at_wise_epoch_arcsec": 33.384786483777646,
+      "proper_motion_applied": true,
+      "G_magnitude_difference": 6.695888519287109,
+      "G_flux_ratio": 0.002097222905159846
+    },
+    {
+      "source_id": "4461930438780716928",
+      "separation_at_wise_epoch_arcsec": 38.04721658720106,
+      "proper_motion_applied": true,
+      "G_magnitude_difference": 7.897613525390625,
+      "G_flux_ratio": 0.0006933533046854813
+    },
+    {
+      "source_id": "4461930649236009216",
+      "separation_at_wise_epoch_arcsec": 43.96894477761928,
+      "proper_motion_applied": false,
+      "G_magnitude_difference": 9.057785034179688,
+      "G_flux_ratio": 0.0002381694130213404
+    },
+    {
+      "source_id": "4461930408720299904",
+      "separation_at_wise_epoch_arcsec": 55.235882602459256,
+      "proper_motion_applied": true,
+      "G_magnitude_difference": 2.2564191818237305,
+      "G_flux_ratio": 0.1251504245669761
+    },
+    {
+      "source_id": "4461930370061238912",
+      "separation_at_wise_epoch_arcsec": 56.27224285566821,
+      "proper_motion_applied": true,
+      "G_magnitude_difference": 6.08610725402832,
+      "G_flux_ratio": 0.003677537402179186
+    },
+    {
+      "source_id": "4461930541859938048",
+      "separation_at_wise_epoch_arcsec": 56.37037193816803,
+      "proper_motion_applied": false,
+      "G_magnitude_difference": 9.297258377075195,
+      "G_flux_ratio": 0.00019102783302179727
+    },
+    {
+      "source_id": "4461930644939151744",
+      "separation_at_wise_epoch_arcsec": 59.9230132388734,
+      "proper_motion_applied": false,
+      "G_magnitude_difference": 9.29377555847168,
+      "G_flux_ratio": 0.0001916415949346825
+    }
+  ],
+  "scientific_status": "development input readiness; no photosphere fit, infrared residual, acceptance probability or discovery claim"
+}

@@ -1,0 +1,217 @@
+{
+  "classification": "model-input availability audit; no fit or stellar classification",
+  "models": [
+    {
+      "file": "model_context/ckm05_4750.fits.gz",
+      "temperature_K": 4750,
+      "metallicity_dex": -0.5,
+      "gravity_columns_checked": [
+        "g25",
+        "g30",
+        "g35"
+      ],
+      "wavelength_range_angstrom": [
+        90.9000015258789,
+        1600000.0
+      ],
+      "rows": 1221,
+      "column_units": {
+        "WAVELENGTH": "ANGSTROM",
+        "g00": "FLAM",
+        "g05": "FLAM",
+        "g10": "FLAM",
+        "g15": "FLAM",
+        "g20": "FLAM",
+        "g25": "FLAM",
+        "g30": "FLAM",
+        "g35": "FLAM",
+        "g40": "FLAM",
+        "g45": "FLAM",
+        "g50": "FLAM"
+      },
+      "model_header": {
+        "TEFF": 4750,
+        "LOG_Z": -0.5,
+        "METAL": null,
+        "FLUXUNIT": null
+      }
+    },
+    {
+      "file": "model_context/ckm05_5000.fits.gz",
+      "temperature_K": 5000,
+      "metallicity_dex": -0.5,
+      "gravity_columns_checked": [
+        "g25",
+        "g30",
+        "g35"
+      ],
+      "wavelength_range_angstrom": [
+        90.9000015258789,
+        1600000.0
+      ],
+      "rows": 1221,
+      "column_units": {
+        "WAVELENGTH": "ANGSTROM",
+        "g00": "FLAM",
+        "g05": "FLAM",
+        "g10": "FLAM",
+        "g15": "FLAM",
+        "g20": "FLAM",
+        "g25": "FLAM",
+        "g30": "FLAM",
+        "g35": "FLAM",
+        "g40": "FLAM",
+        "g45": "FLAM",
+        "g50": "FLAM"
+      },
+      "model_header": {
+        "TEFF": 5000,
+        "LOG_Z": -0.5,
+        "METAL": null,
+        "FLUXUNIT": null
+      }
+    },
+    {
+      "file": "model_context/ckm05_5250.fits.gz",
+      "temperature_K": 5250,
+      "metallicity_dex": -0.5,
+      "gravity_columns_checked": [
+        "g25",
+        "g30",
+        "g35"
+      ],
+      "wavelength_range_angstrom": [
+        90.9000015258789,
+        1600000.0
+      ],
+      "rows": 1221,
+      "column_units": {
+        "WAVELENGTH": "ANGSTROM",
+        "g00": "FLAM",
+        "g05": "FLAM",
+        "g10": "FLAM",
+        "g15": "FLAM",
+        "g20": "FLAM",
+        "g25": "FLAM",
+        "g30": "FLAM",
+        "g35": "FLAM",
+        "g40": "FLAM",
+        "g45": "FLAM",
+        "g50": "FLAM"
+      },
+      "model_header": {
+        "TEFF": 5250,
+        "LOG_Z": -0.5,
+        "METAL": null,
+        "FLUXUNIT": null
+      }
+    },
+    {
+      "file": "model_context/ckp00_4750.fits.gz",
+      "temperature_K": 4750,
+      "metallicity_dex": 0,
+      "gravity_columns_checked": [
+        "g25",
+        "g30",
+        "g35"
+      ],
+      "wavelength_range_angstrom": [
+        90.9000015258789,
+        1600000.0
+      ],
+      "rows": 1221,
+      "column_units": {
+        "WAVELENGTH": "ANGSTROM",
+        "g00": "FLAM",
+        "g05": "FLAM",
+        "g10": "FLAM",
+        "g15": "FLAM",
+        "g20": "FLAM",
+        "g25": "FLAM",
+        "g30": "FLAM",
+        "g35": "FLAM",
+        "g40": "FLAM",
+        "g45": "FLAM",
+        "g50": "FLAM"
+      },
+      "model_header": {
+        "TEFF": 4750,
+        "LOG_Z": 0.0,
+        "METAL": null,
+        "FLUXUNIT": null
+      }
+    },
+    {
+      "file": "model_context/ckp00_5000.fits.gz",
+      "temperature_K": 5000,
+      "metallicity_dex": 0,
+      "gravity_columns_checked": [
+        "g25",
+        "g30",
+        "g35"
+      ],
+      "wavelength_range_angstrom": [
+        90.9000015258789,
+        1600000.0
+      ],
+      "rows": 1221,
+      "column_units": {
+        "WAVELENGTH": "ANGSTROM",
+        "g00": "FLAM",
+        "g05": "FLAM",
+        "g10": "FLAM",
+        "g15": "FLAM",
+        "g20": "FLAM",
+        "g25": "FLAM",
+        "g30": "FLAM",
+        "g35": "FLAM",
+        "g40": "FLAM",
+        "g45": "FLAM",
+        "g50": "FLAM"
+      },
+      "model_header": {
+        "TEFF": 5000,
+        "LOG_Z": 0.0,
+        "METAL": null,
+        "FLUXUNIT": null
+      }
+    },
+    {
+      "file": "model_context/ckp00_5250.fits.gz",
+      "temperature_K": 5250,
+      "metallicity_dex": 0,
+      "gravity_columns_checked": [
+        "g25",
+        "g30",
+        "g35"
+      ],
+      "wavelength_range_angstrom": [
+        90.9000015258789,
+        1600000.0
+      ],
+      "rows": 1221,
+      "column_units": {
+        "WAVELENGTH": "ANGSTROM",
+        "g00": "FLAM",
+        "g05": "FLAM",
+        "g10": "FLAM",
+        "g15": "FLAM",
+        "g20": "FLAM",
+        "g25": "FLAM",
+        "g30": "FLAM",
+        "g35": "FLAM",
+        "g40": "FLAM",
+        "g45": "FLAM",
+        "g50": "FLAM"
+      },
+      "model_header": {
+        "TEFF": 5250,
+        "LOG_Z": 0.0,
+        "METAL": null,
+        "FLUXUNIT": null
+      }
+    }
+  ],
+  "grid_interpolation_not_yet_validated": true,
+  "dust_map_is_2D_context_not_stellar_extinction": true
+}

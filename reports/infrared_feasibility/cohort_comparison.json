@@ -1,0 +1,13 @@
+{
+  "reference_only_001b_commit": "7d143639157f6fb654e8a50cebef13293f8b7a3e",
+  "overlapping_source_ids": [
+    "2224020313110506496",
+    "5308480866647217280",
+    "5799060586767864192",
+    "5863799586612538368",
+    "5871798847258673920",
+    "5943527034463458688"
+  ],
+  "overlap_count": 6,
+  "interpretation": "Overlapping targets are not independent replication."
+}

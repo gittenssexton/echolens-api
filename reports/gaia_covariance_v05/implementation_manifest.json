@@ -1,0 +1,8 @@
+{
+  "package": "GaiaXPy",
+  "version": "2.1.4",
+  "module": "gaiaxpy.spectrum.calibration_absolute_sampled_spectrum",
+  "source_file_sha256": "3176e717d0fc41f2aad37ae11307234f247ef42a9e65c97f3c5ac88a8393939e",
+  "observed_merge_behavior": "the installed __merge_output covariance expression broadcasts one band weight vector across only one axis; means/errors use the expected weights",
+  "workaround": "public single-band calibration plus a separately tested linear covariance merge; original package is not modified"
+}

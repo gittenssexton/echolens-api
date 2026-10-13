@@ -1,0 +1,40 @@
+{
+  "native_responses_validated": 5,
+  "byte_identical_replays": true,
+  "replay_output_sha256": {
+    "summary.json": "3b61dec8cefc1165d4cdc52e74c909ee1b4df8409dd63991b02fd7e324ef0cee",
+    "gaia_source.json": "3d6c341484c7143ecc666292640f601774cfa4dbf2afaa03b4ed5f38477f7754",
+    "astrophysical_parameters.json": "9d7c8f0ef709048c46706a6a75fb42d74c390fccf1e04339daa624eed78bd24d",
+    "neighbors.json": "74abe03eb81eb40f70e44a5cf8351e38d0dad145b3620061d24e405b6da6ef57",
+    "xp_sampled.json": "da37d74c901d922d8c3f54ff4e27ca383817be7daded9e68ea3a2f86d0dabd06",
+    "xp_continuous.json": "973de62f3a4611c007978b6f95c276b8d7309ac577c78262f237bfa856784937"
+  },
+  "original_pilot_outputs_unchanged": true,
+  "local_readiness_tests_passed": 6,
+  "combined_readiness_covariance_pilot_tests_passed": 19,
+  "spectral_grid_samples": 343,
+  "spectral_grid_start_stop_nm": [
+    336,
+    1020
+  ],
+  "spectral_grid_step_nm": 2,
+  "spectral_fluxes_finite_and_errors_positive": true,
+  "bp_rp_coefficient_counts": [
+    55,
+    55
+  ],
+  "bp_rp_correlation_counts": [
+    1485,
+    1485
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "versions": {
+    "astropy": "8.0.1",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "pytest": "8.3.5"
+  },
+  "github_ci_code_commit": "3388c2f02bafa42f3f49cea1586e25ca2e6a18bb",
+  "github_ci_run": 38286441743,
+  "github_ci_conclusion": "success"
+}

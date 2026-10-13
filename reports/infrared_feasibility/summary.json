@@ -1,0 +1,83 @@
+{
+  "run": "infrared-feasibility-v02",
+  "selection_sha256": "98549a954bb3e5907bb4c8fbef738802e273beaa073a95609167191d77e55ec3",
+  "targets": 100,
+  "groups": {
+    "reference": {
+      "targets": 40,
+      "wise": {
+        "unmatched": 5,
+        "provisional": 35,
+        "ambiguous": 0,
+        "bands_pass_screen": {
+          "1": 23,
+          "2": 23,
+          "3": 4,
+          "4": 0
+        }
+      },
+      "tmass": {
+        "unmatched": 0,
+        "provisional": 40,
+        "ambiguous": 0,
+        "bands_pass_screen": {
+          "j": 36,
+          "h": 35,
+          "k": 30
+        }
+      },
+      "joint_W3_JHK_screen": 4
+    },
+    "other": {
+      "targets": 40,
+      "wise": {
+        "unmatched": 36,
+        "provisional": 4,
+        "ambiguous": 0,
+        "bands_pass_screen": {
+          "1": 4,
+          "2": 1,
+          "3": 0,
+          "4": 0
+        }
+      },
+      "tmass": {
+        "unmatched": 29,
+        "provisional": 11,
+        "ambiguous": 0,
+        "bands_pass_screen": {
+          "j": 3,
+          "h": 2,
+          "k": 1
+        }
+      },
+      "joint_W3_JHK_screen": 0
+    },
+    "variable": {
+      "targets": 20,
+      "wise": {
+        "unmatched": 6,
+        "provisional": 14,
+        "ambiguous": 0,
+        "bands_pass_screen": {
+          "1": 6,
+          "2": 6,
+          "3": 2,
+          "4": 1
+        }
+      },
+      "tmass": {
+        "unmatched": 5,
+        "provisional": 15,
+        "ambiguous": 0,
+        "bands_pass_screen": {
+          "j": 11,
+          "h": 10,
+          "k": 10
+        }
+      },
+      "joint_W3_JHK_screen": 1
+    }
+  },
+  "scientific_status": "feasibility only; geometric associations; no covariance-qualified identities, image review, photosphere predictions, excess scores or discovery claims"
+}

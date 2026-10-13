@@ -1,0 +1,19 @@
+{
+  "experiment": "model-and-band-validation-v07",
+  "fit_bands": [
+    "J",
+    "H",
+    "Ks"
+  ],
+  "diagnostic_bands": [
+    "W1",
+    "W2",
+    "W3"
+  ],
+  "upper_limit_band": "W4",
+  "source_id": "4461930649238469760",
+  "model_cases": "CK04 central case and PHOENIX interpolated T/logg/MH at same sensitivity cases as v06; blackbody shape sanity check only",
+  "extinction": "G23 Rv 2.5/3.1/4.0 Av0..1 step .005",
+  "status": "development-exposed diagnostic; bands never fit; not confirmatory",
+  "created_utc": "2026-10-13T05:31:30.716226+00:00"
+}

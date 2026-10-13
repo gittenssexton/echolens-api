@@ -1,0 +1,787 @@
+{
+  "run": "counterpart-review-v03",
+  "input_hashes": {
+    "selection.json": "98549a954bb3e5907bb4c8fbef738802e273beaa073a95609167191d77e55ec3",
+    "results.json": "e7d809f1f9e1a91fbb1854e85a88ec4c82a0f649f2836e413096ed0f741540ed",
+    "review_queue.json": "aafee1850fd51cff4f37c1f54121e0d40abbfad5a9f6b5e9466b9219cb60bd0a"
+  },
+  "assumptions": [
+    "Gaia four-parameter tangent-plane covariance propagated linearly; no parallax/perspective model",
+    "AllWISE RA-coordinate convention is evaluated with cosine; an alternative tangent convention is retained as unresolved sensitivity",
+    "0/50/100mas extra isotropic error floors are illustrative sensitivity assumptions, not measured systematics",
+    "chi-square tails are conditional positional residual checks, not counterpart probabilities or discovery significance",
+    "2MASS ellipse angle east of north; WISE signed co-sigma converted to covariance",
+    "20pct precision ceiling assumes an exact 20pct excess, fixed catalog fractional noise, independent held-out W3 measurement and perfectly known photosphere; it is not a measured residual or an injection recovery test",
+    "No immutable pilot output or selection is changed"
+  ],
+  "sources": [
+    {
+      "source_id": "4310899120739084800",
+      "group": "reference",
+      "gaia_parameters": {
+        "ra": 284.863923595707,
+        "dec": 9.810922514373024,
+        "parallax": 0.4303555681228589,
+        "parallax_error": 0.02338920533657074,
+        "ruwe": 1.0776575803756714,
+        "phot_g_mean_mag": 14.534696578979492,
+        "bp_rp": 2.5696401596069336,
+        "teff_gspphot": 4779.9365234375,
+        "logg_gspphot": 2.588099956512451,
+        "azero_gspphot": 3.6819000244140625,
+        "phot_variable_flag": "NOT_AVAILABLE"
+      },
+      "wise": {
+        "epoch_jyear": 2010.5557837097879,
+        "offset_east_north_arcsec": [
+          -0.009841596192895399,
+          -0.061768786341145
+        ],
+        "gaia_covariance_arcsec2": [
+          [
+            1.5771657362316534e-08,
+            3.76325118659134e-09
+          ],
+          [
+            3.763251186591339e-09,
+            1.9663247870715765e-08
+          ]
+        ],
+        "conditional_diagnostics": {
+          "RA_coordinate": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.0016401634489685345,
+                -5.542736969158464e-05
+              ],
+              [
+                -5.542736969158464e-05,
+                0.00158404
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 1.580047665998341,
+                "chi2_2d_tail": 0.2869993541959422
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.9806975238042057,
+                "chi2_2d_tail": 0.6182367423784909
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.5815438820543972,
+                "chi2_2d_tail": 0.8444272911370303
+              }
+            }
+          },
+          "RA_tangent_sensitivity": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.0016892099999999998,
+                -5.625e-05
+              ],
+              [
+                -5.625e-05,
+                0.00158404
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 1.5793841521567817,
+                "chi2_2d_tail": 0.2873003341171356
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.9805654528640037,
+                "chi2_2d_tail": 0.6183168172111406
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.5815185801173964,
+                "chi2_2d_tail": 0.8444397160189314
+              }
+            }
+          }
+        }
+      },
+      "tmass": {
+        "epoch_jyear": 1999.5855271731689,
+        "offset_east_north_arcsec": [
+          0.007242380588821653,
+          -0.01281644118951228
+        ],
+        "gaia_covariance_arcsec2": [
+          [
+            1.4315874213784358e-07,
+            2.9095279587853356e-08
+          ],
+          [
+            2.9095279587853356e-08,
+            1.778070240031549e-07
+          ]
+        ],
+        "conditional_diagnostics": {
+          "ellipse": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.003599999839067461,
+                0.0
+              ],
+              [
+                0.0,
+                0.003599999839067461
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 0.24534813868221628,
+                "chi2_2d_tail": 0.9703505756570274
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.18848320953583642,
+                "chi2_2d_tail": 0.9823938712683773
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.126232436581534,
+                "chi2_2d_tail": 0.9920643408996899
+              }
+            }
+          }
+        }
+      },
+      "review_flags": [
+        "Gaia_A0_estimate_above_1mag; extinction_model_required",
+        "2MASS_neighbor_within_10arcsec"
+      ],
+      "tmass_other_cone_sources": [
+        {
+          "separation_arcsec": 6.828024990095878,
+          "designation": "18592692+0948363",
+          "j_mag": 15.394000053405762,
+          "k_mag": 14.211999893188477
+        },
+        {
+          "separation_arcsec": 8.762524935961114,
+          "designation": "18592720+0948308",
+          "j_mag": 16.5939998626709,
+          "k_mag": 15.329000473022461
+        }
+      ],
+      "tmass_catalog_key_matches_wise": true,
+      "w3_snr": 17.2,
+      "w3_magnitude_error": 0.06300000101327896,
+      "w3_fractional_flux_error": 0.05817258890045859,
+      "tmass_rd_flg": "222",
+      "status": "development_review; no counterpart_acceptance_or_excess_score",
+      "hypothetical_exact_20pct_excess_measurement_only_z_ceiling": 2.8650378093341624,
+      "hypothetical_exact_20pct_excess_required_snr_for_z5": 30
+    },
+    {
+      "source_id": "4461930649238469760",
+      "group": "reference",
+      "gaia_parameters": {
+        "ra": 251.54266368707752,
+        "dec": 15.44299576239465,
+        "parallax": 1.121721796936813,
+        "parallax_error": 0.01180074643343687,
+        "ruwe": 1.0465857982635498,
+        "phot_g_mean_mag": 12.184337615966797,
+        "bp_rp": 1.165421485900879,
+        "teff_gspphot": null,
+        "logg_gspphot": null,
+        "azero_gspphot": null,
+        "phot_variable_flag": "NOT_AVAILABLE"
+      },
+      "wise": {
+        "epoch_jyear": 2010.5557837097879,
+        "offset_east_north_arcsec": [
+          -0.0025202632041717563,
+          -0.0008612079180195905
+        ],
+        "gaia_covariance_arcsec2": [
+          [
+            2.3157560699487416e-09,
+            -1.5747282720100485e-10
+          ],
+          [
+            -1.5747282720100487e-10,
+            2.208182494897931e-09
+          ]
+        ],
+        "conditional_diagnostics": {
+          "RA_coordinate": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.0014276847431402295,
+                -5.27829345312138e-05
+              ],
+              [
+                -5.27829345312138e-05,
+                0.00133956
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 0.07162343102434726,
+                "chi2_2d_tail": 0.9974383287580788
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.042730149763320846,
+                "chi2_2d_tail": 0.9990874837470114
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.024960107741130704,
+                "chi2_2d_tail": 0.9996885450229501
+              }
+            }
+          },
+          "RA_tangent_sensitivity": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.00153664,
+                -5.4760000000000004e-05
+              ],
+              [
+                -5.4760000000000004e-05,
+                0.00133956
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 0.06935179275741143,
+                "chi2_2d_tail": 0.9975980537211867
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.04221808860401597,
+                "chi2_2d_tail": 0.9991092134833915
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.024855730528059537,
+                "chi2_2d_tail": 0.9996911440357846
+              }
+            }
+          }
+        }
+      },
+      "tmass": {
+        "epoch_jyear": 2000.3554119096507,
+        "offset_east_north_arcsec": [
+          -0.0519558094669084,
+          -0.0987551006452544
+        ],
+        "gaia_covariance_arcsec2": [
+          [
+            1.966343501939892e-08,
+            -4.0942075220632846e-10
+          ],
+          [
+            -4.0942075220632846e-10,
+            1.7969855715475567e-08
+          ]
+        ],
+        "conditional_diagnostics": {
+          "ellipse": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.003599999839067461,
+                0.0
+              ],
+              [
+                0.0,
+                0.006399999713897708
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 1.5078680298117555,
+                "chi2_2d_tail": 0.3208334949769443
+              },
+              "0.05": {
+                "mahalanobis_radius": 1.2402888586015908,
+                "chi2_2d_tail": 0.4634029845828369
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.8905917891694888,
+                "chi2_2d_tail": 0.6726185722274507
+              }
+            }
+          }
+        }
+      },
+      "review_flags": [
+        "Gaia_GSP_Phot_temperature_unavailable"
+      ],
+      "tmass_other_cone_sources": [],
+      "tmass_catalog_key_matches_wise": true,
+      "w3_snr": 21.2,
+      "w3_magnitude_error": 0.050999999046325684,
+      "w3_fractional_flux_error": 0.047223276110805464,
+      "tmass_rd_flg": "222",
+      "status": "development_review; no counterpart_acceptance_or_excess_score",
+      "hypothetical_exact_20pct_excess_measurement_only_z_ceiling": 3.5293329983205166,
+      "hypothetical_exact_20pct_excess_required_snr_for_z5": 30
+    },
+    {
+      "source_id": "2224020313110506496",
+      "group": "reference",
+      "gaia_parameters": {
+        "ra": 322.7885267094346,
+        "dec": 69.51728337653064,
+        "parallax": 0.3832473157374406,
+        "parallax_error": 0.03141345456242561,
+        "ruwe": 1.0104730129241943,
+        "phot_g_mean_mag": 15.901936531066895,
+        "bp_rp": 2.108449935913086,
+        "teff_gspphot": 4850.888671875,
+        "logg_gspphot": 3.3993000984191895,
+        "azero_gspphot": 2.5683000087738037,
+        "phot_variable_flag": "NOT_AVAILABLE"
+      },
+      "wise": {
+        "epoch_jyear": 2010.5557837097879,
+        "offset_east_north_arcsec": [
+          0.05323887019149342,
+          0.004212458136066361
+        ],
+        "gaia_covariance_arcsec2": [
+          [
+            4.498912396034241e-08,
+            -4.467521324192172e-09
+          ],
+          [
+            -4.467521324192171e-09,
+            4.4047393342899584e-08
+          ]
+        ],
+        "conditional_diagnostics": {
+          "RA_coordinate": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.00018719873404647483,
+                4.157456292948074e-05
+              ],
+              [
+                4.157456292948074e-05,
+                0.0016646400000000002
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 3.8951668896855605,
+                "chi2_2d_tail": 0.0005074245392427017
+              },
+              "0.05": {
+                "mahalanobis_radius": 1.028353355785121,
+                "chi2_2d_tail": 0.589338055253218
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.5287688371115566,
+                "chi2_2d_tail": 0.8695336534641842
+              }
+            }
+          },
+          "RA_tangent_sensitivity": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.0015288100000000002,
+                0.00011881
+              ],
+              [
+                0.00011881,
+                0.0016646400000000002
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 1.3615891580284512,
+                "chi2_2d_tail": 0.39575398229030645
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.8397603328098876,
+                "chi2_2d_tail": 0.7028591883646051
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.4969925894009041,
+                "chi2_2d_tail": 0.8838209191977036
+              }
+            }
+          }
+        }
+      },
+      "tmass": {
+        "epoch_jyear": 2000.3857908281998,
+        "offset_east_north_arcsec": [
+          0.18848360677093018,
+          0.11633650266306955
+        ],
+        "gaia_covariance_arcsec2": [
+          [
+            3.602149065647336e-07,
+            -4.03211388844372e-08
+          ],
+          [
+            -4.03211388844372e-08,
+            3.369227348195969e-07
+          ]
+        ],
+        "conditional_diagnostics": {
+          "ellipse": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.004900000041723251,
+                0.0
+              ],
+              [
+                0.0,
+                0.006399999713897708
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 3.0601219631517065,
+                "chi2_2d_tail": 0.009258870493740348
+              },
+              "0.05": {
+                "mahalanobis_radius": 2.5142097137312955,
+                "chi2_2d_tail": 0.042399223003113606
+              },
+              "0.1": {
+                "mahalanobis_radius": 1.7915042958988008,
+                "chi2_2d_tail": 0.20094102516554896
+              }
+            }
+          }
+        }
+      },
+      "review_flags": [
+        "Gaia_A0_estimate_above_1mag; extinction_model_required"
+      ],
+      "tmass_other_cone_sources": [],
+      "tmass_catalog_key_matches_wise": true,
+      "w3_snr": 8.3,
+      "w3_magnitude_error": 0.13099999725818634,
+      "w3_fractional_flux_error": 0.1201972819217762,
+      "tmass_rd_flg": "222",
+      "status": "development_review; no counterpart_acceptance_or_excess_score",
+      "hypothetical_exact_20pct_excess_measurement_only_z_ceiling": 1.386609281024612,
+      "hypothetical_exact_20pct_excess_required_snr_for_z5": 30
+    },
+    {
+      "source_id": "192355921445905536",
+      "group": "reference",
+      "gaia_parameters": {
+        "ra": 88.21252248240071,
+        "dec": 42.01939115356841,
+        "parallax": 0.7176138866305553,
+        "parallax_error": 0.013188906945288181,
+        "ruwe": 0.9581313133239746,
+        "phot_g_mean_mag": 13.168217658996582,
+        "bp_rp": 1.075760841369629,
+        "teff_gspphot": null,
+        "logg_gspphot": null,
+        "azero_gspphot": null,
+        "phot_variable_flag": "NOT_AVAILABLE"
+      },
+      "wise": {
+        "epoch_jyear": 2010.5557837097879,
+        "offset_east_north_arcsec": [
+          -0.014149316940231327,
+          0.02944133046762257
+        ],
+        "gaia_covariance_arcsec2": [
+          [
+            8.05103326969984e-09,
+            -1.3944211875702802e-09
+          ],
+          [
+            -1.39442118757028e-09,
+            3.98025922391928e-09
+          ]
+        ],
+        "conditional_diagnostics": {
+          "RA_coordinate": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.0009505567926332242,
+                2.4991764811851503e-05
+              ],
+              [
+                2.4991764811851503e-05,
+                0.00185761
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 0.8302202664117961,
+                "chi2_2d_tail": 0.7084804275830292
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.5082619253125924,
+                "chi2_2d_tail": 0.8788288656359231
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.30256118262399184,
+                "chi2_2d_tail": 0.9552600856206783
+              }
+            }
+          },
+          "RA_tangent_sensitivity": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.0017222500000000003,
+                3.3639999999999996e-05
+              ],
+              [
+                3.3639999999999996e-05,
+                0.00185761
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 0.7693046986145211,
+                "chi2_2d_tail": 0.7438507570341557
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.49786440495681283,
+                "chi2_2d_tail": 0.8834377192981269
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.3006348047457241,
+                "chi2_2d_tail": 0.9558152450606862
+              }
+            }
+          }
+        }
+      },
+      "tmass": {
+        "epoch_jyear": 1998.8415022587276,
+        "offset_east_north_arcsec": [
+          -0.03124624760718833,
+          -0.007334642247515943
+        ],
+        "gaia_covariance_arcsec2": [
+          [
+            7.626721662763911e-08,
+            -1.1945961896400389e-08
+          ],
+          [
+            -1.1945961896400389e-08,
+            3.393798668239816e-08
+          ]
+        ],
+        "conditional_diagnostics": {
+          "ellipse": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.006398172751991861,
+                5.231734387411719e-05
+              ],
+              [
+                5.231734387411719e-05,
+                0.004901827003629101
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 0.4035066139050817,
+                "chi2_2d_tail": 0.9218167814877907
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.34151168912743435,
+                "chi2_2d_tail": 0.9433526342323098
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.2511000421501593,
+                "chi2_2d_tail": 0.9689661355024936
+              }
+            }
+          }
+        }
+      },
+      "review_flags": [
+        "WISE_W1_artifact_H",
+        "Gaia_GSP_Phot_temperature_unavailable"
+      ],
+      "tmass_other_cone_sources": [],
+      "tmass_catalog_key_matches_wise": true,
+      "w3_snr": 5.7,
+      "w3_magnitude_error": 0.1899999976158142,
+      "w3_fractional_flux_error": 0.1750780047172466,
+      "tmass_rd_flg": "222",
+      "status": "development_review; no counterpart_acceptance_or_excess_score",
+      "hypothetical_exact_20pct_excess_measurement_only_z_ceiling": 0.951956626052688,
+      "hypothetical_exact_20pct_excess_required_snr_for_z5": 30
+    },
+    {
+      "source_id": "4262211057903494912",
+      "group": "variable",
+      "gaia_parameters": {
+        "ra": 287.1457199612757,
+        "dec": -1.5205989790124705,
+        "parallax": 0.04267528355267032,
+        "parallax_error": 0.10129871219396591,
+        "ruwe": 1.1995397806167603,
+        "phot_g_mean_mag": 12.895854949951172,
+        "bp_rp": 5.450695037841797,
+        "teff_gspphot": 3320.008056640625,
+        "logg_gspphot": 0.6816999912261963,
+        "azero_gspphot": 3.8457999229431152,
+        "phot_variable_flag": "VARIABLE"
+      },
+      "wise": {
+        "epoch_jyear": 2010.5557837097879,
+        "offset_east_north_arcsec": [
+          -0.0003774864274577556,
+          0.04339968183346412
+        ],
+        "gaia_covariance_arcsec2": [
+          [
+            3.966338992613645e-07,
+            4.1629118301967636e-08
+          ],
+          [
+            4.1629118301967636e-08,
+            2.622858508756351e-07
+          ]
+        ],
+        "conditional_diagnostics": {
+          "RA_coordinate": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.0012381675189199648,
+                7.837239210902112e-06
+              ],
+              [
+                7.837239210902112e-06,
+                0.0011764899999999999
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 1.2652982378451487,
+                "chi2_2d_tail": 0.44910892978723177
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.7157798306662104,
+                "chi2_2d_tail": 0.7740100794017858
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.4105327658422567,
+                "chi2_2d_tail": 0.9191843521619055
+              }
+            }
+          },
+          "RA_tangent_sensitivity": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.00123904,
+                7.84e-06
+              ],
+              [
+                7.84e-06,
+                0.0011764899999999999
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 1.2652981809834847,
+                "chi2_2d_tail": 0.4491089620992559
+              },
+              "0.05": {
+                "mahalanobis_radius": 0.7157798267445882,
+                "chi2_2d_tail": 0.7740100815744461
+              },
+              "0.1": {
+                "mahalanobis_radius": 0.41053276538945904,
+                "chi2_2d_tail": 0.9191843523327712
+              }
+            }
+          }
+        }
+      },
+      "tmass": {
+        "epoch_jyear": 2000.7079507186857,
+        "offset_east_north_arcsec": [
+          0.066581100154302,
+          0.1599911468957141
+        ],
+        "gaia_covariance_arcsec2": [
+          [
+            3.0537720111185275e-06,
+            3.173795207252985e-07
+          ],
+          [
+            3.173795207252985e-07,
+            2.0427164198299084e-06
+          ]
+        ],
+        "conditional_diagnostics": {
+          "ellipse": {
+            "catalog_covariance_arcsec2": [
+              [
+                0.003599999839067461,
+                0.0
+              ],
+              [
+                0.0,
+                0.003599999839067461
+              ]
+            ],
+            "unmodeled_floor_sensitivity_arcsec": {
+              "0": {
+                "mahalanobis_radius": 2.8872354421126296,
+                "chi2_2d_tail": 0.01548220081993392
+              },
+              "0.05": {
+                "mahalanobis_radius": 2.218340698024233,
+                "chi2_2d_tail": 0.08539073049812011
+              },
+              "0.1": {
+                "mahalanobis_radius": 1.4858369117559824,
+                "chi2_2d_tail": 0.3315901156662009
+              }
+            }
+          }
+        }
+      },
+      "review_flags": [
+        "Gaia_catalog_VARIABLE; noncontemporaneous_SED_requires_variability_model",
+        "WISE_W1_or_W2_saturation",
+        "Gaia_A0_estimate_above_1mag; extinction_model_required",
+        "2MASS_neighbor_within_10arcsec"
+      ],
+      "tmass_other_cone_sources": [
+        {
+          "separation_arcsec": 7.189936764463971,
+          "designation": "19083519-0131204",
+          "j_mag": 14.020000457763672,
+          "k_mag": 10.63599967956543
+        },
+        {
+          "separation_arcsec": 9.731822644211082,
+          "designation": "19083547-0131203",
+          "j_mag": 15.305000305175781,
+          "k_mag": 12.506999969482422
+        },
+        {
+          "separation_arcsec": 11.249568160288398,
+          "designation": "19083457-0131046",
+          "j_mag": 14.901000022888184,
+          "k_mag": 14.01099967956543
+        },
+        {
+          "separation_arcsec": 11.965848874116144,
+          "designation": "19083421-0131175",
+          "j_mag": 15.720000267028809,
+          "k_mag": 13.178999900817871
+        }
+      ],
+      "tmass_catalog_key_matches_wise": true,
+      "w3_snr": 76.1,
+      "w3_magnitude_error": 0.014000000432133675,
+      "w3_fractional_flux_error": 0.013148369335868994,
+      "tmass_rd_flg": "111",
+      "status": "development_review; no counterpart_acceptance_or_excess_score",
+      "hypothetical_exact_20pct_excess_measurement_only_z_ceiling": 12.675843095766783,
+      "hypothetical_exact_20pct_excess_required_snr_for_z5": 30
+    }
+  ]
+}

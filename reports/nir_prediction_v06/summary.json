@@ -1,0 +1,119 @@
+{
+  "experiment": "nir-heldout-w3-v06",
+  "source_id": "4461930649238469760",
+  "status": "exploratory uncalibrated conditional comparison; no detection significance",
+  "observed_JHK": [
+    10.694999694824219,
+    10.166000366210938,
+    10.133000373840332
+  ],
+  "combined_mag_errors_JHK": [
+    0.01899999938905239,
+    0.027499999850988388,
+    0.02329999953508377
+  ],
+  "W3_observed_mag": 10.07800006866455,
+  "W3_error_mag": 0.050999999046325684,
+  "W4_95percent_upper_limit_mag": 8.890000343322754,
+  "central_case": {
+    "T_K": 5046,
+    "logg": 3.16,
+    "MH": -0.11,
+    "Rv": 3.1,
+    "Av_max": 0.3,
+    "Av_fit": 0.115,
+    "normalization_magnitude": 49.89846977897985,
+    "scale_R_over_D_squared": 1.0980246462881058e-20,
+    "chi2_JHK": 0.9565784946537539,
+    "model_magnitudes": [
+      10.690768741509565,
+      10.189202167924641,
+      10.122707193056286,
+      9.647561891430279,
+      9.739347210265144
+    ],
+    "at_extinction_boundary": false,
+    "W3_excess_fraction": -0.3272948862439776,
+    "W3_residual_mag_model_minus_observed": -0.43043817723427225
+  },
+  "sensitivity": {
+    "0.3": {
+      "cases": 81,
+      "Av_fit_range": [
+        0.0,
+        0.3
+      ],
+      "boundary_cases": 13,
+      "chi2_range": [
+        0.5882741032746792,
+        1.6896132946761155
+      ],
+      "W3_prediction_mag_range": [
+        9.629130005018702,
+        9.655711571481966
+      ],
+      "W3_excess_fraction_range": [
+        -0.33861860390340925,
+        -0.3222264740886577
+      ],
+      "W4_predictions_fainter_than_upper_limit": true
+    },
+    "1.0": {
+      "cases": 81,
+      "Av_fit_range": [
+        0.0,
+        0.37
+      ],
+      "boundary_cases": 3,
+      "chi2_range": [
+        0.5882741032746792,
+        1.63501235153
+      ],
+      "W3_prediction_mag_range": [
+        9.629130005018702,
+        9.655711571481966
+      ],
+      "W3_excess_fraction_range": [
+        -0.33861860390340925,
+        -0.3222264740886577
+      ],
+      "W4_predictions_fainter_than_upper_limit": true
+    }
+  },
+  "max_quadrature_refinement_mag_change": 2.554210141170188e-07,
+  "reference": "CALSPEC alpha_lyr_stis_011 assigned zero in every band; survey reference offsets unresolved",
+  "source_results_sha256": "e7d809f1f9e1a91fbb1854e85a88ec4c82a0f649f2836e413096ed0f741540ed",
+  "design_sha256": "0d0491ff1916e9478feccc2a35c4561dae6ad37277edca6c9d497b5699fb63e0",
+  "model_manifest": [
+    {
+      "path": "reports/gaia_covariance_v05/model_context/ckm05_4750.fits.gz",
+      "sha256": "d80cd4ea068720ae27f48bbd9b3f5f8dfca1048b9e887aef8a0db7203e876982",
+      "raw_sha256": "47d55c4576d90a7d033ccf1d2428c998c88c0aee4452f290c158e66d169903c8"
+    },
+    {
+      "path": "reports/gaia_covariance_v05/model_context/ckm05_5000.fits.gz",
+      "sha256": "52aa54f7cb3c18e21bec6c201133f028a3b6e2bb37fac0ba9ec7f51db0deda8c",
+      "raw_sha256": "27d749870ab90fc4fb5f591aa9c8167768ff7ab81620a44291fe690f6ed28d12"
+    },
+    {
+      "path": "reports/gaia_covariance_v05/model_context/ckm05_5250.fits.gz",
+      "sha256": "ab1c72106a1730411b00ba3e23ab64d2a681fdbef6b051603a59584a894f819d",
+      "raw_sha256": "2619c93e4a780ed39bd83aa0f301b192824003201d33a00f0198a9970b731375"
+    },
+    {
+      "path": "reports/gaia_covariance_v05/model_context/ckp00_4750.fits.gz",
+      "sha256": "4d895c5d1a7154876e2bc4c36fff3250bc1013e5776ed184f186fe86c3f05c89",
+      "raw_sha256": "bad44ba513e6f957d70c6b114fbf7460e2e075274c3fae02eadf69793b7a06e0"
+    },
+    {
+      "path": "reports/gaia_covariance_v05/model_context/ckp00_5000.fits.gz",
+      "sha256": "1462b57608168eefcf2264c5c133b76da6e15550bf78fb17c23f37b081d921ad",
+      "raw_sha256": "c89b206bb254360ff10cabfd0f6bab333e630129feafae6ad34f7300a93c5da5"
+    },
+    {
+      "path": "reports/gaia_covariance_v05/model_context/ckp00_5250.fits.gz",
+      "sha256": "ad2f6125836645f791c9f7bf0e2972ce9aaef18b616b8e18dc387f8bf7116c7b",
+      "raw_sha256": "a64cb9e01d34527cbe6722157420f162773c53f929a2812e410abb204c4b51ef"
+    }
+  ]
+}

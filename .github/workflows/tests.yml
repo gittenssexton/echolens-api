@@ -11,5 +11,6 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r requirements-dev.txt
+      - run: pip install -r requirements-nir.txt
       - run: python -m scripts.import_gaia
       - run: python -m pytest -q

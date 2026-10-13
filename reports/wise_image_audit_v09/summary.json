@@ -1,0 +1,90 @@
+{
+  "source_id": "4461930649238469760",
+  "status": "approximate aperture diagnostic; no image covariance/error model or independent exposure",
+  "shape": [
+    132,
+    132
+  ],
+  "pixel_scale_arcsec": 1.3749999809079598,
+  "catalog_position_pixel": [
+    65.17496025999776,
+    65.89922456176646
+  ],
+  "effective_aperture_pixels": 113.09375,
+  "BUNIT": "DN",
+  "MAGZP": 18.0,
+  "annulus_cases": [
+    {
+      "annulus_arcsec": [
+        25,
+        40
+      ],
+      "sky_median_DN": 462.09814453125,
+      "sky_clipped_std_DN": 0.5495823409937546,
+      "pixels_total": 1622,
+      "pixels_retained": 1620,
+      "net_aperture_DN": 664.7642631530762,
+      "uncorrected_mag": 10.94333083923235,
+      "catalog_correction_reused_mag": 0.824999988079071,
+      "corrected_mag": 10.11833085115328
+    },
+    {
+      "annulus_arcsec": [
+        40,
+        55
+      ],
+      "sky_median_DN": 462.0636901855469,
+      "sky_clipped_std_DN": 0.5072819309294397,
+      "pixels_total": 2364,
+      "pixels_retained": 2342,
+      "net_aperture_DN": 668.660834312439,
+      "uncorrected_mag": 10.936985285316116,
+      "catalog_correction_reused_mag": 0.824999988079071,
+      "corrected_mag": 10.111985297237045
+    },
+    {
+      "annulus_arcsec": [
+        50,
+        70
+      ],
+      "sky_median_DN": 462.01763916015625,
+      "sky_clipped_std_DN": 0.4892544207148439,
+      "pixels_total": 3980,
+      "pixels_retained": 3929,
+      "net_aperture_DN": 673.86891746521,
+      "uncorrected_mag": 10.928561438031501,
+      "catalog_correction_reused_mag": 0.824999988079071,
+      "corrected_mag": 10.10356144995243
+    }
+  ],
+  "catalog": {
+    "w3mpro": 10.07800006866455,
+    "w3sigmpro": 0.050999999046325684,
+    "w3mag": 10.104999542236328,
+    "w3sigm": 0.06800000369548798,
+    "w3flg": 0,
+    "w3mag_2": 10.930000305175781,
+    "w3mcor": 0.824999988079071,
+    "w3magp": 10.07699966430664,
+    "w3sigp1": 0.14000000059604645,
+    "w3sigp2": 0.035999998450279236,
+    "w3m": 15,
+    "w3rchi2": 0.9593999981880188,
+    "w3mlq": 0.3799999952316284,
+    "w3mjdmin": 55252.37606814,
+    "w3mjdmax": 55253.50084074
+  },
+  "catalog_aperture_minus_profile_mag": 0.026999473571777344,
+  "catalog_repeatability_mean_minus_profile_mag": -0.0010004043579101562,
+  "catalog_curve_of_growth_arithmetic_error_mag": 7.748603820800781e-07,
+  "larger_catalog_apertures_confusion_flags": {
+    "1": 0,
+    "2": 0,
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "8": 1
+  }
+}

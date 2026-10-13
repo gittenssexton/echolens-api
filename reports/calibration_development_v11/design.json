@@ -1,0 +1,43 @@
+{
+  "experiment": "calibration-development-v11",
+  "frozen_utc": "2026-10-13T10:46:15.779189+00:00",
+  "selection_sha256": "31b57af2409abd08d93bc9d43b7f0daf393fafc50bbd68c5b3473c12a4a6b0cc",
+  "readiness_results_sha256": "866b9fec066a68a38dbe1a0c4814fd57f948a6af0a6b3b6fdc3c080bafad6e95",
+  "development_source_ids": [
+    "2759006524739613056",
+    "3075599868480948992",
+    "2433664848010750848",
+    "2984872253470024576",
+    "1742112230738093312",
+    "2336863054027651456",
+    "6669301637583655168",
+    "2151835210082468992",
+    "3657301580397050240"
+  ],
+  "fit_bands": [
+    "J",
+    "H",
+    "Ks"
+  ],
+  "diagnostic_band": "W3",
+  "optional_band_diagnostics": "W1/W2 only when their own quality screen passes",
+  "upper_limit_not_fitted": "W4",
+  "parameter_cases": [
+    "raw GSPspec median",
+    "published generic field-star calibration sensitivity for logg/MH, using raw logg in both polynomials"
+  ],
+  "Rv_cases": [
+    2.5,
+    3.1,
+    4.0
+  ],
+  "Av_range": [
+    0,
+    1
+  ],
+  "Av_step": 0.005,
+  "model": "archived dense PHOENIX; native model/filter/Vega knots and 4000 auxiliary integration points",
+  "role": "exploratory development only; no calibration correction fitted; no validation reserved predictions",
+  "eligibility": "frozen development role and joint quality screen; not W3 residual",
+  "uncertainty": "central parameter sensitivity only; no posterior predictive interval or calibrated Z score"
+}

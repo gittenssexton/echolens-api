@@ -1,0 +1,37 @@
+{
+  "focused_tests_passed": 17,
+  "new_tests": 8,
+  "network_blocked_replay_passed": true,
+  "identical_outputs": [
+    {
+      "path": "calibration_cohort_v10/summary.json",
+      "sha256": "7e220fd4884de152a2265be508a4bb22ff9b4e8fbd8f377b85636a47e646e0b4"
+    },
+    {
+      "path": "calibration_cohort_v10/results.json",
+      "sha256": "866b9fec066a68a38dbe1a0c4814fd57f948a6af0a6b3b6fdc3c080bafad6e95"
+    },
+    {
+      "path": "calibration_development_v11/summary.json",
+      "sha256": "c476aa5394139779c6f134f72a1c49264aa9a056694ef35d2628bada118107f4"
+    },
+    {
+      "path": "calibration_development_v11/fit_cases.json",
+      "sha256": "19097c7a20b6a891ba8eeea8745d8e0a8da1c09f6d90d951e135a871f6a9b2b7"
+    },
+    {
+      "path": "calibration_development_v11/comparison_cases.json",
+      "sha256": "e9ddbd3c18ad4601d8bff3599b2585f788afaf3a61445bac4c25961af4eeeaaa"
+    }
+  ],
+  "native_catalog_counts": {
+    "gaia_pool": 100,
+    "gaia_selected_main": 20,
+    "infrared_target_responses": 40,
+    "infrared_schema_responses": 2
+  },
+  "all_native_import_checksums_schema_and_status_verified": true,
+  "reserved_validation_stars_scored": 0,
+  "cohort_stage": "readiness only",
+  "development_stage": "nine provisional candidates, 54 conditional fits, not confirmatory"
+}
