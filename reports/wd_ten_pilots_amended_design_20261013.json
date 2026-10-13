@@ -1,0 +1,191 @@
+{
+  "run_id": "WD-TEN-PILOTS-20261013",
+  "mode": "Ten linked sequential exploratory observational experiments; not independent replications or confirmatory tests",
+  "cohort_reference": "reports/wd_counterpart_design_20261013.json",
+  "cohort_design_sha256": "36b0f3732d238d568941885c4be3f4d6489d58914935accd97b425c8e50fe4f4",
+  "source_count": 10,
+  "development_exposure": "Gaia positions/quality and LAMOST rows already accessed by CP001; P01-P04 are retrospective descriptive tests, not preregistered discovery evidence",
+  "experiments": [
+    {
+      "id": "P01",
+      "name": "Proper-motion relevance",
+      "question": "Does epoch propagation change reported-ID separation from the LAMOST fiber?",
+      "decision_rule": "Compare ref_epoch and obsdate separations; report changes >=0.1 arcsec; no counterpart certification"
+    },
+    {
+      "id": "P02",
+      "name": "Crowding sensitivity",
+      "question": "Does candidate ambiguity change as the positional aperture expands?",
+      "decision_rule": "Count Gaia candidates at obsdate within 1,2,3,6 arcsec; missing motion stays explicit"
+    },
+    {
+      "id": "P03",
+      "name": "Astrometric reliability",
+      "question": "How many sources pass a conservative Gaia astrometry screen?",
+      "decision_rule": "Complete PM/errors; ruwe<=1.4; duplicated_source false; ipd_frac_multi_peak<=2; thresholds are pilot policy, not source-normality proof"
+    },
+    {
+      "id": "P04",
+      "name": "Repeated spectroscopic parameters",
+      "question": "Are repeated reported-ID WD temperature/gravity estimates compatible at measurement-only precision?",
+      "decision_rule": "Use all staged WD observations for frozen reported IDs; non-sentinel positive errors; pair differences/max summed errors>3 flags conservative tension; ID association remains provisional"
+    },
+    {
+      "id": "P05",
+      "name": "AllWISE coverage and epoch sensitivity",
+      "question": "Are unique positional AllWISE candidates present for this cohort?",
+      "decision_rule": "Retrieve all candidates within 15 arcsec of Gaia PM position at 2010.5; compare 2009.5/2010.5/2011.5 support at 3 arcsec; no forced association"
+    },
+    {
+      "id": "P06",
+      "name": "WISE detection versus upper limit",
+      "question": "Which infrared bands retain measured uncertainties and clean quality flags?",
+      "decision_rule": "Unique provisional match; per-band ph_qual A/B, cc_flags=0, snr>=5, finite positive magnitude error, rchi2<=2, sat<=0.01, ext_flg=0, nb=1, na=0; U remains upper limit"
+    },
+    {
+      "id": "P07",
+      "name": "W1-W2 color distinguishability",
+      "question": "Are measured clean W1-W2 colors distinguishable from the zero-color reference?",
+      "decision_rule": "Compute color and uncertainty under independent errors plus full correlation bounds; conservative |color|>3*(sigma1+sigma2); zero color is an instrumental reference, not a validated WD photosphere; no excess claim"
+    },
+    {
+      "id": "P08",
+      "name": "2MASS coverage with native epochs",
+      "question": "Do 2MASS candidates retain a unique positional association when native JD is used?",
+      "decision_rule": "Retrieve 15 arcsec cone at year 2000, propagate Gaia separately to each native jdate; unique within 3 arcsec only; missing epoch unresolved"
+    },
+    {
+      "id": "P09",
+      "name": "Near-infrared color measurements",
+      "question": "Which J-H and H-K colors have clean measured uncertainties?",
+      "decision_rule": "Unique provisional 2MASS candidate with ph_qual AAA, cc_flg 000 and positive finite combined magnitude errors; preserve color errors and maximum-correlation bounds, no atmosphere inference"
+    },
+    {
+      "id": "P10",
+      "name": "Joint model-readiness gate",
+      "question": "Is any source ready for a later multi-band WD atmosphere experiment?",
+      "decision_rule": "Require P03 astrometry screen, unique provisional survey candidates, clean JHK+W1W2; independently certified counterpart/image/model validation still required, so this run cannot authorize an excess search"
+    }
+  ],
+  "acquisition": {
+    "endpoint": "https://irsa.ipac.caltech.edu/TAP/sync",
+    "tables": [
+      "allwise_p3as_psd",
+      "fp_psc"
+    ],
+    "radius_arcsec": 15,
+    "maximum_rows": 1000,
+    "epoch_centers": {
+      "allwise_p3as_psd": 2010.5,
+      "fp_psc": 2000
+    },
+    "failure_policy": "Any TAP overflow/error/checksum/transport failure is blocked, never zero matches"
+  },
+  "scientific_limits": [
+    "All associations conditional; no physically certified counterpart in this cohort",
+    "No reference-star control group or validated WD atmosphere model",
+    "No global false-alarm calibration or independent samples",
+    "No technology/alien or physical excess inference",
+    "Ten protocols include prerequisite/feasibility experiments, not ten independent discovery tests"
+  ],
+  "repeat_supplement": {
+    "amendment": "P04 repeat-spectra supplement; original ten-source P04 not testable",
+    "scope": "Exploratory amendment driven by absence of repeat data, not by parameter differences",
+    "selection": "Require >=2 observations sharing reported Gaia ID and >=2 non-sentinel estimates with positive errors in at least one parameter; fixed hash ranking first10; do not inspect differences for selection",
+    "eligible_ids": 1327,
+    "sample": [
+      {
+        "reported_gaia_source_id": "1021452731770726016",
+        "native_observation_count": 3,
+        "eligible_parameters": [
+          "teff",
+          "logg"
+        ],
+        "rank": "001a19b898d0130a41dcdd5a88c60236959c24cff879fffc4af455966b43d592"
+      },
+      {
+        "reported_gaia_source_id": "371070026026145792",
+        "native_observation_count": 3,
+        "eligible_parameters": [
+          "teff",
+          "logg"
+        ],
+        "rank": "0030dec2690954eef4c0ddb451895592ba494e3e30a5984290427ef73271f2dd"
+      },
+      {
+        "reported_gaia_source_id": "647899806626643200",
+        "native_observation_count": 2,
+        "eligible_parameters": [
+          "teff",
+          "logg"
+        ],
+        "rank": "004230ec9d087e51eaa7e5a9827234219d7dc239aab9550eba5a21ca0b9ac726"
+      },
+      {
+        "reported_gaia_source_id": "1876436272064883456",
+        "native_observation_count": 2,
+        "eligible_parameters": [
+          "teff",
+          "logg"
+        ],
+        "rank": "00428f200d919d788b98c879b0b731ffaff825a38a24cc271232bd347598ed6a"
+      },
+      {
+        "reported_gaia_source_id": "692531418844824960",
+        "native_observation_count": 3,
+        "eligible_parameters": [
+          "teff",
+          "logg"
+        ],
+        "rank": "00c253075cb247735d0738e02e7b095a427efb65f2e9bbe2a2eedd1936fc1df7"
+      },
+      {
+        "reported_gaia_source_id": "45980377978968064",
+        "native_observation_count": 2,
+        "eligible_parameters": [
+          "teff",
+          "logg"
+        ],
+        "rank": "00ca2087165329b9d32e32b6b31f42579fb02a06dd436fd195956b55e39078cd"
+      },
+      {
+        "reported_gaia_source_id": "639034783674224384",
+        "native_observation_count": 2,
+        "eligible_parameters": [
+          "teff",
+          "logg"
+        ],
+        "rank": "00fbce66024bba109741c95c8e2c60570687ef80a752ec59330830999a7f339f"
+      },
+      {
+        "reported_gaia_source_id": "1551929124663349632",
+        "native_observation_count": 4,
+        "eligible_parameters": [
+          "teff",
+          "logg"
+        ],
+        "rank": "010e61aa7ce6c07065b9626c244de0ddc3893107dd3d4b285beee0a57b881512"
+      },
+      {
+        "reported_gaia_source_id": "3940955205038857728",
+        "native_observation_count": 3,
+        "eligible_parameters": [
+          "teff",
+          "logg"
+        ],
+        "rank": "01802f583e74aea0808961004c274ef4d38d7b23eec34082330ebd36b862b0aa"
+      },
+      {
+        "reported_gaia_source_id": "820337722743910400",
+        "native_observation_count": 2,
+        "eligible_parameters": [
+          "teff",
+          "logg"
+        ],
+        "rank": "0187945593999468e432ecb9dc6fd03559626ccbc6a42d76b9ed57e6daeabd6d"
+      }
+    ]
+  },
+  "amended_at": "2026-10-13T11:53:01.533950+00:00",
+  "amendment_reason": "Original P04 cohort has no repeats; preserve non-testable result and use availability/hash-selected repeat supplement only for P04"
+}

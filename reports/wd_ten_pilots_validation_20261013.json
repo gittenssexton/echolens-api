@@ -1,0 +1,10 @@
+{
+  "all_ten_executed": true,
+  "strict_chronological_order": true,
+  "socket_connections_blocked": true,
+  "original_design_commit": "f17edbd04970cf1b77faf06b30f67c8b1f1e12c4",
+  "repeat_amendment_commit": "535636379a5c1928d75ae0ded8b6fe50bb1f0c83",
+  "input_IRSA_responses": 20,
+  "physical_counterparts_certified": 0,
+  "scientific_results_replayed_exactly": true
+}
